@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title></title>
+      <link href="/2023/04/15/2.%20%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F%E8%B7%91%E4%B8%8D%E9%80%9A/"/>
+      <url>/2023/04/15/2.%20%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F%E8%B7%91%E4%B8%8D%E9%80%9A/</url>
+      
+        <content type="html"><![CDATA[<h1 id="第一个error"><a href="#第一个error" class="headerlink" title="第一个error"></a>第一个error</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">D:\JDK\jdk-17\bin\java.exe -XX:TieredStopAtLevel=1 -noverify -Dspring.output.ansi.enabled=always &quot;-javaagent:D:\IntelliJ IDEA 2021.3.1\lib\idea_rt.jar=7270:D:\IntelliJ IDEA 2021.3.1\bin&quot; -Dfile.encoding=UTF-8 com.shinwhy.freemall.coupon.FreemallCouponApplication</span><br><span class="line"></span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM warning: Options -Xverify:none and -noverify were deprecated in JDK 13 and will likely be removed in a future release.</span><br><span class="line">错误: 找不到或无法加载主类 com.shinwhy.freemall.coupon.FreemallCouponApplication</span><br><span class="line">原因: java.lang.ClassNotFoundException: com.shinwhy.freemall.coupon.FreemallCouponApplication</span><br><span class="line"></span><br><span class="line">Process finished with exit code 1</span><br></pre></td></tr></table></figure><h1 id="第二个error"><a href="#第二个error" class="headerlink" title="第二个error"></a>第二个error</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">***************************</span><br><span class="line">APPLICATION FAILED TO START</span><br><span class="line">***************************</span><br><span class="line"></span><br><span class="line">Description:</span><br><span class="line"></span><br><span class="line">Web server failed to start. Port 8080 was already in use.</span><br><span class="line"></span><br><span class="line">Action:</span><br><span class="line"></span><br><span class="line">Identify and stop the process that&#x27;s listening on port 8080 or configure this application to listen on another port.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Process finished with exit code 1</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>pictr</title>
       <link href="/2023/04/14/pictr/"/>
       <url>/2023/04/14/pictr/</url>
@@ -62,6 +75,31 @@
         <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
       
       
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Docker安装</title>
+      <link href="/2023/04/14/Docker%E5%AE%89%E8%A3%85/"/>
+      <url>/2023/04/14/Docker%E5%AE%89%E8%A3%85/</url>
+      
+        <content type="html"><![CDATA[<p>#Docker容器文件挂载和端口映射</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 3306:3306 --name mysql \</span><br><span class="line">-v /mydata/mysql/log:/var/log/mysql \</span><br><span class="line">-v /mydata/mysql/data:/var/lib/mysql \</span><br><span class="line">-v /mydata/mysql/conf:/etc/mysql \</span><br><span class="line">-e MYSQL_ROOT_PASSWORD=root \</span><br><span class="line">-d mysql:5.7</span><br><span class="line">参数说明</span><br><span class="line">-p 3306:3306：将容器的 3306 端口映射到主机的 3306 端口</span><br><span class="line">-v /mydata/mysql/conf:/etc/mysql：将配置文件夹挂载到主机</span><br><span class="line">-v /mydata/mysql/log:/var/log/mysql：将日志文件夹挂载到主机</span><br><span class="line">-v /mydata/mysql/data:/var/lib/mysql/：将配置文件夹挂载到主机-e MYSQL_ROOT_PASSWORD=root：初始化 root 用户的密码</span><br></pre></td></tr></table></figure><p>这里有报错，使用<code>docker logs -f &lt;container ID&gt;</code>查看日志，发现</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">2023-04-15 13:31:09+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 5.7.41-1.el7 started.</span><br><span class="line">2023-04-15 13:31:09+00:00 [ERROR] [Entrypoint]: mysqld failed while attempting to check config</span><br><span class="line">command was: mysqld --verbose --help --log-bin-index=/tmp/tmp.F82QFTNxFF</span><br><span class="line">mysqld: Can&#x27;t read dir of &#x27;/etc/mysql/conf.d/&#x27; (Errcode: 2 - No such file or directory)</span><br><span class="line">mysqld: [ERROR] Fatal error in defaults handling. Program aborted!</span><br></pre></td></tr></table></figure><p>修改配置文件的docker容器目录解决问题解决问题</p><p><strong>容器和容器之间相互隔离，相当于一个独立的运行环境</strong></p><p>访问容器内部：<br><code>docker exec -it mysql /bin/bash</code><br>这里还有另一种直接进入的方法<br><code>docker exec -it redis redis-cli</code><br>查看运行的容器<br><code>docker ps</code></p><p>1.查看所有运行中的容器 <code>docker ps</code>；<br>2.停止容器运行 <code>docker stop &lt;container-id&gt;</code>；<br>3.删除这个容器 <code>docker rm &lt;container-id&gt;</code>；<br>4.删除这个镜像 <code>docker rmi &lt;image-id&gt;</code>。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Freemall </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Docker </tag>
+            
+        </tags>
       
     </entry>
     
