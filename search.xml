@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>MIDA</title>
+      <link href="/2023/04/18/MIDA/"/>
+      <url>/2023/04/18/MIDA/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Prediction"><a href="#Prediction" class="headerlink" title="Prediction"></a>Prediction</h2><ul><li>什么是steady_state output?</li><li>什么是POLES和ZEROS?</li><li>γ是什么?</li><li>什么是predictor?</li><li>y(t)&#x3D;w(z)e(t)是什么？</li><li>为什么过去的现在的sample相乘等于0</li><li>笔记第5页y(t+k|t,s)为什么是stochastic process？</li><li>为什么prediction error是stochastic process？</li><li>MA的Variance为什么是平方和？为什么会收敛？</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> STUDY </category>
+          
+          <category> POLIMI </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> POLIMI </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>导入renren-fast包</title>
       <link href="/2023/04/17/2.%20%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F%E8%B7%91%E4%B8%8D%E9%80%9A/"/>
       <url>/2023/04/17/2.%20%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F%E8%B7%91%E4%B8%8D%E9%80%9A/</url>
@@ -110,6 +137,8 @@
         <tags>
             
             <tag> Docker </tag>
+            
+            <tag> Freemall </tag>
             
         </tags>
       
