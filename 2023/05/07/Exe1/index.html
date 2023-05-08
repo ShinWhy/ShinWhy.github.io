@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="Exe 1 为什么MIPS架构五级流水线的指令译码阶段和写回阶段可以被分成两部分？  在MIPS架构中，指令译码阶段的指令解码和操作数寻址可以在同一个阶段中实现。这是因为在MIPS架构中，指令的格式是固定的，指令中的寄存器编号和偏移量等操作数地址相关信息都在指令的特定位置上。 在指令译码阶段，指令解码和操作数寻址这两个小部分的执行顺序是有先后关系的。 具体来说，指令解码必须在操作数寻址之前执行，因">
+    <meta name="description" content="Performance, Amdhal’s Law, Pipeline 为什么MIPS架构五级流水线的指令译码阶段和写回阶段可以被分成两部分？  在MIPS架构中，指令译码阶段的指令解码和操作数寻址可以在同一个阶段中实现。这是因为在MIPS架构中，指令的格式是固定的，指令中的寄存器编号和偏移量等操作数地址相关信息都在指令的特定位置上。 在指令译码阶段，指令解码和操作数寻址这两个小部分的执行顺序是有">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Exe1">
 <meta property="og:url" content="https://shinwhy.github.io/2023/05/07/Exe1/index.html">
 <meta property="og:site_name" content="ShinWhy">
-<meta property="og:description" content="Exe 1 为什么MIPS架构五级流水线的指令译码阶段和写回阶段可以被分成两部分？  在MIPS架构中，指令译码阶段的指令解码和操作数寻址可以在同一个阶段中实现。这是因为在MIPS架构中，指令的格式是固定的，指令中的寄存器编号和偏移量等操作数地址相关信息都在指令的特定位置上。 在指令译码阶段，指令解码和操作数寻址这两个小部分的执行顺序是有先后关系的。 具体来说，指令解码必须在操作数寻址之前执行，因">
+<meta property="og:description" content="Performance, Amdhal’s Law, Pipeline 为什么MIPS架构五级流水线的指令译码阶段和写回阶段可以被分成两部分？  在MIPS架构中，指令译码阶段的指令解码和操作数寻址可以在同一个阶段中实现。这是因为在MIPS架构中，指令的格式是固定的，指令中的寄存器编号和偏移量等操作数地址相关信息都在指令的特定位置上。 在指令译码阶段，指令解码和操作数寻址这两个小部分的执行顺序是有">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-05-07T13:11:03.000Z">
-<meta property="article:modified_time" content="2023-05-07T15:28:37.041Z">
+<meta property="article:modified_time" content="2023-05-07T15:34:50.661Z">
 <meta property="article:author" content="ShinWhy">
 <meta property="article:tag" content="POLIMI">
 <meta name="twitter:card" content="summary">
@@ -119,7 +119,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Exe-1"><span class="toc-number">1.</span> <span class="toc-text">Exe 1</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Performance-Amdhal%E2%80%99s-Law-Pipeline"><span class="toc-number">1.</span> <span class="toc-text">Performance, Amdhal’s Law, Pipeline</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -168,7 +168,7 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1 id="Exe-1"><a href="#Exe-1" class="headerlink" title="Exe 1"></a>Exe 1</h1><ol>
+    <h1 id="Performance-Amdhal’s-Law-Pipeline"><a href="#Performance-Amdhal’s-Law-Pipeline" class="headerlink" title="Performance, Amdhal’s Law, Pipeline"></a>Performance, Amdhal’s Law, Pipeline</h1><ol>
 <li>为什么MIPS架构五级流水线的指令译码阶段和写回阶段可以被分成两部分？</li>
 </ol>
 <p>在MIPS架构中，指令译码阶段的指令解码和操作数寻址可以在同一个阶段中实现。这是因为在MIPS架构中，指令的格式是固定的，指令中的寄存器编号和偏移量等操作数地址相关信息都在指令的特定位置上。</p>
@@ -279,7 +279,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Exe-1"><span class="toc-number">1.</span> <span class="toc-text">Exe 1</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Performance-Amdhal%E2%80%99s-Law-Pipeline"><span class="toc-number">1.</span> <span class="toc-text">Performance, Amdhal’s Law, Pipeline</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
