@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="Prediction 什么是steady_state output? 什么是POLES和ZEROS? γ是什么? 什么是predictor? y(t)&#x3D;w(z)e(t)是什么？ 为什么过去的现在的sample相乘等于0 笔记第5页y(t+k|t,s)为什么是stochastic process？ 为什么prediction error是stochastic process？ MA的Var">
+    <meta name="description" content="Plan 复习完MIDA1，看至少一半的exe课 复习完ACA 看FOR(2)和DB(3)的PPT，并做题 写周报，分享感受，The long season">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MIDA">
-<meta property="og:url" content="https://shinwhy.github.io/2023/04/18/MIDA/index.html">
+<meta property="og:title" content="周报">
+<meta property="og:url" content="https://shinwhy.github.io/2023/05/15/weekly1/index.html">
 <meta property="og:site_name" content="ShinWhy">
-<meta property="og:description" content="Prediction 什么是steady_state output? 什么是POLES和ZEROS? γ是什么? 什么是predictor? y(t)&#x3D;w(z)e(t)是什么？ 为什么过去的现在的sample相乘等于0 笔记第5页y(t+k|t,s)为什么是stochastic process？ 为什么prediction error是stochastic process？ MA的Var">
+<meta property="og:description" content="Plan 复习完MIDA1，看至少一半的exe课 复习完ACA 看FOR(2)和DB(3)的PPT，并做题 写周报，分享感受，The long season">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-04-18T13:11:03.000Z">
-<meta property="article:modified_time" content="2023-05-13T20:30:53.357Z">
+<meta property="article:published_time" content="2023-05-14T22:00:00.000Z">
+<meta property="article:modified_time" content="2023-05-15T17:44:42.411Z">
 <meta property="article:author" content="ShinWhy">
-<meta property="article:tag" content="POLIMI">
+<meta property="article:tag" content="weekly">
 <meta name="twitter:card" content="summary">
     
     
@@ -37,7 +37,7 @@
       
     
     <!-- title -->
-    <title>MIDA</title>
+    <title>周报</title>
     <!-- async scripts -->
     <!-- Google Analytics -->
 
@@ -88,10 +88,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" aria-label="Previous post" href="/2023/04/19/new%20words/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Previous post" href="/2023/05/15/words(week21)/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" aria-label="Next post" href="/2023/04/17/2.%20%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F%E8%B7%91%E4%B8%8D%E9%80%9A/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Next post" href="/2023/05/07/Lec3/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -104,22 +104,22 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://shinwhy.github.io/2023/04/18/MIDA/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://shinwhy.github.io/2023/04/18/MIDA/&text=MIDA"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://shinwhy.github.io/2023/04/18/MIDA/&title=MIDA"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://shinwhy.github.io/2023/04/18/MIDA/&is_video=false&description=MIDA"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=MIDA&body=Check out this article: https://shinwhy.github.io/2023/04/18/MIDA/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://shinwhy.github.io/2023/04/18/MIDA/&title=MIDA"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://shinwhy.github.io/2023/04/18/MIDA/&title=MIDA"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://shinwhy.github.io/2023/04/18/MIDA/&title=MIDA"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://shinwhy.github.io/2023/04/18/MIDA/&title=MIDA"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://shinwhy.github.io/2023/04/18/MIDA/&name=MIDA&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://shinwhy.github.io/2023/04/18/MIDA/&t=MIDA"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://shinwhy.github.io/2023/05/15/weekly1/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://shinwhy.github.io/2023/05/15/weekly1/&text=周报"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://shinwhy.github.io/2023/05/15/weekly1/&title=周报"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://shinwhy.github.io/2023/05/15/weekly1/&is_video=false&description=周报"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=周报&body=Check out this article: https://shinwhy.github.io/2023/05/15/weekly1/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://shinwhy.github.io/2023/05/15/weekly1/&title=周报"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://shinwhy.github.io/2023/05/15/weekly1/&title=周报"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://shinwhy.github.io/2023/05/15/weekly1/&title=周报"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://shinwhy.github.io/2023/05/15/weekly1/&title=周报"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://shinwhy.github.io/2023/05/15/weekly1/&name=周报&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://shinwhy.github.io/2023/05/15/weekly1/&t=周报"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Prediction"><span class="toc-number">1.</span> <span class="toc-text">Prediction</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Plan"><span class="toc-number">1.</span> <span class="toc-text">Plan</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -131,7 +131,7 @@
   <header>
     
     <h1 class="posttitle p-name" itemprop="name headline">
-        MIDA
+        周报
     </h1>
 
 
@@ -143,7 +143,7 @@
       
     <div class="postdate">
       
-        <time datetime="2023-04-18T13:11:03.000Z" class="dt-published" itemprop="datePublished">2023-04-18</time>
+        <time datetime="2023-05-14T22:00:00.000Z" class="dt-published" itemprop="datePublished">2023-05-15</time>
         
       
     </div>
@@ -152,14 +152,14 @@
       
     <div class="article-category">
         <i class="fas fa-archive"></i>
-        <a class="category-link" href="/categories/STUDY/">STUDY</a> › <a class="category-link" href="/categories/STUDY/POLIMI/">POLIMI</a> › <a class="category-link" href="/categories/STUDY/POLIMI/MIDA/">MIDA</a>
+        <a class="category-link" href="/categories/weekly/">weekly</a>
     </div>
 
 
       
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="p-category" href="/tags/POLIMI/" rel="tag">POLIMI</a>
+        <a class="p-category" href="/tags/weekly/" rel="tag">weekly</a>
     </div>
 
 
@@ -168,17 +168,12 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h2 id="Prediction"><a href="#Prediction" class="headerlink" title="Prediction"></a>Prediction</h2><ul>
-<li>什么是steady_state output?</li>
-<li>什么是POLES和ZEROS?</li>
-<li>γ是什么?</li>
-<li>什么是predictor?</li>
-<li>y(t)&#x3D;w(z)e(t)是什么？</li>
-<li>为什么过去的现在的sample相乘等于0</li>
-<li>笔记第5页y(t+k|t,s)为什么是stochastic process？</li>
-<li>为什么prediction error是stochastic process？</li>
-<li>MA的Variance为什么是平方和？为什么会收敛？</li>
-</ul>
+    <h1 id="Plan"><a href="#Plan" class="headerlink" title="Plan"></a>Plan</h1><ol>
+<li>复习完MIDA1，看至少一半的exe课</li>
+<li>复习完ACA</li>
+<li>看FOR(2)和DB(3)的PPT，并做题</li>
+<li>写周报，分享感受，The long season</li>
+</ol>
 
   </div>
 </article>
@@ -210,22 +205,22 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Prediction"><span class="toc-number">1.</span> <span class="toc-text">Prediction</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Plan"><span class="toc-number">1.</span> <span class="toc-text">Plan</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://shinwhy.github.io/2023/04/18/MIDA/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://shinwhy.github.io/2023/04/18/MIDA/&text=MIDA"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://shinwhy.github.io/2023/04/18/MIDA/&title=MIDA"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://shinwhy.github.io/2023/04/18/MIDA/&is_video=false&description=MIDA"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=MIDA&body=Check out this article: https://shinwhy.github.io/2023/04/18/MIDA/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://shinwhy.github.io/2023/04/18/MIDA/&title=MIDA"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://shinwhy.github.io/2023/04/18/MIDA/&title=MIDA"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://shinwhy.github.io/2023/04/18/MIDA/&title=MIDA"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://shinwhy.github.io/2023/04/18/MIDA/&title=MIDA"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://shinwhy.github.io/2023/04/18/MIDA/&name=MIDA&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://shinwhy.github.io/2023/04/18/MIDA/&t=MIDA"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://shinwhy.github.io/2023/05/15/weekly1/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://shinwhy.github.io/2023/05/15/weekly1/&text=周报"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://shinwhy.github.io/2023/05/15/weekly1/&title=周报"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://shinwhy.github.io/2023/05/15/weekly1/&is_video=false&description=周报"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=周报&body=Check out this article: https://shinwhy.github.io/2023/05/15/weekly1/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://shinwhy.github.io/2023/05/15/weekly1/&title=周报"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://shinwhy.github.io/2023/05/15/weekly1/&title=周报"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://shinwhy.github.io/2023/05/15/weekly1/&title=周报"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://shinwhy.github.io/2023/05/15/weekly1/&title=周报"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://shinwhy.github.io/2023/05/15/weekly1/&name=周报&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://shinwhy.github.io/2023/05/15/weekly1/&t=周报"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
