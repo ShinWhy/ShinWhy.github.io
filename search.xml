@@ -4,6 +4,68 @@
   
     
     <entry>
+      <title>Graph</title>
+      <link href="/2023/05/22/FOR_Graph/"/>
+      <url>/2023/05/22/FOR_Graph/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Graphs"><a href="#Graphs" class="headerlink" title="Graphs"></a>Graphs</h1><p>G&#x3D;(N,E)<br>nodes and vertices<br>edges and arcs<br>Undirected graph: 边 {i,j}<br>Directed graph: 边 (i,j)<br>The degree of a node<br>The in-degree(out-degree) of a node<br>Nodes u and v are connected<br>A graph is connected(没有孤立点)<br>strongly connected (u and v are connected by a directed path for any u,v\inN)</p><p>Cycle<br>bipartite(no edges connects nodes in the same subset)<br>complete(完全图是一个简单的无向图，其中每对不同的顶点之间都恰连有一条边相连)</p><p>Given a directed graph G&#x3D;(N,A)<br>the outgoing cut&#x2F; incoming cut(出向割和入向割，都是一些边的集合)</p><h2 id="Graph-reachablility-problem"><a href="#Graph-reachablility-problem" class="headerlink" title="Graph reachablility problem"></a>Graph reachablility problem</h2><p>O(N+E)<br>breath-first search</p><p>G’&#x3D;(N’,E’): subgraph<br>GT&#x3D;(N’,T): connected and acyclic<br>spanning tree</p><h1 id="Trees"><a href="#Trees" class="headerlink" title="Trees"></a>Trees</h1><p>n nodes and n-1 edges<br>Any pair of nodes in a tree is connected via a unique path<br>By adding a new edge to a tree, we create a unique cycle<br>T\cup{e}{f} is also a spanning tree</p><h2 id="Optimal-cost-spanning-trees"><a href="#Optimal-cost-spanning-trees" class="headerlink" title="Optimal cost spanning trees"></a>Optimal cost spanning trees</h2><ol><li>connected subgraph containing all the nodes</li><li>subgraph with no cycles</li></ol><ul><li><strong>Theorem 1</strong><br>A complete graph with n(n&gt;1) nodes has n^(n-2) spanning trees</li><li><strong>Theorem 2</strong><br>A tree T is of minimum total cost if and only if no cost-decreasing edge exists<br>Prim’s Algorithm<br>Prim’s算法适用于连通无向图，且边的权重不能为负值。如果图不是连通的，则需要对每个连通分量分别应用Prim’s算法，或者在起始节点的选择上进行调整。</li></ul><h2 id="Optimal-paths"><a href="#Optimal-paths" class="headerlink" title="Optimal paths"></a>Optimal paths</h2><p><strong>Dijkstra’s Algorithm</strong><br>输出从s到图中各个点的最短路径<br>生成的树不是minimum cost sanning tree<br>不能解决有负边的问题<br><strong>Floyd-Warshall Algorithm</strong><br>Triangular operation<br>D矩阵：从i到j的最短路径<br>P矩阵：从i到j最短路径上j的前趋(predecessor)<br>s&#x3D;1,t&#x3D;4,(u&#x3D;2,u&#x3D;3)</p><p><strong>Optimal paths in DAG(directed acyclic graph)</strong><br>Topological ordering method</p><h3 id="Dynamic-programming-for-shortest-paths-in-DAGs"><a href="#Dynamic-programming-for-shortest-paths-in-DAGs" class="headerlink" title="Dynamic programming for shortest paths in DAGs"></a>Dynamic programming for shortest paths in DAGs</h3><p>\pi 是最短路径，Li是从s到i的最短路径的cost</p><p>The Dynamic programming algorithm for finding <strong>shortest(longest)</strong> paths in DAGs is exact.</p><h4 id="1-Project-planning"><a href="#1-Project-planning" class="headerlink" title="1. Project planning"></a>1. Project planning</h4><p><strong>Critical path method</strong></p><h2 id="Network-flows"><a href="#Network-flows" class="headerlink" title="Network flows"></a>Network flows</h2><p>Ford-Fulkerson’s algorithm is not greedy<br>overall complexity is O(m2kmax)<br>The value of a feasible <em>flow of maximum value</em> &#x3D; the capacity of <em>a cut of minimum capacity</em></p><p>Minimum Cost Flow Problem: 满足容量约束的前提下，以最低的费用从源节点发送流量到汇节点。</p><p>Bipartite graph</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> STUDY </category>
+          
+          <category> POLIMI </category>
+          
+          <category> FOR </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> POLIMI </tag>
+            
+            <tag> FOR </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>生词本(22周)</title>
+      <link href="/2023/05/22/words(week22)/"/>
+      <url>/2023/05/22/words(week22)/</url>
+      
+        <content type="html"><![CDATA[<h1 id="competence"><a href="#competence" class="headerlink" title="competence"></a>competence</h1><p>[英] · &#x2F;ˈkɒmpɪt(ə)ns&#x2F;  美 · &#x2F;ˈkɑːmpətəns&#x2F;<br>[n.] 能力；胜任；资格<br>例句：</p><ol><li>She has demonstrated her competence in managing the team. (她已经证明了自己在团队管理方面的能力。)</li><li>The company is looking for someone with technical competence to fill the position. (公司正在寻找一位具备技术能力的人来填补这个职位。)</li><li>A high level of competence is required for this job. (这份工作需要高水平的能力。)</li></ol><h1 id="correspondence"><a href="#correspondence" class="headerlink" title="correspondence"></a>correspondence</h1><p>[英] · &#x2F;ˌkɒr.əˈspɒn.dəns&#x2F;  [美] · &#x2F;ˌkɔːr.əˈspɑːn.dəns&#x2F;<br>[n.] 1. 通信；信件；信函<br>    2. 相似之处；对应关系<br>    3. 符合，一致<br>例句：</p><ol><li>I have been in correspondence with him for several years.<br>（我和他有几年的书信往来。）</li><li>There is a close correspondence between the two accounts.<br>（这两个账户存在密切的对应关系。）</li><li>The results of the experiment are in correspondence with our expectations.<br>（实验结果与我们的预期相符。）</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+          <category> New word </category>
+          
+          <category> 2023.5.22 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> STUDY </tag>
+            
+            <tag> English </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>口语表达</title>
       <link href="/2023/05/20/oral%20expression/"/>
       <url>/2023/05/20/oral%20expression/</url>
