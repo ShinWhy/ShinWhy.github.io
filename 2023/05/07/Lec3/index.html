@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="Branch Hazards and Static Branch Prediction TechniquesThree classes of hazardsBranch Outcome and Branch Target Address are ready at the end of EX statge(3th stage). Conditional branches are solved whe">
+    <meta name="description" content="Branch Hazards and Static Branch Prediction TechniquesThree classes of hazards现在来看Control Hazards  Branch Target Address指向else地址 在EXE阶段末尾算出BTA 在ME结段末更新PC，此时才能取回指令 Taken&#x2F;Not takenIf the branch is">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Lec3">
 <meta property="og:url" content="https://shinwhy.github.io/2023/05/07/Lec3/index.html">
 <meta property="og:site_name" content="ShinWhy">
-<meta property="og:description" content="Branch Hazards and Static Branch Prediction TechniquesThree classes of hazardsBranch Outcome and Branch Target Address are ready at the end of EX statge(3th stage). Conditional branches are solved whe">
+<meta property="og:description" content="Branch Hazards and Static Branch Prediction TechniquesThree classes of hazards现在来看Control Hazards  Branch Target Address指向else地址 在EXE阶段末尾算出BTA 在ME结段末更新PC，此时才能取回指令 Taken&#x2F;Not takenIf the branch is">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-05-07T13:11:03.000Z">
-<meta property="article:modified_time" content="2023-05-20T23:06:29.265Z">
+<meta property="article:modified_time" content="2023-05-23T12:22:04.218Z">
 <meta property="article:author" content="ShinWhy">
 <meta property="article:tag" content="POLIMI">
 <meta name="twitter:card" content="summary">
@@ -119,7 +119,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Branch-Hazards-and-Static-Branch-Prediction-Techniques"><span class="toc-number">1.</span> <span class="toc-text">Branch Hazards and Static Branch Prediction Techniques</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Three-classes-of-hazards"><span class="toc-number">1.1.</span> <span class="toc-text">Three classes of hazards</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Branch-Hazards-and-Static-Branch-Prediction-Techniques"><span class="toc-number">1.</span> <span class="toc-text">Branch Hazards and Static Branch Prediction Techniques</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Three-classes-of-hazards"><span class="toc-number">1.1.</span> <span class="toc-text">Three classes of hazards</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Branch-Prediction-Techniques"><span class="toc-number">1.2.</span> <span class="toc-text">Branch Prediction Techniques</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Static-Branch-Prediction-Techniques-offline"><span class="toc-number">1.2.1.</span> <span class="toc-text">Static Branch Prediction Techniques(offline)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dynamic-Branch-Prediction-Techniques"><span class="toc-number">1.2.2.</span> <span class="toc-text">Dynamic Branch Prediction Techniques</span></a></li></ol></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -168,7 +168,22 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1 id="Branch-Hazards-and-Static-Branch-Prediction-Techniques"><a href="#Branch-Hazards-and-Static-Branch-Prediction-Techniques" class="headerlink" title="Branch Hazards and Static Branch Prediction Techniques"></a>Branch Hazards and Static Branch Prediction Techniques</h1><h2 id="Three-classes-of-hazards"><a href="#Three-classes-of-hazards" class="headerlink" title="Three classes of hazards"></a>Three classes of hazards</h2><p><strong>Branch Outcome and Branch Target Address are ready at the end of EX statge(3th stage). Conditional branches are solved when PC is updated at the end of the ME stage(4th Stage).The branch decision is taken during the MEM stage(Taken or Not Taken)</strong></p>
+    <h1 id="Branch-Hazards-and-Static-Branch-Prediction-Techniques"><a href="#Branch-Hazards-and-Static-Branch-Prediction-Techniques" class="headerlink" title="Branch Hazards and Static Branch Prediction Techniques"></a>Branch Hazards and Static Branch Prediction Techniques</h1><h2 id="Three-classes-of-hazards"><a href="#Three-classes-of-hazards" class="headerlink" title="Three classes of hazards"></a>Three classes of hazards</h2><p>现在来看Control Hazards</p>
+<ol>
+<li>Branch Target Address指向else地址</li>
+<li>在EXE阶段末尾算出BTA<br> 在ME结段末更新PC，此时才能取回指令</li>
+<li>Taken&#x2F;Not taken<br>If the branch is <strong>not taken</strong>, the pipeline execution is OK<br>If the branch is <strong>taken</strong>, it is necessary to flush the next <strong>3</strong> instructions<br>in the pipeline and fetched the lw instruction at the branch target<br>address (L1)</li>
+<li><strong>Branch Stalls without Forwarding</strong> 等待3个cycle<br><strong>Branch Stalls with Forwarding</strong> 等待2个cycle</li>
+<li>MIPS processor <code>compares registers</code>, <code>computes branch target address</code> and <code>updates PC</code> during <strong>ID stage</strong>. 只需要stall一个cycle</li>
+</ol>
+<h2 id="Branch-Prediction-Techniques"><a href="#Branch-Prediction-Techniques" class="headerlink" title="Branch Prediction Techniques"></a>Branch Prediction Techniques</h2><h3 id="Static-Branch-Prediction-Techniques-offline"><a href="#Static-Branch-Prediction-Techniques-offline" class="headerlink" title="Static Branch Prediction Techniques(offline)"></a>Static Branch Prediction Techniques(offline)</h3><p>Branch Always Not Taken (Predicted-Not-Taken)<br>Branch Always Taken (Predicted-Taken)<br>Backward Taken Forward Not Taken (BTFNT)<br>Profile-Driven Prediction</p>
+<p><strong>Delayed Branch</strong> : </p>
+<ol>
+<li>From before</li>
+<li>From target</li>
+<li>From fall-through</li>
+</ol>
+<h3 id="Dynamic-Branch-Prediction-Techniques"><a href="#Dynamic-Branch-Prediction-Techniques" class="headerlink" title="Dynamic Branch Prediction Techniques"></a>Dynamic Branch Prediction Techniques</h3><p><strong>Branch Outcome and Branch Target Address are ready at the end of EX statge(3th stage). Conditional branches are solved when PC is updated at the end of the ME stage(4th Stage).The branch decision is taken during the MEM stage(Taken or Not Taken)</strong></p>
 <hr>
 <ol>
 <li>beq和bne指令具体的结构是什么样的</li>
@@ -208,6 +223,9 @@
 <li><p>分支判断阶段：在执行阶段得到的运算结果为0时，表示两个操作数相等，此时需要跳转。因此，在分支判断阶段，需要判断执行阶段得到的运算结果是否为0，如果是，就需要进行跳转。为了实现这个功能，需要在<strong>执行阶段</strong>将跳转地址保存在流水线寄存器中，并在<strong>分支判断阶段从流水线寄存器中取出跳转地址并判断是否需要跳转</strong>。如果需要跳转，就将取出的跳转地址送到PC（程序计数器）中，更新下一条指令的地址。如果不需要跳转，就继续执行下一条指令。</p>
 </li>
 </ul>
+<ol start="4">
+<li>EXE2的PPT第19页为什么i5要阻塞一个周期？<br>为了等t0<br>那为什么$t2不需要等WB结束呢？<br>第17页为什么MEM&#x2F;ID是灰色的？</li>
+</ol>
 
   </div>
 </article>
@@ -239,7 +257,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Branch-Hazards-and-Static-Branch-Prediction-Techniques"><span class="toc-number">1.</span> <span class="toc-text">Branch Hazards and Static Branch Prediction Techniques</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Three-classes-of-hazards"><span class="toc-number">1.1.</span> <span class="toc-text">Three classes of hazards</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Branch-Hazards-and-Static-Branch-Prediction-Techniques"><span class="toc-number">1.</span> <span class="toc-text">Branch Hazards and Static Branch Prediction Techniques</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Three-classes-of-hazards"><span class="toc-number">1.1.</span> <span class="toc-text">Three classes of hazards</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Branch-Prediction-Techniques"><span class="toc-number">1.2.</span> <span class="toc-text">Branch Prediction Techniques</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Static-Branch-Prediction-Techniques-offline"><span class="toc-number">1.2.1.</span> <span class="toc-text">Static Branch Prediction Techniques(offline)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dynamic-Branch-Prediction-Techniques"><span class="toc-number">1.2.2.</span> <span class="toc-text">Dynamic Branch Prediction Techniques</span></a></li></ol></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
