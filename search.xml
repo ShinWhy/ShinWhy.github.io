@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>TCS:Part 1</title>
+      <link href="/2023/05/23/TCS_1/"/>
+      <url>/2023/05/23/TCS_1/</url>
+      
+        <content type="html"><![CDATA[<h1 id="FSA"><a href="#FSA" class="headerlink" title="FSA"></a>FSA</h1><p> A finite state automaton is (made of):<br>– A finite state set: Q<br>– A finite input alphabet: I<br>– A transition function (partial, in general):</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> STUDY </category>
+          
+          <category> POLIMI </category>
+          
+          <category> TCS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> POLIMI </tag>
+            
+            <tag> TCS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Graph</title>
       <link href="/2023/05/22/FOR_Graph/"/>
       <url>/2023/05/22/FOR_Graph/</url>
