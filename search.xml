@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>Exe4:Static BP + Complex, VLIM, Dynamic BP</title>
+      <link href="/2023/06/01/Exe4/"/>
+      <url>/2023/06/01/Exe4/</url>
+      
+        <content type="html"><![CDATA[<ol><li>为什么不管两条指令离得有多远，都存在WAR冲突？</li><li>为什么WAR和WAW要推迟Decode，并在解决它们后才能提交？</li><li>在exe4，为什么I7的decode在C18？<br>有WAR冲突，要保证前面的指令读完了才能进行后面的指令，<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">有两条顺序执行的指令：</span><br><span class="line">1. ld $f3, VA($r6)</span><br><span class="line">2. addi $r6,$r6,4</span><br><span class="line">第二条指令什么时候进入decode阶段才能解决WAR？</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><table><thead><tr><th align="center">IF</th><th align="center">Ds</th><th align="center">Ds</th><th align="center">Ds</th><th align="center">Ds</th><th align="center">Ds</th><th align="center">Ds</th><th align="center">Ds</th><th align="center">Ds</th><th align="center">D</th><th align="center">IS</th><th align="center">E1</th><th align="center">E2</th><th align="center">E3</th><th align="center">W</th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th></tr></thead><tbody><tr><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"><strong>F</strong></td><td align="center"><strong>Ds</strong></td><td align="center"><strong>D</strong></td><td align="center"><strong>ISs</strong></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr></tbody></table></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> STUDY </category>
+          
+          <category> POLIMI </category>
+          
+          <category> ACA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> POLIMI </tag>
+            
+            <tag> ACA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>空中英语教室1：mental gymnastic</title>
       <link href="/2023/05/31/%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%BB%83%E4%B9%A0%E5%8F%A3%E8%AF%AD1/"/>
       <url>/2023/05/31/%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%BB%83%E4%B9%A0%E5%8F%A3%E8%AF%AD1/</url>
@@ -55,6 +86,8 @@
             
             <tag> POLIMI </tag>
             
+            <tag> ACA </tag>
+            
         </tags>
       
     </entry>
@@ -83,6 +116,8 @@
         <tags>
             
             <tag> POLIMI </tag>
+            
+            <tag> ACA </tag>
             
         </tags>
       
@@ -201,6 +236,8 @@
         <tags>
             
             <tag> POLIMI </tag>
+            
+            <tag> ACA </tag>
             
         </tags>
       
@@ -504,6 +541,8 @@
             
             <tag> POLIMI </tag>
             
+            <tag> ACA </tag>
+            
         </tags>
       
     </entry>
@@ -532,6 +571,8 @@
         <tags>
             
             <tag> POLIMI </tag>
+            
+            <tag> ACA </tag>
             
         </tags>
       
