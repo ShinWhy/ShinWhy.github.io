@@ -4,7 +4,94 @@
   
     
     <entry>
-      <title>工作</title>
+      <title>空中英语教室1：mental gymnastic</title>
+      <link href="/2023/05/31/%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%BB%83%E4%B9%A0%E5%8F%A3%E8%AF%AD1/"/>
+      <url>/2023/05/31/%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%BB%83%E4%B9%A0%E5%8F%A3%E8%AF%AD1/</url>
+      
+        <content type="html"><![CDATA[<p>concerntration<br>plaque 斑块<br>be aware 知道 意识到<br>beware 小心危险的</p><p>how do you like to exercise?<br>short-term memory<br>have whole brain strength<br>relexation<br>there are other benefits to exercising your mind<br>Phiscal exercise&#x2F;<br>the necessity of mental exercise<br>have been shown to benefit </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+          <category> 沉练 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> STUDY </tag>
+            
+            <tag> English </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Lec5:Dynamic Branch Predictors,Pipelining and Performance,Complex pipelining</title>
+      <link href="/2023/05/30/Exe3/"/>
+      <url>/2023/05/30/Exe3/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> STUDY </category>
+          
+          <category> POLIMI </category>
+          
+          <category> ACA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> POLIMI </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Lec5:ILP,Complex pipelining,Intro to Scheduling</title>
+      <link href="/2023/05/30/Lec5/"/>
+      <url>/2023/05/30/Lec5/</url>
+      
+        <content type="html"><![CDATA[<p>Mixing integer and Floating point operations: Complex Pipelining<br>in-order<br>out-of-order<br>怎么样进一步提升性能？scheduling，分为Dynamic Scheduling(hardware) and Static Scheduling(software)</p><h1 id="1-为什么要加ISSUE阶段？"><a href="#1-为什么要加ISSUE阶段？" class="headerlink" title="1. 为什么要加ISSUE阶段？"></a>1. 为什么要加ISSUE阶段？</h1><p>在MIPS架构中，ISSUE阶段是指令流水线中的一个重要阶段，用于指令的调度和发射。ISSUE阶段的作用包括：</p><ol><li><p>指令调度：</p><ul><li>ISSUE阶段对已解码的指令进行调度，确定指令的执行顺序和优先级。它根据不同的调度算法和策略，将指令安排到适当的执行单元上，以最大程度地提高流水线的利用率和性能。</li></ul></li><li><p>数据相关检测：</p><ul><li>ISSUE阶段可以进行<strong>数据相关的检测</strong>，检查当前指令是否存在数据依赖性（例如RAW依赖）。通过检测数据相关性，可以判断指令是否可以立即发射，或者需要等待之前的指令完成。</li></ul></li><li><p>发射指令：</p><ul><li>在ISSUE阶段，经过调度和相关性检测后，合适的指令可以被发射到执行阶段（EX阶段）。发射意味着将指令送入下一阶段进行实际的操作和执行。</li></ul></li></ol><p>ISSUE阶段在流水线中起到关键的调度和控制作用。通过合理的调度和发射策略，可以优化指令的执行顺序，最大程度地避免数据冒险和资源竞争，提高流水线的吞吐量和效率。</p><h1 id="为什么decode执行的时机不一样"><a href="#为什么decode执行的时机不一样" class="headerlink" title="为什么decode执行的时机不一样"></a>为什么decode执行的时机不一样</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> STUDY </category>
+          
+          <category> POLIMI </category>
+          
+          <category> ACA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> POLIMI </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>工作地道化表达</title>
       <link href="/2023/05/30/Native%20speaker(work)/"/>
       <url>/2023/05/30/Native%20speaker(work)/</url>
       
@@ -66,7 +153,7 @@
       <link href="/2023/05/29/words(week23)/"/>
       <url>/2023/05/29/words(week23)/</url>
       
-        <content type="html"><![CDATA[<h1 id="blazer"><a href="#blazer" class="headerlink" title="blazer"></a>blazer</h1><p>[英] · &#x2F;ˈbleɪzə(r)&#x2F;<br>[n.] 西装外套；燃烧器；引线火药枪<br>例句：</p><ol><li>She wore a navy blazer over her white blouse.<br>（她在白衬衫上穿了一件海军蓝西装外套。）</li><li>The pilot lit the blazer to signal for help.<br>（飞行员点燃了引线火药枪以示求救。）</li><li>He fixed the broken blazer on his stove.<br>（他修好了灶具上的坏掉的燃烧器。）<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Does it fit?</span><br><span class="line">I forget to mention we have discount at these shoes just today.</span><br><span class="line">I am afraid it&#x27;s not suitable for a birthday party.</span><br><span class="line">I will be right back</span><br><span class="line">old fashioned and faded</span><br><span class="line">It dosen&#x27;t suit you.</span><br><span class="line">be in style 时尚流行</span><br><span class="line">It goes well with your scarf and skirt.</span><br><span class="line">It really match your blue eyes.</span><br></pre></td></tr></table></figure></li></ol><h1 id="blouse"><a href="#blouse" class="headerlink" title="blouse"></a>blouse</h1><p>[英] · &#x2F;blaʊz&#x2F;<br>[n.] 女衬衫；女上衣<br>例句：</p><ol><li>She wore a white blouse and black skirt to the interview. (她穿了一件白色的女衬衫和黑色的裙子去面试。)</li><li>The new collection features a variety of blouses in different colors and patterns. (新系列中有各种颜色和图案的女上衣。)</li><li>I prefer wearing blouses to dresses in the summer because they are more comfortable. (夏天我更喜欢穿女式上装而不是连衣裙，因为它们更舒适。)<br>词源：来自法语blouse，最初指士兵穿的短外套或工作服。</li></ol><h1 id="classy"><a href="#classy" class="headerlink" title="classy"></a>classy</h1><p>[英] · &#x2F;ˈklɑːsi&#x2F;<br>[形容词] 有品位的；高雅的；上等的<br>例句：</p><ol><li>She always dresses so classy.<br>（她总是穿得很有品味。）</li><li>The restaurant has a very classy atmosphere.<br>（这家餐厅氛围非常高雅。）</li><li>He gave a really classy speech at the awards ceremony.<br>（他在颁奖典礼上发表了一篇非常高雅的演讲。）<br>词源：来自class，意为“阶级、等级”，加后缀-y构成形容词。</li></ol><h1 id="pirate"><a href="#pirate" class="headerlink" title="pirate"></a>pirate</h1><p>[英] · &#x2F;ˈpaɪrət&#x2F;<br>[n] 海盗；剽窃者<br>[v] 盗版；掠夺<br>例句：</p><ol><li>The pirates captured the ship and held the crew for ransom. (海盗抓住了那艘船，扣留了船员以勒索赎金。)</li><li>He was accused of pirating software from his company’s competitors. (他被指控从公司竞争对手处盗版软件。)</li><li>The movie studio lost millions due to piracy of their latest film. (电影制片厂因最新电影的盗版而损失数百万。)<br>词源：来自拉丁语pirata，意为“海上强盗”。</li></ol><h1 id="outfit"><a href="#outfit" class="headerlink" title="outfit"></a>outfit</h1><p>[英] · &#x2F;ˈaʊtfɪt&#x2F;<br>[n] 1. 全套装备；全套服装；2. （尤指）一家公司、组织或团体</p><p>例句：</p><ol><li>She wore a stylish outfit to the party.<br>（她穿了一身时髦的衣服去参加派对。）</li><li>The military outfit was well-equipped and highly trained.<br>（这支军队配备精良，训练有素。）</li><li>My sister works for a fashion outfit in New York City.<br>（我姐姐在纽约市的一个时尚公司工作。）</li></ol><p>词源：来自out + fit，意为“完整的设备”。</p><h1 id="bow-tie"><a href="#bow-tie" class="headerlink" title="bow tie"></a>bow tie</h1><p>领结</p><h1 id="flashy"><a href="#flashy" class="headerlink" title="flashy"></a>flashy</h1><p>[英] · &#x2F;ˈflæʃi&#x2F;<br>[形容词] 艳丽的；炫耀的；浮华的<br>例句：</p><ol><li>She wore a flashy dress to the party. (她穿了一件艳丽的裙子去参加派对。)</li><li>His car is too flashy for my taste. (他的车太过浮华，不符合我的口味。)</li><li>The singer’s performance was flashy but lacked substance. (歌手表演很炫耀，但缺乏实质内容。)<br>词源：来自flash（闪光）+ -y后缀</li></ol>]]></content>
+        <content type="html"><![CDATA[<h1 id="blazer"><a href="#blazer" class="headerlink" title="blazer"></a>blazer</h1><p>[英] · &#x2F;ˈbleɪzə(r)&#x2F;<br>[n.] 西装外套；燃烧器；引线火药枪<br>例句：</p><ol><li>She wore a navy blazer over her white blouse.<br>（她在白衬衫上穿了一件海军蓝西装外套。）</li><li>The pilot lit the blazer to signal for help.<br>（飞行员点燃了引线火药枪以示求救。）</li><li>He fixed the broken blazer on his stove.<br>（他修好了灶具上的坏掉的燃烧器。）<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Does it fit?</span><br><span class="line">I forget to mention we have discount at these shoes just today.</span><br><span class="line">I am afraid it&#x27;s not suitable for a birthday party.</span><br><span class="line">I will be right back</span><br><span class="line">old fashioned and faded</span><br><span class="line">It dosen&#x27;t suit you.</span><br><span class="line">be in style 时尚流行</span><br><span class="line">It goes well with your scarf and skirt.</span><br><span class="line">It really match your blue eyes.</span><br></pre></td></tr></table></figure></li></ol><h1 id="blouse"><a href="#blouse" class="headerlink" title="blouse"></a>blouse</h1><p>[英] · &#x2F;blaʊz&#x2F;<br>[n.] 女衬衫；女上衣<br>例句：</p><ol><li>She wore a white blouse and black skirt to the interview. (她穿了一件白色的女衬衫和黑色的裙子去面试。)</li><li>The new collection features a variety of blouses in different colors and patterns. (新系列中有各种颜色和图案的女上衣。)</li><li>I prefer wearing blouses to dresses in the summer because they are more comfortable. (夏天我更喜欢穿女式上装而不是连衣裙，因为它们更舒适。)<br>词源：来自法语blouse，最初指士兵穿的短外套或工作服。</li></ol><h1 id="classy"><a href="#classy" class="headerlink" title="classy"></a>classy</h1><p>[英] · &#x2F;ˈklɑːsi&#x2F;<br>[形容词] 有品位的；高雅的；上等的<br>例句：</p><ol><li>She always dresses so classy.<br>（她总是穿得很有品味。）</li><li>The restaurant has a very classy atmosphere.<br>（这家餐厅氛围非常高雅。）</li><li>He gave a really classy speech at the awards ceremony.<br>（他在颁奖典礼上发表了一篇非常高雅的演讲。）<br>词源：来自class，意为“阶级、等级”，加后缀-y构成形容词。</li></ol><h1 id="pirate"><a href="#pirate" class="headerlink" title="pirate"></a>pirate</h1><p>[英] · &#x2F;ˈpaɪrət&#x2F;<br>[n] 海盗；剽窃者<br>[v] 盗版；掠夺<br>例句：</p><ol><li>The pirates captured the ship and held the crew for ransom. (海盗抓住了那艘船，扣留了船员以勒索赎金。)</li><li>He was accused of pirating software from his company’s competitors. (他被指控从公司竞争对手处盗版软件。)</li><li>The movie studio lost millions due to piracy of their latest film. (电影制片厂因最新电影的盗版而损失数百万。)<br>词源：来自拉丁语pirata，意为“海上强盗”。</li></ol><h1 id="outfit"><a href="#outfit" class="headerlink" title="outfit"></a>outfit</h1><p>[英] · &#x2F;ˈaʊtfɪt&#x2F;<br>[n] 1. 全套装备；全套服装；2. （尤指）一家公司、组织或团体</p><p>例句：</p><ol><li>She wore a stylish outfit to the party.<br>（她穿了一身时髦的衣服去参加派对。）</li><li>The military outfit was well-equipped and highly trained.<br>（这支军队配备精良，训练有素。）</li><li>My sister works for a fashion outfit in New York City.<br>（我姐姐在纽约市的一个时尚公司工作。）</li></ol><p>词源：来自out + fit，意为“完整的设备”。</p><h1 id="bow-tie"><a href="#bow-tie" class="headerlink" title="bow tie"></a>bow tie</h1><p>领结</p><h1 id="flashy"><a href="#flashy" class="headerlink" title="flashy"></a>flashy</h1><p>[英] · &#x2F;ˈflæʃi&#x2F;<br>[形容词] 艳丽的；炫耀的；浮华的<br>例句：</p><ol><li>She wore a flashy dress to the party. (她穿了一件艳丽的裙子去参加派对。)</li><li>His car is too flashy for my taste. (他的车太过浮华，不符合我的口味。)</li><li>The singer’s performance was flashy but lacked substance. (歌手表演很炫耀，但缺乏实质内容。)<br>词源：来自flash（闪光）+ -y后缀</li></ol><h1 id="make-a-bet-on-our-prediction"><a href="#make-a-bet-on-our-prediction" class="headerlink" title="make a bet on our prediction"></a>make a bet on our prediction</h1><p>在这个句子中，“make a bet”意为“下注”。整个句子的意思是“在我们的预测上下注”。</p><p>这个短语也可以用于其他情境，例如：</p><ul><li>He made a bet on the horse race.（他在赛马比赛上下了一笔赌注。）</li><li>I’m not going to make a bet until I know more about the teams.（在我更多地了解队伍之前，我不会进行任何投注。）</li></ul><p>总之，“make a bet”就是指通过支付一定金额或物品来表达对某种结果的信心，并期望获得回报。</p><h1 id="descendant"><a href="#descendant" class="headerlink" title="descendant"></a>descendant</h1><p>[英] · &#x2F;dɪ’sendənt&#x2F;<br>[n] 后代；子孙<br>[adj] 下降的；衰落的<br>例句：</p><ol><li>He is a descendant of the royal family. (他是皇室的后裔。)</li><li>The number of descendants has been decreasing year by year. (后代数量逐年减少。)</li><li>The company’s profits have been on a descendant trend for the past few years. (公司利润在过去几年中一直呈下降趋势。)<br>词源：来自拉丁语“descendere”，意为“下降，传承”。</li></ol>]]></content>
       
       
       <categories>
@@ -97,36 +184,7 @@
       <link href="/2023/05/24/Lec4/"/>
       <url>/2023/05/24/Lec4/</url>
       
-        <content type="html"><![CDATA[<h1 id="Branch-History-Table"><a href="#Branch-History-Table" class="headerlink" title="Branch History Table"></a>Branch History Table</h1>]]></content>
-      
-      
-      <categories>
-          
-          <category> STUDY </category>
-          
-          <category> POLIMI </category>
-          
-          <category> ACA </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> POLIMI </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Lec5</title>
-      <link href="/2023/05/24/Lec5/"/>
-      <url>/2023/05/24/Lec5/</url>
-      
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="Branch-History-Table"><a href="#Branch-History-Table" class="headerlink" title="Branch History Table"></a>Branch History Table</h1><p>Taken or not taken<br>为什么1-bit BHT 的错误率是80%? 因为第一次not taken，misprediction后改为taken，最后一次预测错误，所以是misprediction两次<br>为什么2-nested loop taken的错误次数是1+2*9？OK<br>1-bit和2-bit BHT的状态转换图<br>correlating branch predictors</p>]]></content>
       
       
       <categories>
@@ -310,7 +368,7 @@
       <link href="/2023/05/16/DB_PhiscalDatabases/"/>
       <url>/2023/05/16/DB_PhiscalDatabases/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="DATA-ACCESS-and-COST-MODEL"><a href="#DATA-ACCESS-and-COST-MODEL" class="headerlink" title="DATA ACCESS and COST MODEL"></a>DATA ACCESS and COST MODEL</h1><p>Main memory: Page<br>Secondary memory: Block</p><p>Assumption: the size of a page &#x3D; the size of a a block</p><p>secondary memory access: seek time(track)+latency time(sector)+transfer time(data transfer)</p><p>File System<br>DBMS</p><p>Primary structure<br>Secondary structures</p><p><strong>3 main types of data access structures:</strong></p><ol><li>Sequential structures(primary typical):</li></ol><ul><li>Entry-sequenced organization(ordered according their order of entry不好找特定数据，不好增加元组的尺寸)</li><li>Sequentially-ordered organization(ordered by the value of a key)</li></ul><ol start="2"><li>Hash-based structures: bucket(of the size of 1 block): folding&#x2F;hashing</li></ol><ul><li>closed hashing(open addressing) eg. linear probing</li><li>open hashing(separate chaining): overflow chains</li></ul><ol start="3"><li>Tree-based structures(seconary typical)</li></ol><ul><li>Balanced trees(B trees)</li><li>B+ trees</li></ul><p>blocks and tuples</p><p>Block factor B&#x3D;SB&#x2F;SR</p><p>Indexes<br>Dense vs. sparse index<br>primary index<br>clustering index<br>secondary index: why the secondary index is necessarily dense次要索引是基于非主键列构建的索引，用于加速对表中数据的访问。<br>注意： A search key is not a primary key! A search key maybe unique or not unique!<br>Hash-based index</p><h1 id="INTRODUCTION-TO-OPTIMIZATION-COSTS-OF-DIFFERENT-ACCESS-MODES"><a href="#INTRODUCTION-TO-OPTIMIZATION-COSTS-OF-DIFFERENT-ACCESS-MODES" class="headerlink" title="INTRODUCTION TO OPTIMIZATION COSTS OF DIFFERENT ACCESS MODES"></a>INTRODUCTION TO OPTIMIZATION COSTS OF DIFFERENT ACCESS MODES</h1><ol><li>Query optimization<br>Optimizations<br><strong>Operations</strong><br>• Selection<br>• Projection<br>• Sort<br>• Join<br>• Grouping<br><strong>Access methods</strong><br>• Sequential<br>• Hash-based indexes<br>• Tree-based indexes</li></ol><p>Sequential scan<br>Cost of lookups: equality ( A&#x3D;v )<br>• Sequential structures with no index<br>  • Lookups are not supported (cost: a full scan)<br>    • Sequentially-ordered structures may have reduced cost<br>• Hash&#x2F;Tree structures<br>  • Supported if A is the search key attribute of the<br>structure<br>  • The cost depends on<br>    • the storage type (primary&#x2F;secondary)<br>    • the search key type (unique&#x2F;non-unique)</p><h2 id="Equality-lookup"><a href="#Equality-lookup" class="headerlink" title="Equality lookup"></a>Equality lookup</h2><ul><li><p>Equality lookup on a primary hash</p></li><li><p>Equality lookup on a secondary hash<br>eg.(non unique search key)为什么是1.3+2&#x3D;3.3？一共有75K个姓氏，有150K个元组，平均一个姓有两个元组，分别在不同的block上，找到这些block用1.3次，在不同的block上找到这两个元组用2次</p></li><li><p>Equality lookup on a primary B+<br>eg.<br>Query predicate on unique search key(3 intermediate levels + 1 leaf node &#x3D; 4)<br>Query predicate NOT on search key(3 intermediate levels + 2K leaf nodes)<br>Query predicate on non unique search key( 3 intermediate levels + 14 leaf blocks &#x3D; 17)</p></li><li><p>Equality lookup on a secondary B+<br>Query predicate on unique search key of STUDENT(3 intermediate levels + 1 leaf<br>node + 1 data block &#x3D; 5)<br>Query predicate not on search key of STUDENT(Index is not useful for this<br>query (full scan costs 1.7k))</p></li><li><p>Equality lookup on a secondary B+<br>Query predicate on non unique search key of STUDENT(Total cost &#x3D; 3 +1 + 2 &#x3D; 6)<br>Query predicate on non unique search key of EXAM(Total cost &#x3D; 3 + 5 + 3.6K ≈ 3.6K)</p></li></ul><h2 id="Interval-lookup"><a href="#Interval-lookup" class="headerlink" title="Interval lookup"></a>Interval lookup</h2><p>Interval lookups A&lt;v , v1&lt;&#x3D; A &lt;&#x3D; v2<br>Tree structures (primary&#x2F;secondary)<br>• Supported if A is the search key</p><ul><li>Interval lookup on primary B+<br>Cost: 1 block per intermediate level + as many leaf blocks as necessary to read all the tuples in the interval<br>(estimated with statistics)</li><li>Interval lookup on secondary B+<br>Cost: 1 block per intermediate level + as many leaf blocks as necessary to read all pointers in the interval + 1 block per each such pointer (to retrieve the tuples)</li></ul><h2 id="operations"><a href="#operations" class="headerlink" title="operations"></a>operations</h2><ol><li>Conjunction &#x2F; disjunction</li><li>sort</li></ol><ul><li>Sort in main memory</li><li>Sort of large files<br>(External Merge Sort)<br>To sort a file stored in N blocks using B buffer pages:<br>现在有N个block，B个buffer，从N个block里选择B个放入内存，对它们进行排序，把排序好的数据放入一个chunk里，这个chunk的长度是B个block，总共有N&#x2F;B个chunk，现在把B个buffer分成B-1个input buffer和1个output buffer，从每个chunk里取出一个block放进input buffer，进行归并排序，放入output buffer中，output buffer满了就写入磁盘，input buffer空了就读进新的block，最后就得到了一个更大的chunk，大小为(B-1)*B，以此类推，最后只剩下一个chunk。<br><strong>cost:</strong><br>Number of passes cost &#x3D; 1 (for initial step) + ⌈log B-1⌈N&#x2F;B⌉ ⌉ (for iterative merge of chunks)<br>Cost &#x3D; 2 (1 for reading + 1 for writing) * N * (# of passes)</li></ul><ol start="3"><li>Join<br>nested-loop</li></ol><ul><li>simple nested-loop 代价一般是平方(b*b)，如果有一个小的表可以放进buffer，那么cost是b+b</li><li>nested-loop join with cache 把特别小的table放进cache，cost是b+b，小表忽略不计，约等于大表</li><li>filtering by condition</li><li>scan and lookup</li></ul><p>merge-scan join</p><ul><li>sort + merge-scan join<br>c&#x3D;b+b<br>if not sorted, 2<em>b</em>(# of passes)<br>• The ordered full scan is possible for a table if the primary storage is <strong>sequentially ordered wrt the join attribute</strong> or a <strong>B+ on the join attribute is defined</strong></li></ul><p>为什么叶子的数量不同？primary index和second index</p><p>hashed join<br>cost&#x3D;b+b</p><h2 id="COST-BASED-OPTIMIZATION"><a href="#COST-BASED-OPTIMIZATION" class="headerlink" title="COST-BASED OPTIMIZATION"></a>COST-BASED OPTIMIZATION</h2>]]></content>
       
       
       <categories>
@@ -403,7 +461,7 @@
       <link href="/2023/05/15/weekly1/"/>
       <url>/2023/05/15/weekly1/</url>
       
-        <content type="html"><![CDATA[<h1 id="Plan"><a href="#Plan" class="headerlink" title="Plan"></a>Plan</h1><ol><li>复习完MIDA1，看至少一半的exe课</li><li>复习完ACA(一天看两节课，十天看完) 每天五个小时</li><li>看FOR(2)和DB(3)的PPT，并做题</li><li>写周报，分享感受，The long season</li><li>第一轮考7门：TCS（12）,ACA（13）,CI（15）,FOR（16）, CS（21）, DB2（23）, MIDA1（24）, MIDA2,  </li><li>9:00-11:00看完ACA，1:00~5:00看完MIDA identification<br>晚上到7:00吃晚饭，然后看DB Trigger加做concurrency的题<br>MIDA(6个lecture:3天，10个exercise，5天)</li></ol><h1 id="发现的一些有趣的频道"><a href="#发现的一些有趣的频道" class="headerlink" title="发现的一些有趣的频道"></a>发现的一些有趣的频道</h1><p><a href="https://www.xiaoyuzhoufm.com/podcast/640ee2438be5d40013fe4a87">硬地骇客</a></p><p><a href="https://www.xiaoyuzhoufm.com/podcast/640ee2438be5d40013fe4a87">豌豆花下猫（关于Python）</a></p><p><a href="https://brr.fyi/">被派到南极洲工作的程序员</a><br>作者作为 IT 工程师被派到南极洲工作，博客是记录他在南极生活的点点滴滴</p><h1 id="看到的一些推特好帖"><a href="#看到的一些推特好帖" class="headerlink" title="看到的一些推特好帖"></a>看到的一些推特好帖</h1><h2 id="1-如何提高专注度"><a href="#1-如何提高专注度" class="headerlink" title="1. 如何提高专注度"></a>1. 如何提高专注度</h2><p>**转自博主Dexter Yang(@dexteryy)**，<br><a href="https://twitter.com/dexteryy/status/1629491278886076416">方法</a><br>想要通过正念（mindfulness&#x2F;meditation）来恢复对当下的感知、减慢时间流逝、用内啡肽替代多巴胺、提升专注能力、降低压力的消极影响，我觉得骑车是最有效果的（图2），比那些冥想app里的付费课程（图1）强多了。<br>方法总结：</p><ol><li>不要听播客不要听播客不要听播客（凡是抢占注意力的都不要碰）。<br>(1&#x2F;4)</li><li>开降噪，听音乐。最好是 citypop、blues  那样积极向上的音乐（这两种本来就源自上班族和黑人奴工振奋情绪排解压力的需求）。</li><li>公路车和共享单车都可以。</li><li>把注意力放在自身感受和眼前情景上，只接受下意识的瞬间的发散和思考。</li><li>天气要好，一定要有阳光，推荐下午出发，去程有落日返程有夜景。</li><li>路线选择类似 city walk，尽量途径那些有河、有沿街生态、城市机理细密有机多样的地方。</li></ol>]]></content>
+        <content type="html"><![CDATA[<h1 id="Plan"><a href="#Plan" class="headerlink" title="Plan"></a>Plan</h1><ol><li>复习完MIDA1，看至少一半的exe课</li><li>复习完ACA(一天看两节课，十天看完) 每天五个小时</li><li>看FOR(2)和DB(3)的PPT，并做题</li><li>写周报，分享感受，The long season</li><li>第一轮考7门：TCS（12）,ACA（13）,CI（15）,FOR（16）, <del>CS（21）</del>, DB2（23）在ACA考试前只需要把理论和TA看完就行, MIDA1（24）, <del>MIDA2,</del>  </li><li>9:00-11:00看完ACA，1:00~5:00看完MIDA identification<br>晚上到7:00吃晚饭，然后看DB Trigger加做concurrency的题<br>MIDA(6个lecture:3天，10个exercise，5天)</li></ol><h1 id="发现的一些有趣的频道"><a href="#发现的一些有趣的频道" class="headerlink" title="发现的一些有趣的频道"></a>发现的一些有趣的频道</h1><p><a href="https://www.xiaoyuzhoufm.com/podcast/640ee2438be5d40013fe4a87">硬地骇客</a></p><p><a href="https://www.xiaoyuzhoufm.com/podcast/640ee2438be5d40013fe4a87">豌豆花下猫（关于Python）</a></p><p><a href="https://brr.fyi/">被派到南极洲工作的程序员</a><br>作者作为 IT 工程师被派到南极洲工作，博客是记录他在南极生活的点点滴滴</p><h1 id="看到的一些推特好帖"><a href="#看到的一些推特好帖" class="headerlink" title="看到的一些推特好帖"></a>看到的一些推特好帖</h1><h2 id="1-如何提高专注度"><a href="#1-如何提高专注度" class="headerlink" title="1. 如何提高专注度"></a>1. 如何提高专注度</h2><p>**转自博主Dexter Yang(@dexteryy)**，<br><a href="https://twitter.com/dexteryy/status/1629491278886076416">方法</a><br>想要通过正念（mindfulness&#x2F;meditation）来恢复对当下的感知、减慢时间流逝、用内啡肽替代多巴胺、提升专注能力、降低压力的消极影响，我觉得骑车是最有效果的（图2），比那些冥想app里的付费课程（图1）强多了。<br>方法总结：</p><ol><li>不要听播客不要听播客不要听播客（凡是抢占注意力的都不要碰）。<br>(1&#x2F;4)</li><li>开降噪，听音乐。最好是 citypop、blues  那样积极向上的音乐（这两种本来就源自上班族和黑人奴工振奋情绪排解压力的需求）。</li><li>公路车和共享单车都可以。</li><li>把注意力放在自身感受和眼前情景上，只接受下意识的瞬间的发散和思考。</li><li>天气要好，一定要有阳光，推荐下午出发，去程有落日返程有夜景。</li><li>路线选择类似 city walk，尽量途径那些有河、有沿街生态、城市机理细密有机多样的地方。</li></ol>]]></content>
       
       
       <categories>
