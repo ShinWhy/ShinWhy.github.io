@@ -130,7 +130,7 @@
       <link href="/2023/05/30/Lec6/"/>
       <url>/2023/05/30/Lec6/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="VLIW-architecture"><a href="#VLIW-architecture" class="headerlink" title="VLIW architecture"></a>VLIW architecture</h1><h1 id="Static-Scheduling"><a href="#Static-Scheduling" class="headerlink" title="Static Scheduling"></a>Static Scheduling</h1><ul><li>Basic Blocks</li><li>Trace scheduling</li></ul><h2 id="methods"><a href="#methods" class="headerlink" title="methods"></a>methods</h2><ol><li>simple code motion</li><li>Loop unrolling &amp; loop peeling</li><li>Software pipeline</li><li>Global code scheduling(across basic block)</li></ol><ul><li>Trace scheduling</li><li>Superblock scheduling</li><li>Hyperblock scheduling</li><li>Speculative Trace scheduling</li></ul><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ol><li>为什么P48页ld和add不存在冲突？</li><li>第70页为什么选择在下面？</li></ol>]]></content>
       
       
       <categories>
