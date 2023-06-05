@@ -4,6 +4,50 @@
   
     
     <entry>
+      <title></title>
+      <link href="/2023/06/04/weekly2/"/>
+      <url>/2023/06/04/weekly2/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LP</title>
+      <link href="/2023/06/01/FOR_LP/"/>
+      <url>/2023/06/01/FOR_LP/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Def"><a href="#Def" class="headerlink" title="Def"></a>Def</h1><p>min f(x)<br>s.t. x属于X<br>General form:<br>min z &#x3D; c1x1 + c2c2 +…+cnxn<br>s.t.<br>Matrix notation<br>min z &#x3D; [c1 … cn][]</p><p><strong>Standard form</strong>:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">min z = cTx</span><br><span class="line">s.t. Ax = b</span><br><span class="line">     x&gt;=0   (only equality constraints and all nonnegative variables)</span><br></pre></td></tr></table></figure><p>方法：把小于0的x变成(xi-xj), 添加slack variable和surplus variable, 改变目标函数的符号</p><h1 id="Basic-feasible-solutions-and-vertices-of-polyhedra"><a href="#Basic-feasible-solutions-and-vertices-of-polyhedra" class="headerlink" title="Basic feasible solutions and vertices of polyhedra"></a>Basic feasible solutions and vertices of polyhedra</h1><p>Ax&#x3D;b<br>A&#x3D;&gt;m<em>n<br>rank&#x3D;m(A is full of rank)<br>m &#x3D; n unique solution<br>m &lt; n 无穷个solution<br>A&#x3D;[B|N]<br>B: a basis of such a matrix A——————m</em>m<br>N: m*(n-m)</p><p>XT &#x3D; [XBT|XNT]<br>A basic solution is a solution obtained by setting <strong>xN&#x3D;0</strong>，<br>A basic solution with <strong>XB&gt;&#x3D;0</strong> is a <strong>basic feasible solution</strong>.<br>The variable in XB——-basic variables, non basic variables</p><h1 id="单纯形算法（simplex-method）"><a href="#单纯形算法（simplex-method）" class="headerlink" title="单纯形算法（simplex method）"></a>单纯形算法（simplex method）</h1><p>算法的基本思想是通过在多维空间中移动一个特定形状的多面体，寻找目标函数取得最优值的顶点</p><p>basic feasible solution is such that xB&#x3D;B-1b, xN&#x3D;0<br>reduced cost<br>如果cN&gt;&#x3D;0 基本可行解就是全局最优解（对于最小化问题）<br>对于最大化问题，看是否&lt;&#x3D;0</p><p>Change of basis(for minimization LP): 通过矩阵变换，哪个进(第一行负的进)，哪个出(第一列&#x2F;进的那列对应的行的值)</p><p>Two-phase simplex method(Determine an initial basic feasible solution)看不出明显的基变量的情况下使用<br>两阶段的第一阶段就是用单纯形法消去人工变量，即把人工变量变成非基变量，第二阶段就是从基本可行解出发用单纯形法求线性规划最优解。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> STUDY </category>
+          
+          <category> POLIMI </category>
+          
+          <category> FOR </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> POLIMI </tag>
+            
+            <tag> FOR </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Exe4:Static BP + Complex, VLIM, Dynamic BP</title>
       <link href="/2023/06/01/Exe4/"/>
       <url>/2023/06/01/Exe4/</url>
