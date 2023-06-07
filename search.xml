@@ -8,7 +8,7 @@
       <link href="/2023/06/07/Lec8/"/>
       <url>/2023/06/07/Lec8/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="1-Tomasulo-algorithm"><a href="#1-Tomasulo-algorithm" class="headerlink" title="1. Tomasulo algorithm"></a>1. Tomasulo algorithm</h1><p>Reservation Stations(Operand buffers)<br>Each instruction is an entry of a reservation station<br>Its operands are replaced by values or pointers (Register Renaming)</p><h2 id="3-stage-of-the-Tomasulo-Algorithm"><a href="#3-stage-of-the-Tomasulo-Algorithm" class="headerlink" title="3-stage of the Tomasulo Algorithm:"></a>3-stage of the Tomasulo Algorithm:</h2><p>ISSUE<br>EXECUTION<br>WRITE</p><h1 id="2-Comparison-between-Scoreboard-and-Tomasulo"><a href="#2-Comparison-between-Scoreboard-and-Tomasulo" class="headerlink" title="2. Comparison between Scoreboard and Tomasulo"></a>2. Comparison between Scoreboard and Tomasulo</h1>]]></content>
       
       
       <categories>
