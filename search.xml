@@ -4,6 +4,130 @@
   
     
     <entry>
+      <title>Lec7:Dynamic Scheduling, Tomasulo</title>
+      <link href="/2023/06/07/Lec8/"/>
+      <url>/2023/06/07/Lec8/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> STUDY </category>
+          
+          <category> POLIMI </category>
+          
+          <category> ACA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> POLIMI </tag>
+            
+            <tag> ACA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>生词本(23周)</title>
+      <link href="/2023/06/06/words(week24)/"/>
+      <url>/2023/06/06/words(week24)/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Initiation-interval"><a href="#Initiation-interval" class="headerlink" title="Initiation interval"></a>Initiation interval</h1><p>在这个句子中，“interval”是一个名词，表示两个事件或时间之间的间隔。在“Initiation interval”的语境下，它指的是某个过程中开始和结束之间的时间段。</p><p>这个句子的意思是，在某个过程中，有一个特定的时间段用来启动该过程。</p><p>在英语中，“interval”还可以用于描述音乐、体育比赛等方面。例如：</p><ul><li>The orchestra took a short interval after the first movement. (管弦乐队在第一部分后休息了一会儿。)</li><li>There will be a 15-minute interval between the two halves of the football match. (足球比赛两半场之间将有15分钟的休息时间。)</li></ul><h1 id="pending"><a href="#pending" class="headerlink" title="pending"></a>pending</h1><p>在这个句子中，单词”pending”是一个形容词，用来描述指令的状态。它意味着有一些指令已经被下达但还没有完成或者等待执行。</p><p>整个句子的意思是：如果没有未决的指示，就会将该寄存器写入空白。</p><p>在这个句子中，并没有使用到任何习语。以下是几个例子：</p><ol><li>My pending workload is making me stressed out. (我的待处理工作量让我感到很压力)</li><li>The court case has been pending for months now. (这起法庭案件已经悬而未决数月了)</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+          <category> New word </category>
+          
+          <category> 2023.6.6 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> STUDY </tag>
+            
+            <tag> English </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Lec6:Dynamic Scheduling, Scoreboard</title>
+      <link href="/2023/06/05/Lec7/"/>
+      <url>/2023/06/05/Lec7/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Dynamic-Scheduling"><a href="#Dynamic-Scheduling" class="headerlink" title="Dynamic Scheduling"></a>Dynamic Scheduling</h1><p>Enables out-of-order execution and completion (commit)<br><strong>一个表结构</strong><br>A Data Structure for Correct Issues<br>Keeps track of the status of Functional Units</p><h1 id="Scoreboard-Operation"><a href="#Scoreboard-Operation" class="headerlink" title="Scoreboard Operation"></a>Scoreboard Operation</h1><p>New pipeline</p><table><thead><tr><th align="center">ID</th><th align="center">ID</th><th align="center">EX</th><th align="center">WB</th></tr></thead><tbody><tr><td align="center">Issue</td><td align="center">Read regs</td><td align="center">Execution</td><td align="center">Write</td></tr></tbody></table><h2 id="Four-Stages-of-Scoreboard-Control"><a href="#Four-Stages-of-Scoreboard-Control" class="headerlink" title="Four Stages of Scoreboard Control"></a>Four Stages of Scoreboard Control</h2><ol><li>Issue(in-order)<br>structural harzard &amp;&amp; WAW(has the same destination)</li><li>Read Operands(out of order)<br>Wait until no data hazards(RAW hazard)</li><li>Execution<br>latency, Initiation interval </li><li>Write Result<br>Finish execution<br>Once the scoreboard is aware that the functional unit has completed execution, the scoreboard checks for <em>WAR hazards</em>.<br>If none, it writes results. If WAR, then it stalls the instruction.</li></ol><h2 id="Scoreboard-structure-three-parts"><a href="#Scoreboard-structure-three-parts" class="headerlink" title="Scoreboard structure: three parts"></a>Scoreboard structure: three parts</h2><ol><li><p>Instruction status</p></li><li><p>Functional Unit status<br>Indicates the state of the functional unit (FU):</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Busy – Indicates whether the unit is busy or not</span><br><span class="line">Op - The operation to perform in the unit (+,-, etc.)</span><br><span class="line">Fi - Destination register</span><br><span class="line">Fj, Fk – Source register numbers</span><br><span class="line">Qj, Qk – Functional units producing source registers</span><br><span class="line">Rj, Rk – Flags indicating when Fj, Fk are ready</span><br></pre></td></tr></table></figure><p>Rj表示Fj(Fk)准备好了没有，Fj(Fk)表示源寄存器的数据准备好了没有<br>Fi是目标寄存器</p></li><li><p>Register result status<br>Indicates <strong>which functional unit</strong> will write each register.<br>Blank if no pending instructions will write that register.z</p></li></ol><h2 id="Execution-Process"><a href="#Execution-Process" class="headerlink" title="Execution Process"></a>Execution Process</h2><ol><li>Issue<br>• Functional unit is free (<strong>structural</strong>)<br>• Active instructions do not have same Rd (<strong>WAW</strong>)</li><li>Read Operands<br>• Checks availability of source operands<br>• Resolves <strong>RAW</strong> hazards dynamically (out-of-order execution)</li><li>Execution<br>• Functional unit begins execution when operands arrive<br>• Notifies the scoreboard when it has completed execution</li><li>Write result<br>• Scoreboard checks <strong>WAR</strong> hazards<br>• Stalls the completing instruction if necessary</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> STUDY </category>
+          
+          <category> POLIMI </category>
+          
+          <category> ACA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> POLIMI </tag>
+            
+            <tag> ACA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CI各单元简记</title>
+      <link href="/2023/06/05/CI/"/>
+      <url>/2023/06/05/CI/</url>
+      
+        <content type="html"><![CDATA[<h1 id="课程大纲"><a href="#课程大纲" class="headerlink" title="课程大纲"></a>课程大纲</h1><p><strong>A. HW Infrastructures:</strong><br>• System-level: Computing Infrastructures and Data Center<br>Architectures, Rack&#x2F;Structure;<br>• Node-level: Server (computation, HW accelerators), Storage<br>(Type, technology), Networking (architecture and technology);<br>• Building-level: Cooling systems, power supply, failure recovery<br><strong>B. SW Infrastructures:</strong><br>• Virtualization: Process&#x2F;System VM, Virtualization Mechanisms<br>(Hypervisor, Para&#x2F;Full virtualization)<br>• Computing Architectures: Cloud Computing (types,<br>characteristics), Edge&#x2F;Fog Computing, X-as-a service<br>• Machine and deep learning-as-a-service<br><strong>C. Methods:</strong><br>• Reliability and availability of datacenters (definition,<br>fundamental laws, RBDs)<br>• Disk performance (Type, Performance, RAID)<br>• Scalability and performance of datacenters (definitions,<br>fundamental laws, queuing network theory)</p><p>IoT<br>Embedded PCs&#x2F;Devices<br>PCs<br>Edge&#x2F;Fog Computing Systems<br>Embedded PCs</p><h2 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h2><p>Quality Evaluation techniques: </p><ol><li>Measurement-based</li></ol><ul><li>Direct measurement</li><li>Benchmarking</li><li>Prototype</li></ul><ol start="2"><li>Model-based</li></ol><ul><li>Analytical and numerical</li><li>Simulation</li><li>Hybrid techniques<br>eg. Queueing Networks<br>• Arrival: average arrival rate \lambda  (req&#x2F;s)<br>• Service: the time a job spends being served,  average duration, maximum service rate<br>• Queue: Service discipline&#x2F;queuing policy: FCFS, LCFS, RSS, PRI<br>• Population: Service discipline&#x2F;queuing policy<br>• Routing: Probabilistic, Round robin, Join the shortest queue</li></ul><h2 id="DataWareHouse"><a href="#DataWareHouse" class="headerlink" title="DataWareHouse"></a>DataWareHouse</h2><p>warehouse-scale computers (WSCs):</p><p>Multiple data centers：<br>Hierarchical approach: </p><ul><li>Geographic Areas and Regions</li><li>Availability Zones</li></ul><p>Architectural Overview of A Warehouse-scale Computer</p><ul><li>SERVERS: the main processing equipment</li><li>STORAGE: how and where to store the information</li><li>NETWORKING: providing internal and external connections</li><li>BUILDING AND INFRASTRUCTURE: power delivery, cooling, and building infrastructure</li></ul><p>If we observed such an abstract system we might measure the following<br>quantities:<br>§ T, the length of <strong>time</strong> we observe the system<br>§ A, the number of <strong>request arrivals</strong> we observe<br>§ C, the number of <strong>request completions</strong> we observe<br>§ B, the total amount of time during which the system is <strong>busy</strong>(B&lt;&#x3D;T&gt;)<br>§ N, the <strong>average number of jobs</strong> in the system </p><p>§ λ &#x3D; A&#x2F;T , the arrival rate<br>§ X &#x3D; C &#x2F;T , the throughput or completion rate<br>§ U &#x3D; B&#x2F;T, the utilisation<br>§ S &#x3D; B&#x2F;C, the mean service time per completed job</p><p><strong>utilization law:</strong><br>Uk &#x3D; XkSk<br><strong>Little’s law:</strong><br>N &#x3D; XR<br>(N &#x3D; average number of requests in the system<br>If the system throughput is X requests&#x2F;sec, and each request remains in the system on average for R seconds)</p><p>Red Box(without the queue)<br>Blue Box(including the queue)<br>Green Box(consider the central subsystem)</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> STUDY </category>
+          
+          <category> POLIMI </category>
+          
+          <category> CI </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> POLIMI </tag>
+            
+            <tag> CI </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title></title>
       <link href="/2023/06/04/weekly2/"/>
       <url>/2023/06/04/weekly2/</url>
@@ -259,11 +383,11 @@
     
     
     <entry>
-      <title>生词本(22周)</title>
+      <title>生词本(23周)</title>
       <link href="/2023/05/29/words(week23)/"/>
       <url>/2023/05/29/words(week23)/</url>
       
-        <content type="html"><![CDATA[<h1 id="blazer"><a href="#blazer" class="headerlink" title="blazer"></a>blazer</h1><p>[英] · &#x2F;ˈbleɪzə(r)&#x2F;<br>[n.] 西装外套；燃烧器；引线火药枪<br>例句：</p><ol><li>She wore a navy blazer over her white blouse.<br>（她在白衬衫上穿了一件海军蓝西装外套。）</li><li>The pilot lit the blazer to signal for help.<br>（飞行员点燃了引线火药枪以示求救。）</li><li>He fixed the broken blazer on his stove.<br>（他修好了灶具上的坏掉的燃烧器。）<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Does it fit?</span><br><span class="line">I forget to mention we have discount at these shoes just today.</span><br><span class="line">I am afraid it&#x27;s not suitable for a birthday party.</span><br><span class="line">I will be right back</span><br><span class="line">old fashioned and faded</span><br><span class="line">It dosen&#x27;t suit you.</span><br><span class="line">be in style 时尚流行</span><br><span class="line">It goes well with your scarf and skirt.</span><br><span class="line">It really match your blue eyes.</span><br></pre></td></tr></table></figure></li></ol><h1 id="blouse"><a href="#blouse" class="headerlink" title="blouse"></a>blouse</h1><p>[英] · &#x2F;blaʊz&#x2F;<br>[n.] 女衬衫；女上衣<br>例句：</p><ol><li>She wore a white blouse and black skirt to the interview. (她穿了一件白色的女衬衫和黑色的裙子去面试。)</li><li>The new collection features a variety of blouses in different colors and patterns. (新系列中有各种颜色和图案的女上衣。)</li><li>I prefer wearing blouses to dresses in the summer because they are more comfortable. (夏天我更喜欢穿女式上装而不是连衣裙，因为它们更舒适。)<br>词源：来自法语blouse，最初指士兵穿的短外套或工作服。</li></ol><h1 id="classy"><a href="#classy" class="headerlink" title="classy"></a>classy</h1><p>[英] · &#x2F;ˈklɑːsi&#x2F;<br>[形容词] 有品位的；高雅的；上等的<br>例句：</p><ol><li>She always dresses so classy.<br>（她总是穿得很有品味。）</li><li>The restaurant has a very classy atmosphere.<br>（这家餐厅氛围非常高雅。）</li><li>He gave a really classy speech at the awards ceremony.<br>（他在颁奖典礼上发表了一篇非常高雅的演讲。）<br>词源：来自class，意为“阶级、等级”，加后缀-y构成形容词。</li></ol><h1 id="pirate"><a href="#pirate" class="headerlink" title="pirate"></a>pirate</h1><p>[英] · &#x2F;ˈpaɪrət&#x2F;<br>[n] 海盗；剽窃者<br>[v] 盗版；掠夺<br>例句：</p><ol><li>The pirates captured the ship and held the crew for ransom. (海盗抓住了那艘船，扣留了船员以勒索赎金。)</li><li>He was accused of pirating software from his company’s competitors. (他被指控从公司竞争对手处盗版软件。)</li><li>The movie studio lost millions due to piracy of their latest film. (电影制片厂因最新电影的盗版而损失数百万。)<br>词源：来自拉丁语pirata，意为“海上强盗”。</li></ol><h1 id="outfit"><a href="#outfit" class="headerlink" title="outfit"></a>outfit</h1><p>[英] · &#x2F;ˈaʊtfɪt&#x2F;<br>[n] 1. 全套装备；全套服装；2. （尤指）一家公司、组织或团体</p><p>例句：</p><ol><li>She wore a stylish outfit to the party.<br>（她穿了一身时髦的衣服去参加派对。）</li><li>The military outfit was well-equipped and highly trained.<br>（这支军队配备精良，训练有素。）</li><li>My sister works for a fashion outfit in New York City.<br>（我姐姐在纽约市的一个时尚公司工作。）</li></ol><p>词源：来自out + fit，意为“完整的设备”。</p><h1 id="bow-tie"><a href="#bow-tie" class="headerlink" title="bow tie"></a>bow tie</h1><p>领结</p><h1 id="flashy"><a href="#flashy" class="headerlink" title="flashy"></a>flashy</h1><p>[英] · &#x2F;ˈflæʃi&#x2F;<br>[形容词] 艳丽的；炫耀的；浮华的<br>例句：</p><ol><li>She wore a flashy dress to the party. (她穿了一件艳丽的裙子去参加派对。)</li><li>His car is too flashy for my taste. (他的车太过浮华，不符合我的口味。)</li><li>The singer’s performance was flashy but lacked substance. (歌手表演很炫耀，但缺乏实质内容。)<br>词源：来自flash（闪光）+ -y后缀</li></ol><h1 id="make-a-bet-on-our-prediction"><a href="#make-a-bet-on-our-prediction" class="headerlink" title="make a bet on our prediction"></a>make a bet on our prediction</h1><p>在这个句子中，“make a bet”意为“下注”。整个句子的意思是“在我们的预测上下注”。</p><p>这个短语也可以用于其他情境，例如：</p><ul><li>He made a bet on the horse race.（他在赛马比赛上下了一笔赌注。）</li><li>I’m not going to make a bet until I know more about the teams.（在我更多地了解队伍之前，我不会进行任何投注。）</li></ul><p>总之，“make a bet”就是指通过支付一定金额或物品来表达对某种结果的信心，并期望获得回报。</p><h1 id="descendant"><a href="#descendant" class="headerlink" title="descendant"></a>descendant</h1><p>[英] · &#x2F;dɪ’sendənt&#x2F;<br>[n] 后代；子孙<br>[adj] 下降的；衰落的<br>例句：</p><ol><li>He is a descendant of the royal family. (他是皇室的后裔。)</li><li>The number of descendants has been decreasing year by year. (后代数量逐年减少。)</li><li>The company’s profits have been on a descendant trend for the past few years. (公司利润在过去几年中一直呈下降趋势。)<br>词源：来自拉丁语“descendere”，意为“下降，传承”。</li></ol>]]></content>
+        <content type="html"><![CDATA[<h1 id="blazer"><a href="#blazer" class="headerlink" title="blazer"></a>blazer</h1><p>[英] · &#x2F;ˈbleɪzə(r)&#x2F;<br>[n.] 西装外套；燃烧器；引线火药枪<br>例句：</p><ol><li>She wore a navy blazer over her white blouse.<br>（她在白衬衫上穿了一件海军蓝西装外套。）</li><li>The pilot lit the blazer to signal for help.<br>（飞行员点燃了引线火药枪以示求救。）</li><li>He fixed the broken blazer on his stove.<br>（他修好了灶具上的坏掉的燃烧器。）<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Does it fit?</span><br><span class="line">I forget to mention we have discount at these shoes just today.</span><br><span class="line">I am afraid it&#x27;s not suitable for a birthday party.</span><br><span class="line">I will be right back</span><br><span class="line">old fashioned and faded</span><br><span class="line">It dosen&#x27;t suit you.</span><br><span class="line">be in style 时尚流行</span><br><span class="line">It goes well with your scarf and skirt.</span><br><span class="line">It really match your blue eyes.</span><br></pre></td></tr></table></figure></li></ol><h1 id="blouse"><a href="#blouse" class="headerlink" title="blouse"></a>blouse</h1><p>[英] · &#x2F;blaʊz&#x2F;<br>[n.] 女衬衫；女上衣<br>例句：</p><ol><li>She wore a white blouse and black skirt to the interview. (她穿了一件白色的女衬衫和黑色的裙子去面试。)</li><li>The new collection features a variety of blouses in different colors and patterns. (新系列中有各种颜色和图案的女上衣。)</li><li>I prefer wearing blouses to dresses in the summer because they are more comfortable. (夏天我更喜欢穿女式上装而不是连衣裙，因为它们更舒适。)<br>词源：来自法语blouse，最初指士兵穿的短外套或工作服。</li></ol><h1 id="classy"><a href="#classy" class="headerlink" title="classy"></a>classy</h1><p>[英] · &#x2F;ˈklɑːsi&#x2F;<br>[形容词] 有品位的；高雅的；上等的<br>例句：</p><ol><li>She always dresses so classy.<br>（她总是穿得很有品味。）</li><li>The restaurant has a very classy atmosphere.<br>（这家餐厅氛围非常高雅。）</li><li>He gave a really classy speech at the awards ceremony.<br>（他在颁奖典礼上发表了一篇非常高雅的演讲。）<br>词源：来自class，意为“阶级、等级”，加后缀-y构成形容词。</li></ol><h1 id="pirate"><a href="#pirate" class="headerlink" title="pirate"></a>pirate</h1><p>[英] · &#x2F;ˈpaɪrət&#x2F;<br>[n] 海盗；剽窃者<br>[v] 盗版；掠夺<br>例句：</p><ol><li>The pirates captured the ship and held the crew for ransom. (海盗抓住了那艘船，扣留了船员以勒索赎金。)</li><li>He was accused of pirating software from his company’s competitors. (他被指控从公司竞争对手处盗版软件。)</li><li>The movie studio lost millions due to piracy of their latest film. (电影制片厂因最新电影的盗版而损失数百万。)<br>词源：来自拉丁语pirata，意为“海上强盗”。</li></ol><h1 id="outfit"><a href="#outfit" class="headerlink" title="outfit"></a>outfit</h1><p>[英] · &#x2F;ˈaʊtfɪt&#x2F;<br>[n] 1. 全套装备；全套服装；2. （尤指）一家公司、组织或团体</p><p>例句：</p><ol><li>She wore a stylish outfit to the party.<br>（她穿了一身时髦的衣服去参加派对。）</li><li>The military outfit was well-equipped and highly trained.<br>（这支军队配备精良，训练有素。）</li><li>My sister works for a fashion outfit in New York City.<br>（我姐姐在纽约市的一个时尚公司工作。）</li></ol><p>词源：来自out + fit，意为“完整的设备”。</p><h1 id="bow-tie"><a href="#bow-tie" class="headerlink" title="bow tie"></a>bow tie</h1><p>领结</p><h1 id="flashy"><a href="#flashy" class="headerlink" title="flashy"></a>flashy</h1><p>[英] · &#x2F;ˈflæʃi&#x2F;<br>[形容词] 艳丽的；炫耀的；浮华的<br>例句：</p><ol><li>She wore a flashy dress to the party. (她穿了一件艳丽的裙子去参加派对。)</li><li>His car is too flashy for my taste. (他的车太过浮华，不符合我的口味。)</li><li>The singer’s performance was flashy but lacked substance. (歌手表演很炫耀，但缺乏实质内容。)<br>词源：来自flash（闪光）+ -y后缀</li></ol><h1 id="make-a-bet-on-our-prediction"><a href="#make-a-bet-on-our-prediction" class="headerlink" title="make a bet on our prediction"></a>make a bet on our prediction</h1><p>在这个句子中，“make a bet”意为“下注”。整个句子的意思是“在我们的预测上下注”。</p><p>这个短语也可以用于其他情境，例如：</p><ul><li>He made a bet on the horse race.（他在赛马比赛上下了一笔赌注。）</li><li>I’m not going to make a bet until I know more about the teams.（在我更多地了解队伍之前，我不会进行任何投注。）</li></ul><p>总之，“make a bet”就是指通过支付一定金额或物品来表达对某种结果的信心，并期望获得回报。</p><h1 id="descendant"><a href="#descendant" class="headerlink" title="descendant"></a>descendant</h1><p>[英] · &#x2F;dɪ’sendənt&#x2F;<br>[n] 后代；子孙<br>[adj] 下降的；衰落的<br>例句：</p><ol><li>He is a descendant of the royal family. (他是皇室的后裔。)</li><li>The number of descendants has been decreasing year by year. (后代数量逐年减少。)</li><li>The company’s profits have been on a descendant trend for the past few years. (公司利润在过去几年中一直呈下降趋势。)<br>词源：来自拉丁语“descendere”，意为“下降，传承”。</li></ol><h1 id="Pervasive"><a href="#Pervasive" class="headerlink" title="Pervasive"></a>Pervasive</h1><p>[英] · &#x2F;pəˈveɪsɪv&#x2F;<br>[形] 普遍存在的；无处不在的；渗透性强的<br>例句：</p><ol><li>The pervasive influence of social media is undeniable. (社交媒体的普及影响是不可否认的。)</li><li>The smell of smoke was pervasive throughout the building. (烟味弥漫整个建筑物。)</li><li>Ageism is a pervasive problem in our society. (年龄歧视是我们社会中普遍存在的问题。)<br>词源：来自拉丁语 pervasus，意为“穿过、渗透”。</li></ol><h1 id="undeniable"><a href="#undeniable" class="headerlink" title="undeniable"></a>undeniable</h1><p>[英] · &#x2F;ˌʌndɪˈnaɪəbl&#x2F;<br>[形容词] 不可否认的，无可争辩的<br>中文含义：不可否认的，无法抵赖的</p><p>例句：</p><ol><li>His talent is undeniable.<br>（他的才华是不可否认的。）</li><li>The evidence against him was undeniable.<br>（针对他的证据是无法抵赖的。）</li><li>It is undeniable that climate change is happening.<br>（气候变化正在发生这一点是毋庸置疑的。）</li></ol><p>词源：来自于deny这个单词加上un-前缀构成，意为“不能被否定”。</p><h1 id="negligible"><a href="#negligible" class="headerlink" title="negligible"></a>negligible</h1><p>[英] · &#x2F;ˈneɡlɪdʒəbl&#x2F;<br>[形] 可忽略的，微不足道的<br>例句：</p><ol><li>The difference in price is negligible.<br>（价格上的差异微不足道。）</li><li>The impact of the new policy on the economy is negligible.<br>（新政策对经济的影响微乎其微。）</li><li>The amount of dust in the air was negligible.<br>（空气中灰尘数量可以忽略不计。）<br>词源：<br>来自拉丁语“negligere”，意为“忽视”。</li></ol><h1 id="Ubiquity"><a href="#Ubiquity" class="headerlink" title="Ubiquity"></a>Ubiquity</h1><p>在这个句子中，“Ubiquity”指的是“无处不在”，表示某物或某种情况普遍存在，随处可见。整个句子的意思是“访问无处不在”，即可以随时随地访问。</p><p>这个词也可以用于习语中，例如：“Ubiquitous presence”，意为“到处都有的存在”。其他类似的例子包括：</p><ol><li>The ubiquity of smartphones has changed the way we communicate. (智能手机的普及改变了我们交流方式)</li><li>The ubiquity of fast food restaurants is a sign of our busy lifestyles. (快餐店无处不在反映了我们繁忙的生活方式)</li></ol>]]></content>
       
       
       <categories>
@@ -573,7 +697,7 @@
       <link href="/2023/05/15/weekly1/"/>
       <url>/2023/05/15/weekly1/</url>
       
-        <content type="html"><![CDATA[<h1 id="Plan"><a href="#Plan" class="headerlink" title="Plan"></a>Plan</h1><ol><li>复习完MIDA1，看至少一半的exe课</li><li>复习完ACA(一天看两节课，十天看完) 每天五个小时</li><li>看FOR(2)和DB(3)的PPT，并做题</li><li>写周报，分享感受，The long season</li><li>第一轮考7门：TCS（12）,ACA（13）,CI（15）,FOR（16）, <del>CS（21）</del>, DB2（23）在ACA考试前只需要把理论和TA看完就行, MIDA1（24）, <del>MIDA2,</del>  </li><li>今天晚上看for的第二章，明天看CI两个单元<br>MIDA(6个lecture:3天，10个exercise，5天)</li></ol><h1 id="发现的一些有趣的频道"><a href="#发现的一些有趣的频道" class="headerlink" title="发现的一些有趣的频道"></a>发现的一些有趣的频道</h1><p><a href="https://www.xiaoyuzhoufm.com/podcast/640ee2438be5d40013fe4a87">硬地骇客</a></p><p><a href="https://www.xiaoyuzhoufm.com/podcast/640ee2438be5d40013fe4a87">豌豆花下猫（关于Python）</a></p><p><a href="https://brr.fyi/">被派到南极洲工作的程序员</a><br>作者作为 IT 工程师被派到南极洲工作，博客是记录他在南极生活的点点滴滴</p><h1 id="看到的一些推特好帖"><a href="#看到的一些推特好帖" class="headerlink" title="看到的一些推特好帖"></a>看到的一些推特好帖</h1><h2 id="1-如何提高专注度"><a href="#1-如何提高专注度" class="headerlink" title="1. 如何提高专注度"></a>1. 如何提高专注度</h2><p>**转自博主Dexter Yang(@dexteryy)**，<br><a href="https://twitter.com/dexteryy/status/1629491278886076416">方法</a><br>想要通过正念（mindfulness&#x2F;meditation）来恢复对当下的感知、减慢时间流逝、用内啡肽替代多巴胺、提升专注能力、降低压力的消极影响，我觉得骑车是最有效果的（图2），比那些冥想app里的付费课程（图1）强多了。<br>方法总结：</p><ol><li>不要听播客不要听播客不要听播客（凡是抢占注意力的都不要碰）。<br>(1&#x2F;4)</li><li>开降噪，听音乐。最好是 citypop、blues  那样积极向上的音乐（这两种本来就源自上班族和黑人奴工振奋情绪排解压力的需求）。</li><li>公路车和共享单车都可以。</li><li>把注意力放在自身感受和眼前情景上，只接受下意识的瞬间的发散和思考。</li><li>天气要好，一定要有阳光，推荐下午出发，去程有落日返程有夜景。</li><li>路线选择类似 city walk，尽量途径那些有河、有沿街生态、城市机理细密有机多样的地方。</li></ol>]]></content>
+        <content type="html"><![CDATA[<h1 id="Plan"><a href="#Plan" class="headerlink" title="Plan"></a>Plan</h1><ol><li>复习完MIDA1，看至少一半的exe课</li><li>复习完ACA(一天看两节课，十天看完) 每天五个小时</li><li>看FOR(2)和DB(3)的PPT，并做题</li><li>写周报，分享感受，The long season</li><li>第一轮考7门：TCS（12）,ACA（13）,CI（15）,FOR（16）, <del>CS（21）</del>, DB2（23）在ACA考试前只需要把理论和TA看完就行, MIDA1（24）, <del>MIDA2,</del>  </li><li>今天看for的duality和第二章和ILP(晚上)，上午看CI两个单元，下午看ACA的三个视频<br>MIDA(6个lecture:3天，10个exercise，5天)</li></ol><h1 id="发现的一些有趣的频道"><a href="#发现的一些有趣的频道" class="headerlink" title="发现的一些有趣的频道"></a>发现的一些有趣的频道</h1><p><a href="https://www.xiaoyuzhoufm.com/podcast/640ee2438be5d40013fe4a87">硬地骇客</a></p><p><a href="https://www.xiaoyuzhoufm.com/podcast/640ee2438be5d40013fe4a87">豌豆花下猫（关于Python）</a></p><p><a href="https://brr.fyi/">被派到南极洲工作的程序员</a><br>作者作为 IT 工程师被派到南极洲工作，博客是记录他在南极生活的点点滴滴</p><h1 id="看到的一些推特好帖"><a href="#看到的一些推特好帖" class="headerlink" title="看到的一些推特好帖"></a>看到的一些推特好帖</h1><h2 id="1-如何提高专注度"><a href="#1-如何提高专注度" class="headerlink" title="1. 如何提高专注度"></a>1. 如何提高专注度</h2><p>**转自博主Dexter Yang(@dexteryy)**，<br><a href="https://twitter.com/dexteryy/status/1629491278886076416">方法</a><br>想要通过正念（mindfulness&#x2F;meditation）来恢复对当下的感知、减慢时间流逝、用内啡肽替代多巴胺、提升专注能力、降低压力的消极影响，我觉得骑车是最有效果的（图2），比那些冥想app里的付费课程（图1）强多了。<br>方法总结：</p><ol><li>不要听播客不要听播客不要听播客（凡是抢占注意力的都不要碰）。<br>(1&#x2F;4)</li><li>开降噪，听音乐。最好是 citypop、blues  那样积极向上的音乐（这两种本来就源自上班族和黑人奴工振奋情绪排解压力的需求）。</li><li>公路车和共享单车都可以。</li><li>把注意力放在自身感受和眼前情景上，只接受下意识的瞬间的发散和思考。</li><li>天气要好，一定要有阳光，推荐下午出发，去程有落日返程有夜景。</li><li>路线选择类似 city walk，尽量途径那些有河、有沿街生态、城市机理细密有机多样的地方。</li></ol>]]></content>
       
       
       <categories>
