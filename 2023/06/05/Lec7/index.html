@@ -8,13 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
     <meta name="description" content="Dynamic SchedulingEnables out-of-order execution and completion (commit)一个表结构A Data Structure for Correct IssuesKeeps track of the status of Functional Units Scoreboard OperationNew pipeline    ID ID">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Lec6:Dynamic Scheduling, Scoreboard">
+<meta property="og:title" content="Lec7:Dynamic Scheduling, Scoreboard">
 <meta property="og:url" content="https://shinwhy.github.io/2023/06/05/Lec7/index.html">
 <meta property="og:site_name" content="ShinWhy">
 <meta property="og:description" content="Dynamic SchedulingEnables out-of-order execution and completion (commit)一个表结构A Data Structure for Correct IssuesKeeps track of the status of Functional Units Scoreboard OperationNew pipeline    ID ID">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-06-05T13:50:00.000Z">
-<meta property="article:modified_time" content="2023-06-07T20:52:59.500Z">
+<meta property="article:modified_time" content="2023-06-07T22:26:13.352Z">
 <meta property="article:author" content="ShinWhy">
 <meta property="article:tag" content="POLIMI">
 <meta property="article:tag" content="ACA">
@@ -38,7 +38,7 @@
       
     
     <!-- title -->
-    <title>Lec6:Dynamic Scheduling, Scoreboard</title>
+    <title>Lec7:Dynamic Scheduling, Scoreboard</title>
     <!-- async scripts -->
     <!-- Google Analytics -->
 
@@ -106,16 +106,16 @@
     <div id="share" style="display: none">
       <ul>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://shinwhy.github.io/2023/06/05/Lec7/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://shinwhy.github.io/2023/06/05/Lec7/&text=Lec6:Dynamic Scheduling, Scoreboard"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://shinwhy.github.io/2023/06/05/Lec7/&title=Lec6:Dynamic Scheduling, Scoreboard"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://shinwhy.github.io/2023/06/05/Lec7/&is_video=false&description=Lec6:Dynamic Scheduling, Scoreboard"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Lec6:Dynamic Scheduling, Scoreboard&body=Check out this article: https://shinwhy.github.io/2023/06/05/Lec7/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://shinwhy.github.io/2023/06/05/Lec7/&title=Lec6:Dynamic Scheduling, Scoreboard"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://shinwhy.github.io/2023/06/05/Lec7/&title=Lec6:Dynamic Scheduling, Scoreboard"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://shinwhy.github.io/2023/06/05/Lec7/&title=Lec6:Dynamic Scheduling, Scoreboard"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://shinwhy.github.io/2023/06/05/Lec7/&title=Lec6:Dynamic Scheduling, Scoreboard"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://shinwhy.github.io/2023/06/05/Lec7/&name=Lec6:Dynamic Scheduling, Scoreboard&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://shinwhy.github.io/2023/06/05/Lec7/&t=Lec6:Dynamic Scheduling, Scoreboard"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://shinwhy.github.io/2023/06/05/Lec7/&text=Lec7:Dynamic Scheduling, Scoreboard"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://shinwhy.github.io/2023/06/05/Lec7/&title=Lec7:Dynamic Scheduling, Scoreboard"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://shinwhy.github.io/2023/06/05/Lec7/&is_video=false&description=Lec7:Dynamic Scheduling, Scoreboard"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Lec7:Dynamic Scheduling, Scoreboard&body=Check out this article: https://shinwhy.github.io/2023/06/05/Lec7/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://shinwhy.github.io/2023/06/05/Lec7/&title=Lec7:Dynamic Scheduling, Scoreboard"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://shinwhy.github.io/2023/06/05/Lec7/&title=Lec7:Dynamic Scheduling, Scoreboard"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://shinwhy.github.io/2023/06/05/Lec7/&title=Lec7:Dynamic Scheduling, Scoreboard"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://shinwhy.github.io/2023/06/05/Lec7/&title=Lec7:Dynamic Scheduling, Scoreboard"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://shinwhy.github.io/2023/06/05/Lec7/&name=Lec7:Dynamic Scheduling, Scoreboard&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://shinwhy.github.io/2023/06/05/Lec7/&t=Lec7:Dynamic Scheduling, Scoreboard"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -132,7 +132,7 @@
   <header>
     
     <h1 class="posttitle p-name" itemprop="name headline">
-        Lec6:Dynamic Scheduling, Scoreboard
+        Lec7:Dynamic Scheduling, Scoreboard
     </h1>
 
 
@@ -246,16 +246,16 @@
     <div id="share-footer" style="display: none">
       <ul>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://shinwhy.github.io/2023/06/05/Lec7/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://shinwhy.github.io/2023/06/05/Lec7/&text=Lec6:Dynamic Scheduling, Scoreboard"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://shinwhy.github.io/2023/06/05/Lec7/&title=Lec6:Dynamic Scheduling, Scoreboard"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://shinwhy.github.io/2023/06/05/Lec7/&is_video=false&description=Lec6:Dynamic Scheduling, Scoreboard"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Lec6:Dynamic Scheduling, Scoreboard&body=Check out this article: https://shinwhy.github.io/2023/06/05/Lec7/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://shinwhy.github.io/2023/06/05/Lec7/&title=Lec6:Dynamic Scheduling, Scoreboard"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://shinwhy.github.io/2023/06/05/Lec7/&title=Lec6:Dynamic Scheduling, Scoreboard"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://shinwhy.github.io/2023/06/05/Lec7/&title=Lec6:Dynamic Scheduling, Scoreboard"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://shinwhy.github.io/2023/06/05/Lec7/&title=Lec6:Dynamic Scheduling, Scoreboard"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://shinwhy.github.io/2023/06/05/Lec7/&name=Lec6:Dynamic Scheduling, Scoreboard&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://shinwhy.github.io/2023/06/05/Lec7/&t=Lec6:Dynamic Scheduling, Scoreboard"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://shinwhy.github.io/2023/06/05/Lec7/&text=Lec7:Dynamic Scheduling, Scoreboard"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://shinwhy.github.io/2023/06/05/Lec7/&title=Lec7:Dynamic Scheduling, Scoreboard"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://shinwhy.github.io/2023/06/05/Lec7/&is_video=false&description=Lec7:Dynamic Scheduling, Scoreboard"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Lec7:Dynamic Scheduling, Scoreboard&body=Check out this article: https://shinwhy.github.io/2023/06/05/Lec7/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://shinwhy.github.io/2023/06/05/Lec7/&title=Lec7:Dynamic Scheduling, Scoreboard"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://shinwhy.github.io/2023/06/05/Lec7/&title=Lec7:Dynamic Scheduling, Scoreboard"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://shinwhy.github.io/2023/06/05/Lec7/&title=Lec7:Dynamic Scheduling, Scoreboard"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://shinwhy.github.io/2023/06/05/Lec7/&title=Lec7:Dynamic Scheduling, Scoreboard"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://shinwhy.github.io/2023/06/05/Lec7/&name=Lec7:Dynamic Scheduling, Scoreboard&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://shinwhy.github.io/2023/06/05/Lec7/&t=Lec7:Dynamic Scheduling, Scoreboard"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>

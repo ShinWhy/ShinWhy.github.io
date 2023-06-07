@@ -8,13 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
     <meta name="description" content="1. Tomasulo algorithmReservation Stations(Operand buffers)Each instruction is an entry of a reservation stationIts operands are replaced by values or pointers (Register Renaming) 3-stage of the Tomasu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Lec7:Dynamic Scheduling, Tomasulo">
+<meta property="og:title" content="Lec8:Dynamic Scheduling, Tomasulo">
 <meta property="og:url" content="https://shinwhy.github.io/2023/06/07/Lec8/index.html">
 <meta property="og:site_name" content="ShinWhy">
 <meta property="og:description" content="1. Tomasulo algorithmReservation Stations(Operand buffers)Each instruction is an entry of a reservation stationIts operands are replaced by values or pointers (Register Renaming) 3-stage of the Tomasu">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-06-07T21:37:00.000Z">
-<meta property="article:modified_time" content="2023-06-07T22:08:07.208Z">
+<meta property="article:modified_time" content="2023-06-07T22:27:23.528Z">
 <meta property="article:author" content="ShinWhy">
 <meta property="article:tag" content="POLIMI">
 <meta property="article:tag" content="ACA">
@@ -38,7 +38,7 @@
       
     
     <!-- title -->
-    <title>Lec7:Dynamic Scheduling, Tomasulo</title>
+    <title>Lec8:Dynamic Scheduling, Tomasulo</title>
     <!-- async scripts -->
     <!-- Google Analytics -->
 
@@ -104,16 +104,16 @@
     <div id="share" style="display: none">
       <ul>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://shinwhy.github.io/2023/06/07/Lec8/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://shinwhy.github.io/2023/06/07/Lec8/&text=Lec7:Dynamic Scheduling, Tomasulo"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://shinwhy.github.io/2023/06/07/Lec8/&title=Lec7:Dynamic Scheduling, Tomasulo"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://shinwhy.github.io/2023/06/07/Lec8/&is_video=false&description=Lec7:Dynamic Scheduling, Tomasulo"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Lec7:Dynamic Scheduling, Tomasulo&body=Check out this article: https://shinwhy.github.io/2023/06/07/Lec8/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://shinwhy.github.io/2023/06/07/Lec8/&title=Lec7:Dynamic Scheduling, Tomasulo"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://shinwhy.github.io/2023/06/07/Lec8/&title=Lec7:Dynamic Scheduling, Tomasulo"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://shinwhy.github.io/2023/06/07/Lec8/&title=Lec7:Dynamic Scheduling, Tomasulo"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://shinwhy.github.io/2023/06/07/Lec8/&title=Lec7:Dynamic Scheduling, Tomasulo"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://shinwhy.github.io/2023/06/07/Lec8/&name=Lec7:Dynamic Scheduling, Tomasulo&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://shinwhy.github.io/2023/06/07/Lec8/&t=Lec7:Dynamic Scheduling, Tomasulo"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://shinwhy.github.io/2023/06/07/Lec8/&text=Lec8:Dynamic Scheduling, Tomasulo"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://shinwhy.github.io/2023/06/07/Lec8/&title=Lec8:Dynamic Scheduling, Tomasulo"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://shinwhy.github.io/2023/06/07/Lec8/&is_video=false&description=Lec8:Dynamic Scheduling, Tomasulo"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Lec8:Dynamic Scheduling, Tomasulo&body=Check out this article: https://shinwhy.github.io/2023/06/07/Lec8/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://shinwhy.github.io/2023/06/07/Lec8/&title=Lec8:Dynamic Scheduling, Tomasulo"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://shinwhy.github.io/2023/06/07/Lec8/&title=Lec8:Dynamic Scheduling, Tomasulo"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://shinwhy.github.io/2023/06/07/Lec8/&title=Lec8:Dynamic Scheduling, Tomasulo"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://shinwhy.github.io/2023/06/07/Lec8/&title=Lec8:Dynamic Scheduling, Tomasulo"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://shinwhy.github.io/2023/06/07/Lec8/&name=Lec8:Dynamic Scheduling, Tomasulo&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://shinwhy.github.io/2023/06/07/Lec8/&t=Lec8:Dynamic Scheduling, Tomasulo"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -130,7 +130,7 @@
   <header>
     
     <h1 class="posttitle p-name" itemprop="name headline">
-        Lec7:Dynamic Scheduling, Tomasulo
+        Lec8:Dynamic Scheduling, Tomasulo
     </h1>
 
 
@@ -206,16 +206,16 @@
     <div id="share-footer" style="display: none">
       <ul>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://shinwhy.github.io/2023/06/07/Lec8/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://shinwhy.github.io/2023/06/07/Lec8/&text=Lec7:Dynamic Scheduling, Tomasulo"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://shinwhy.github.io/2023/06/07/Lec8/&title=Lec7:Dynamic Scheduling, Tomasulo"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://shinwhy.github.io/2023/06/07/Lec8/&is_video=false&description=Lec7:Dynamic Scheduling, Tomasulo"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Lec7:Dynamic Scheduling, Tomasulo&body=Check out this article: https://shinwhy.github.io/2023/06/07/Lec8/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://shinwhy.github.io/2023/06/07/Lec8/&title=Lec7:Dynamic Scheduling, Tomasulo"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://shinwhy.github.io/2023/06/07/Lec8/&title=Lec7:Dynamic Scheduling, Tomasulo"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://shinwhy.github.io/2023/06/07/Lec8/&title=Lec7:Dynamic Scheduling, Tomasulo"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://shinwhy.github.io/2023/06/07/Lec8/&title=Lec7:Dynamic Scheduling, Tomasulo"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://shinwhy.github.io/2023/06/07/Lec8/&name=Lec7:Dynamic Scheduling, Tomasulo&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://shinwhy.github.io/2023/06/07/Lec8/&t=Lec7:Dynamic Scheduling, Tomasulo"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://shinwhy.github.io/2023/06/07/Lec8/&text=Lec8:Dynamic Scheduling, Tomasulo"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://shinwhy.github.io/2023/06/07/Lec8/&title=Lec8:Dynamic Scheduling, Tomasulo"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://shinwhy.github.io/2023/06/07/Lec8/&is_video=false&description=Lec8:Dynamic Scheduling, Tomasulo"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Lec8:Dynamic Scheduling, Tomasulo&body=Check out this article: https://shinwhy.github.io/2023/06/07/Lec8/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://shinwhy.github.io/2023/06/07/Lec8/&title=Lec8:Dynamic Scheduling, Tomasulo"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://shinwhy.github.io/2023/06/07/Lec8/&title=Lec8:Dynamic Scheduling, Tomasulo"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://shinwhy.github.io/2023/06/07/Lec8/&title=Lec8:Dynamic Scheduling, Tomasulo"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://shinwhy.github.io/2023/06/07/Lec8/&title=Lec8:Dynamic Scheduling, Tomasulo"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://shinwhy.github.io/2023/06/07/Lec8/&name=Lec8:Dynamic Scheduling, Tomasulo&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://shinwhy.github.io/2023/06/07/Lec8/&t=Lec8:Dynamic Scheduling, Tomasulo"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
