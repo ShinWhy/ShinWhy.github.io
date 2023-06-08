@@ -4,11 +4,125 @@
   
     
     <entry>
+      <title>Lec10:Hardware-Based Speculation</title>
+      <link href="/2023/06/08/Lec10/"/>
+      <url>/2023/06/08/Lec10/</url>
+      
+        <content type="html"><![CDATA[<h1 id="HW-based-speculation-main-idea"><a href="#HW-based-speculation-main-idea" class="headerlink" title="HW-based speculation main idea"></a>HW-based speculation main idea</h1><ol><li>Dynamic Branch Prediction<br>choose which instruction to execute</li><li>Dynamic Scheduling<br>out-of-order execution but inorder commit </li><li>Speculation<br>execute instructions before control dependences are resolved</li></ol><h2 id="The-key-idea-behind-speculation-is"><a href="#The-key-idea-behind-speculation-is" class="headerlink" title="The key idea behind speculation is"></a>The key idea behind speculation is</h2><ol><li>to <strong>issue and execute instructions dependent on a branch</strong> before the branch outcome is known;</li><li>to allow instructions to <strong>execute out-of-order</strong> but to force them to <strong>commit in-order</strong>;<br>to prevent any irrevocable action (such as updating state or taking an exception) until an instruction commits;</li></ol><h1 id="Reorder-Buffer"><a href="#Reorder-Buffer" class="headerlink" title="Reorder Buffer"></a>Reorder Buffer</h1><ol><li>Re-order buffer(ROB)保存寄存器的结果从completion到commit</li><li>Entries(条目)在decode的阶段按程序的顺序分配</li><li>已完成(completed)未提交(uncommited)的值可以被相关指令使用</li><li>load&#x2F;store指令的reordering需要特殊的数据结构</li></ol><h1 id="An-example"><a href="#An-example" class="headerlink" title="An example"></a>An example</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> STUDY </category>
+          
+          <category> POLIMI </category>
+          
+          <category> ACA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> POLIMI </tag>
+            
+            <tag> ACA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Lec9:Exception Handling</title>
+      <link href="/2023/06/08/Lec9/"/>
+      <url>/2023/06/08/Lec9/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Classes-of-exceptions"><a href="#Classes-of-exceptions" class="headerlink" title="Classes of exceptions"></a>Classes of exceptions</h1><ol><li>Synchronous vs asynchronous</li><li>User requested vs coerced(被迫)</li><li>User maskable vs user nonmaskable</li><li>Within vs between instructions</li><li>Resume vs terminate</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> STUDY </category>
+          
+          <category> POLIMI </category>
+          
+          <category> ACA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> POLIMI </tag>
+            
+            <tag> ACA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2023/06/08/Lec14/"/>
+      <url>/2023/06/08/Lec14/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2023/06/08/Lec13/"/>
+      <url>/2023/06/08/Lec13/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2023/06/08/Lec12/"/>
+      <url>/2023/06/08/Lec12/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2023/06/08/Lec11/"/>
+      <url>/2023/06/08/Lec11/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Lec8:Dynamic Scheduling, Tomasulo</title>
       <link href="/2023/06/07/Lec8/"/>
       <url>/2023/06/07/Lec8/</url>
       
-        <content type="html"><![CDATA[<h1 id="1-Tomasulo-algorithm"><a href="#1-Tomasulo-algorithm" class="headerlink" title="1. Tomasulo algorithm"></a>1. Tomasulo algorithm</h1><p>Reservation Stations(Operand buffers)<br>Each instruction is an entry of a reservation station<br>Its operands are replaced by values or pointers (Register Renaming)</p><h2 id="3-stage-of-the-Tomasulo-Algorithm"><a href="#3-stage-of-the-Tomasulo-Algorithm" class="headerlink" title="3-stage of the Tomasulo Algorithm:"></a>3-stage of the Tomasulo Algorithm:</h2><p>ISSUE<br>EXECUTION<br>WRITE</p><h1 id="2-Comparison-between-Scoreboard-and-Tomasulo"><a href="#2-Comparison-between-Scoreboard-and-Tomasulo" class="headerlink" title="2. Comparison between Scoreboard and Tomasulo"></a>2. Comparison between Scoreboard and Tomasulo</h1>]]></content>
+        <content type="html"><![CDATA[<h1 id="1-Tomasulo-algorithm"><a href="#1-Tomasulo-algorithm" class="headerlink" title="1. Tomasulo algorithm"></a>1. Tomasulo algorithm</h1><p>Reservation Stations(Operand buffers)<br>Each instruction is an entry of a reservation station<br>Its operands are replaced by values or pointers (Register Renaming)-&gt;<strong>避免WAR和WAW</strong></p><h2 id="3-stage-of-the-Tomasulo-Algorithm"><a href="#3-stage-of-the-Tomasulo-Algorithm" class="headerlink" title="3-stage of the Tomasulo Algorithm:"></a>3-stage of the Tomasulo Algorithm:</h2><p>ISSUE<br>EXECUTION<br>WRITE</p><p><strong>Reservation Station Components</strong></p><ul><li>Tag identifying the RS</li><li>OP &#x3D; the operation to perform on the component.</li><li>Vj, Vk &#x3D; Value of the source operands</li><li>Qj,Qk &#x3D; Pointers to RS that produce Vj,Vk<br>Zero value &#x3D; Source op. is already available in Vj or Vk</li><li>Busy &#x3D; Indicates RS Busy<br>Note: Only one of V-field or Q-field is valid for each operand<br><strong>其他component</strong></li><li>RF and the Store buffer have a Value (V) and a Pointer (Q) field.<br>Pointer (Q) field corresponds to number of reservation station producing the<br>result to be stored in RF or store buffer<br>If zero  no active instructions producing the result<br>(RF or store buffer content is the correct value).</li></ul><h1 id="2-Comparison-between-Scoreboard-and-Tomasulo"><a href="#2-Comparison-between-Scoreboard-and-Tomasulo" class="headerlink" title="2. Comparison between Scoreboard and Tomasulo"></a>2. Comparison between Scoreboard and Tomasulo</h1><p>• Control &amp; buffers distributed with Function Units (FU) vs.<br>centralized in scoreboard;<br>• FU buffers called “reservation stations”; have pending operands<br>• Registers in instructions replaced by values or pointers to<br>reservation stations(RS); called register renaming ;<br>• avoids WAR, WAW hazards<br>• More reservation stations than registers, so can do optimizations compilers can’t<br>• Results to FU from RS, not through registers, over Common Data<br>Bus that broadcasts results to all FUs<br>• Load and Stores treated as FUs with RSs as well<br>• Integer instructions can go past branches, allowing<br>FP ops beyond basic block in FP queue</p>]]></content>
       
       
       <categories>
