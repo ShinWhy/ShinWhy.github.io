@@ -14,7 +14,7 @@
 <meta property="og:description" content="HW-based speculation main idea Dynamic Branch Predictionchoose which instruction to execute Dynamic Schedulingout-of-order execution but inorder commit  Speculationexecute instructions before control">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-06-08T15:30:00.000Z">
-<meta property="article:modified_time" content="2023-06-08T17:03:29.777Z">
+<meta property="article:modified_time" content="2023-06-08T20:30:09.126Z">
 <meta property="article:author" content="ShinWhy">
 <meta property="article:tag" content="POLIMI">
 <meta property="article:tag" content="ACA">
@@ -89,6 +89,8 @@
     <span id="actions">
       <ul>
         
+        <li><a class="icon" aria-label="Previous post" href="/2023/06/09/Lec11/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
         
         <li><a class="icon" aria-label="Next post" href="/2023/06/08/Lec9/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
@@ -118,7 +120,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HW-based-speculation-main-idea"><span class="toc-number">1.</span> <span class="toc-text">HW-based speculation main idea</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-key-idea-behind-speculation-is"><span class="toc-number">1.1.</span> <span class="toc-text">The key idea behind speculation is</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reorder-Buffer"><span class="toc-number">2.</span> <span class="toc-text">Reorder Buffer</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#An-example"><span class="toc-number">3.</span> <span class="toc-text">An example</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HW-based-speculation-main-idea"><span class="toc-number">1.</span> <span class="toc-text">HW-based speculation main idea</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-key-idea-behind-speculation-is"><span class="toc-number">1.1.</span> <span class="toc-text">The key idea behind speculation is</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reorder-Buffer"><span class="toc-number">2.</span> <span class="toc-text">Reorder Buffer</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Speculative-Tomasulo-Algorithm"><span class="toc-number">2.1.</span> <span class="toc-text">Speculative Tomasulo Algorithm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Each-entry-in-ROB-contains-four-fields"><span class="toc-number">2.2.</span> <span class="toc-text">Each entry in ROB contains four fields</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#An-example"><span class="toc-number">3.</span> <span class="toc-text">An example</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -177,10 +179,22 @@
 <li>to allow instructions to <strong>execute out-of-order</strong> but to force them to <strong>commit in-order</strong>;<br>to prevent any irrevocable action (such as updating state or taking an exception) until an instruction commits;</li>
 </ol>
 <h1 id="Reorder-Buffer"><a href="#Reorder-Buffer" class="headerlink" title="Reorder Buffer"></a>Reorder Buffer</h1><ol>
-<li>Re-order buffer(ROB)保存寄存器的结果从completion到commit</li>
+<li>Re-order buffer(ROB)保存未提交但已完成的寄存器的结果(从completion到commit)<br>指令什么时候提交？1. 完成execution 2. 前面的指令都提交<br>当指令提交后，结果就会从ROB转到register</li>
 <li>Entries(条目)在decode的阶段按程序的顺序分配</li>
 <li>已完成(completed)未提交(uncommited)的值可以被相关指令使用</li>
 <li>load&#x2F;store指令的reordering需要特殊的数据结构</li>
+</ol>
+<h2 id="Speculative-Tomasulo-Algorithm"><a href="#Speculative-Tomasulo-Algorithm" class="headerlink" title="Speculative Tomasulo Algorithm"></a>Speculative Tomasulo Algorithm</h2><ol>
+<li>Issue<br>如果Reservation Station和Reorder Buffer slot都有空，就issue instruction &amp;&amp; send operands &amp;&amp; reorder buffer no. for destination</li>
+<li>Execution<br>当两个操作数都准备好，就开始execution，没准备好，就等CDB(common data bus)，当两个操作数都在 reservation station，执行</li>
+<li>Write Result<br>写到CDB准备好传给等待的FU和ROB</li>
+<li>Commit<br>3种：normal commit, Store commit, Instruction is a branch with incorrect prediction</li>
+</ol>
+<h2 id="Each-entry-in-ROB-contains-four-fields"><a href="#Each-entry-in-ROB-contains-four-fields" class="headerlink" title="Each entry in ROB contains four fields"></a>Each entry in ROB contains four fields</h2><ol>
+<li><strong>Instruction type field</strong> – indicates whether instruction is a branch (no destination<br>result), a store (has memory address destination), or a load&#x2F;ALU (register<br>destination)</li>
+<li><strong>Destination field</strong>: supplies register number (for loads and ALU instructions) or<br>memory address (for stores) where results should be written;</li>
+<li><strong>Value field</strong> (used to hold value of result until instruction commits)</li>
+<li><strong>Ready field</strong>: indicates that instruction has completed execution, value is ready</li>
 </ol>
 <h1 id="An-example"><a href="#An-example" class="headerlink" title="An example"></a>An example</h1>
   </div>
@@ -213,7 +227,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HW-based-speculation-main-idea"><span class="toc-number">1.</span> <span class="toc-text">HW-based speculation main idea</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-key-idea-behind-speculation-is"><span class="toc-number">1.1.</span> <span class="toc-text">The key idea behind speculation is</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reorder-Buffer"><span class="toc-number">2.</span> <span class="toc-text">Reorder Buffer</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#An-example"><span class="toc-number">3.</span> <span class="toc-text">An example</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HW-based-speculation-main-idea"><span class="toc-number">1.</span> <span class="toc-text">HW-based speculation main idea</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-key-idea-behind-speculation-is"><span class="toc-number">1.1.</span> <span class="toc-text">The key idea behind speculation is</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reorder-Buffer"><span class="toc-number">2.</span> <span class="toc-text">Reorder Buffer</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Speculative-Tomasulo-Algorithm"><span class="toc-number">2.1.</span> <span class="toc-text">Speculative Tomasulo Algorithm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Each-entry-in-ROB-contains-four-fields"><span class="toc-number">2.2.</span> <span class="toc-text">Each entry in ROB contains four fields</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#An-example"><span class="toc-number">3.</span> <span class="toc-text">An example</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

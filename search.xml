@@ -4,11 +4,104 @@
   
     
     <entry>
+      <title>Lec12:Parallel Architectures:SIMD and intro to MIMD</title>
+      <link href="/2023/06/09/Lec13/"/>
+      <url>/2023/06/09/Lec13/</url>
+      
+        <content type="html"><![CDATA[<ol><li>SISD<br>Only one instruction stream, only one data stream</li><li>SIMD<br>Same instruction executed by multiple processors using different data streams.<br>每个处理器都有自己的memory, 只有一个控制单元，只有一个代码副本</li><li>MISD<br>A single data stream is fed into multiple processing units.</li><li>MIMD<br>• Multiple Instruction: every processor may be executing a different instruction stream<br>• Multiple Data: every processor may be working with a different data stream</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> STUDY </category>
+          
+          <category> POLIMI </category>
+          
+          <category> ACA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> POLIMI </tag>
+            
+            <tag> ACA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Lec12:ILP Limits and Superscalar Architecture</title>
+      <link href="/2023/06/09/Lec12/"/>
+      <url>/2023/06/09/Lec12/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Outline"><a href="#Outline" class="headerlink" title="Outline"></a>Outline</h1><ol><li>Review<br>ILP Journey<br>ILP Definition<br>Superscalar Architectures, Static and Dynamic<br>Schedulers</li><li>Limits to ILP<br>Ideal machine<br>Limits<br>Examples of real architectures</li></ol><h1 id="Superscalar-Execution-为什么多个指令不在同一个时钟周期开始执行呢"><a href="#Superscalar-Execution-为什么多个指令不在同一个时钟周期开始执行呢" class="headerlink" title="Superscalar Execution(为什么多个指令不在同一个时钟周期开始执行呢)"></a>Superscalar Execution(为什么多个指令不在同一个时钟周期开始执行呢)</h1><ol><li>在每个时钟周期fetch多条指令</li><li>Decide on data and control dependencies:<br>dynamic scheduling and dynamic branch<br>prediction</li></ol><h1 id="Modern-Supercalar"><a href="#Modern-Supercalar" class="headerlink" title="Modern Supercalar"></a>Modern Supercalar</h1><p>Dynamic scheduling + multiple issue + speculation</p><h1 id="Limits"><a href="#Limits" class="headerlink" title="Limits"></a>Limits</h1><ol><li>Window size</li><li>N. of functional units</li><li>N. of busses</li><li>N. of ports for the register file</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> STUDY </category>
+          
+          <category> POLIMI </category>
+          
+          <category> ACA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> POLIMI </tag>
+            
+            <tag> ACA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Lec11:Explicit Register Renaming</title>
+      <link href="/2023/06/09/Lec11/"/>
+      <url>/2023/06/09/Lec11/</url>
+      
+        <content type="html"><![CDATA[<h1 id="什么是renaming"><a href="#什么是renaming" class="headerlink" title="什么是renaming"></a>什么是renaming</h1><p>Key insight: Allocate a new physical destination register for every instruction that writes<br>Very similar to a compiler transformation called Static Single Assignment (SSA) form — but in hardware!</p><p>Mechanism? Keep a translation table:<br>ISA register ➔ physical register mapping</p><p>在decode阶段rename寄存器(Mapping)，但不读取寄存器的值<br>function units从统一的寄存器文件中读写数据，包括已经提交的和临时的寄存器<br>Commit仅仅是改变一下Architectural和Phiscal寄存器的映射关系</p><p>Tomasulo提供Implicit Register Renaming(寄存器被重命名为Reservation Station的标签)<br>现在讨论Explicit Register Renaming:<br>用physical register file(这个比寄存器的数量多得多)<br>ISA register &lt;&#x3D;&gt; physical register mapping<br>当寄存器被写好后，从freelist里找一个新的寄存器来代替表的entry，一个指令有一个entry</p><p>有什么好处？<br>可以消除WAR和WAW<br>和Tomasulo一样，允许out-of-order完成</p><h1 id="Stage-of-Scoreboard-Control-With-Explicit-Renaming"><a href="#Stage-of-Scoreboard-Control-With-Explicit-Renaming" class="headerlink" title="Stage of Scoreboard Control With Explicit Renaming"></a>Stage of Scoreboard Control With Explicit Renaming</h1><ol><li>ISSUE<br>解码 + 检查structural hazards + 为结果分配新的physical register<br>指令按program order来issue，没有空闲的physical register就别issue，有structural hazard别issue</li><li>Read operands<br>等到没有hazard, 再读操作数。所有的dependencies(RAW)都在这个阶段解决</li><li>Execution<br>Function unit一收到操作数就开始执行。当结果都准备好，通知scoreboard</li><li>Write result<br>完成执行<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">注意:</span><br><span class="line">不用检测WAR和WAW</span><br><span class="line"></span><br></pre></td></tr></table></figure></li></ol><h1 id="An-example"><a href="#An-example" class="headerlink" title="An example"></a>An example</h1><ol><li>什么时候需要rename？<br>只有destination register才需要renaming</li><li>放入一次function unit status表，就rename一次destination register</li><li>不用考虑每条指令等待几个周期，只需要一个周期一个周期往下推就行，RAW hazard中，被依赖的指令完成后(第n个周期Write Result)，才可以执行下一条指令(第n+1个周期read operands)</li></ol><h1 id="Register-renaming-vs-ROB"><a href="#Register-renaming-vs-ROB" class="headerlink" title="Register renaming vs. ROB"></a>Register renaming vs. ROB</h1><p>前者指令commit更简单一些，但释放寄存器更为复杂</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> STUDY </category>
+          
+          <category> POLIMI </category>
+          
+          <category> ACA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> POLIMI </tag>
+            
+            <tag> ACA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Lec10:Hardware-Based Speculation</title>
       <link href="/2023/06/08/Lec10/"/>
       <url>/2023/06/08/Lec10/</url>
       
-        <content type="html"><![CDATA[<h1 id="HW-based-speculation-main-idea"><a href="#HW-based-speculation-main-idea" class="headerlink" title="HW-based speculation main idea"></a>HW-based speculation main idea</h1><ol><li>Dynamic Branch Prediction<br>choose which instruction to execute</li><li>Dynamic Scheduling<br>out-of-order execution but inorder commit </li><li>Speculation<br>execute instructions before control dependences are resolved</li></ol><h2 id="The-key-idea-behind-speculation-is"><a href="#The-key-idea-behind-speculation-is" class="headerlink" title="The key idea behind speculation is"></a>The key idea behind speculation is</h2><ol><li>to <strong>issue and execute instructions dependent on a branch</strong> before the branch outcome is known;</li><li>to allow instructions to <strong>execute out-of-order</strong> but to force them to <strong>commit in-order</strong>;<br>to prevent any irrevocable action (such as updating state or taking an exception) until an instruction commits;</li></ol><h1 id="Reorder-Buffer"><a href="#Reorder-Buffer" class="headerlink" title="Reorder Buffer"></a>Reorder Buffer</h1><ol><li>Re-order buffer(ROB)保存寄存器的结果从completion到commit</li><li>Entries(条目)在decode的阶段按程序的顺序分配</li><li>已完成(completed)未提交(uncommited)的值可以被相关指令使用</li><li>load&#x2F;store指令的reordering需要特殊的数据结构</li></ol><h1 id="An-example"><a href="#An-example" class="headerlink" title="An example"></a>An example</h1>]]></content>
+        <content type="html"><![CDATA[<h1 id="HW-based-speculation-main-idea"><a href="#HW-based-speculation-main-idea" class="headerlink" title="HW-based speculation main idea"></a>HW-based speculation main idea</h1><ol><li>Dynamic Branch Prediction<br>choose which instruction to execute</li><li>Dynamic Scheduling<br>out-of-order execution but inorder commit </li><li>Speculation<br>execute instructions before control dependences are resolved</li></ol><h2 id="The-key-idea-behind-speculation-is"><a href="#The-key-idea-behind-speculation-is" class="headerlink" title="The key idea behind speculation is"></a>The key idea behind speculation is</h2><ol><li>to <strong>issue and execute instructions dependent on a branch</strong> before the branch outcome is known;</li><li>to allow instructions to <strong>execute out-of-order</strong> but to force them to <strong>commit in-order</strong>;<br>to prevent any irrevocable action (such as updating state or taking an exception) until an instruction commits;</li></ol><h1 id="Reorder-Buffer"><a href="#Reorder-Buffer" class="headerlink" title="Reorder Buffer"></a>Reorder Buffer</h1><ol><li>Re-order buffer(ROB)保存未提交但已完成的寄存器的结果(从completion到commit)<br>指令什么时候提交？1. 完成execution 2. 前面的指令都提交<br>当指令提交后，结果就会从ROB转到register</li><li>Entries(条目)在decode的阶段按程序的顺序分配</li><li>已完成(completed)未提交(uncommited)的值可以被相关指令使用</li><li>load&#x2F;store指令的reordering需要特殊的数据结构</li></ol><h2 id="Speculative-Tomasulo-Algorithm"><a href="#Speculative-Tomasulo-Algorithm" class="headerlink" title="Speculative Tomasulo Algorithm"></a>Speculative Tomasulo Algorithm</h2><ol><li>Issue<br>如果Reservation Station和Reorder Buffer slot都有空，就issue instruction &amp;&amp; send operands &amp;&amp; reorder buffer no. for destination</li><li>Execution<br>当两个操作数都准备好，就开始execution，没准备好，就等CDB(common data bus)，当两个操作数都在 reservation station，执行</li><li>Write Result<br>写到CDB准备好传给等待的FU和ROB</li><li>Commit<br>3种：normal commit, Store commit, Instruction is a branch with incorrect prediction</li></ol><h2 id="Each-entry-in-ROB-contains-four-fields"><a href="#Each-entry-in-ROB-contains-four-fields" class="headerlink" title="Each entry in ROB contains four fields"></a>Each entry in ROB contains four fields</h2><ol><li><strong>Instruction type field</strong> – indicates whether instruction is a branch (no destination<br>result), a store (has memory address destination), or a load&#x2F;ALU (register<br>destination)</li><li><strong>Destination field</strong>: supplies register number (for loads and ALU instructions) or<br>memory address (for stores) where results should be written;</li><li><strong>Value field</strong> (used to hold value of result until instruction commits)</li><li><strong>Ready field</strong>: indicates that instruction has completed execution, value is ready</li></ol><h1 id="An-example"><a href="#An-example" class="headerlink" title="An example"></a>An example</h1>]]></content>
       
       
       <categories>
@@ -69,45 +162,6 @@
       <title></title>
       <link href="/2023/06/08/Lec14/"/>
       <url>/2023/06/08/Lec14/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/2023/06/08/Lec13/"/>
-      <url>/2023/06/08/Lec13/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/2023/06/08/Lec12/"/>
-      <url>/2023/06/08/Lec12/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/2023/06/08/Lec11/"/>
-      <url>/2023/06/08/Lec11/</url>
       
         <content type="html"><![CDATA[]]></content>
       
