@@ -4,6 +4,99 @@
   
     
     <entry>
+      <title>Lec14</title>
+      <link href="/2023/06/12/Lec14/"/>
+      <url>/2023/06/12/Lec14/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> STUDY </category>
+          
+          <category> POLIMI </category>
+          
+          <category> ACA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> POLIMI </tag>
+            
+            <tag> ACA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Lec15</title>
+      <link href="/2023/06/12/Lec15/"/>
+      <url>/2023/06/12/Lec15/</url>
+      
+        <content type="html"><![CDATA[<p>CPU的速度超过了内存的速度，内存无法跟上处理器的速度<br>引进cache</p><p>Q1: Where can a block be placed in the cache?<br>(Block placement)<br>Fully Associative, (2-way) Set Associative, Direct mapped<br>Q2: How is a block found if it is in the cache?<br>(Block identification)<br>Q3: Which block should be replaced on a miss?<br>(Block replacement)<br>Random, LRU, FIFO<br>Q4: What happens on a write?<br>(Write strategy)<br>Write through, Write back<br>no write allocate(直接将数据写入内存), write allocate(写时取回)</p><p><strong>Cache performance：</strong><br>AMAT &#x3D; Average Memory Access Time<br>CPIALUOps does not include memory instructions</p><p>AMAT &#x3D; Hit time + miss rate x miss penalty</p><ol><li>Reduce the miss rate<br>Hardware Prefetching</li><li>Reduce the miss penalty<br>to introduce a second level cache</li><li>Reduce the time to hit in the cache</li></ol><h1 id="1-Memory-Hierarchy-Review"><a href="#1-Memory-Hierarchy-Review" class="headerlink" title="1. Memory Hierarchy Review"></a>1. Memory Hierarchy Review</h1><h1 id="2-MIMD-Architectures"><a href="#2-MIMD-Architectures" class="headerlink" title="2. MIMD Architectures"></a>2. MIMD Architectures</h1><h1 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h1><p>Memory Address Space Model<br>Single logically shared address space: Shared Memory Architectures<br>Multiple and private address spaces: Message Passing Architectures</p><p>Address Space vs. Physical Memory</p><p>Shared Memory &amp; Message Passing</p><p>解决coherency问题：<br>Two classes of protocols:<br>Snooping Protocols(嗅探)<br>Directory-Based Protocols(基于目录)</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> STUDY </category>
+          
+          <category> POLIMI </category>
+          
+          <category> ACA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> POLIMI </tag>
+            
+            <tag> ACA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>期末考试复习心得</title>
+      <link href="/2023/06/11/ACA_Review/"/>
+      <url>/2023/06/11/ACA_Review/</url>
+      
+        <content type="html"><![CDATA[<ol><li>怎么找RAW？<br>对于同一个寄存器，先找到W，再往下看，看有没有R，如果下面有新的W，RAW到此为止</li><li>关于VLIW的题，<br>先找到conflicts，</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> STUDY </category>
+          
+          <category> POLIMI </category>
+          
+          <category> ACA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> POLIMI </tag>
+            
+            <tag> ACA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Lec12:Parallel Architectures:SIMD and intro to MIMD</title>
       <link href="/2023/06/09/Lec13/"/>
       <url>/2023/06/09/Lec13/</url>
@@ -153,19 +246,6 @@
             <tag> ACA </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/2023/06/08/Lec14/"/>
-      <url>/2023/06/08/Lec14/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
       
     </entry>
     
@@ -344,7 +424,7 @@
       <link href="/2023/06/01/Exe4/"/>
       <url>/2023/06/01/Exe4/</url>
       
-        <content type="html"><![CDATA[<ol><li>为什么不管两条指令离得有多远，都存在WAR冲突？</li><li>为什么WAR和WAW要推迟Decode，并在解决它们后才能提交？</li><li>在exe4，为什么I7的decode在C18？<br>有WAR冲突，要保证前面的指令读完了才能进行后面的指令，<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">有两条顺序执行的指令：</span><br><span class="line">1. ld $f3, VA($r6)</span><br><span class="line">2. addi $r6,$r6,4</span><br><span class="line">第二条指令什么时候进入decode阶段才能解决WAR？</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><table><thead><tr><th align="center">IF</th><th align="center">Ds</th><th align="center">Ds</th><th align="center">Ds</th><th align="center">Ds</th><th align="center">Ds</th><th align="center">Ds</th><th align="center">Ds</th><th align="center">Ds</th><th align="center">D</th><th align="center">IS</th><th align="center">E1</th><th align="center">E2</th><th align="center">E3</th><th align="center">W</th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th></tr></thead><tbody><tr><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"><strong>F</strong></td><td align="center"><strong>Ds</strong></td><td align="center"><strong>D</strong></td><td align="center"><strong>ISs</strong></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr></tbody></table></li><li>I9的decode不需要等吗？</li></ol>]]></content>
+        <content type="html"><![CDATA[<ol><li><p>为什么不管两条指令离得有多远，都存在WAR冲突？</p></li><li><p>为什么WAR和WAW要推迟Decode，并在解决它们后才能提交？</p></li><li><p>在exe4，为什么I7的decode在C18？<br>有WAR冲突，要保证前面的指令读完了才能进行后面的指令，</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">有两条顺序执行的指令：</span><br><span class="line">1. ld $f3, VA($r6)</span><br><span class="line">2. addi $r6,$r6,4</span><br><span class="line">第二条指令什么时候进入decode阶段才能解决WAR？</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><table><thead><tr><th align="center">IF</th><th align="center">Ds</th><th align="center">Ds</th><th align="center">Ds</th><th align="center">Ds</th><th align="center">Ds</th><th align="center">Ds</th><th align="center">Ds</th><th align="center">Ds</th><th align="center">D</th><th align="center">IS</th><th align="center">E1</th><th align="center">E2</th><th align="center">E3</th><th align="center">W</th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th></tr></thead><tbody><tr><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"><strong>F</strong></td><td align="center"><strong>Ds</strong></td><td align="center"><strong>D</strong></td><td align="center"><strong>ISs</strong></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr></tbody></table></li><li><p>I9的decode不需要等吗？</p></li><li></li></ol>]]></content>
       
       
       <categories>
@@ -466,7 +546,7 @@
       <link href="/2023/05/30/Lec6/"/>
       <url>/2023/05/30/Lec6/</url>
       
-        <content type="html"><![CDATA[<h1 id="VLIW-architecture"><a href="#VLIW-architecture" class="headerlink" title="VLIW architecture"></a>VLIW architecture</h1><h1 id="Static-Scheduling"><a href="#Static-Scheduling" class="headerlink" title="Static Scheduling"></a>Static Scheduling</h1><ul><li>Basic Blocks</li><li>Trace scheduling</li></ul><h2 id="methods"><a href="#methods" class="headerlink" title="methods"></a>methods</h2><ol><li>simple code motion</li><li>Loop unrolling &amp; loop peeling</li><li>Software pipeline</li><li>Global code scheduling(across basic block)</li></ol><ul><li>Trace scheduling</li><li>Superblock scheduling</li><li>Hyperblock scheduling</li><li>Speculative Trace scheduling</li></ul><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ol><li>为什么P48页ld和add不存在冲突？</li><li>第70页为什么选择在下面？</li></ol>]]></content>
+        <content type="html"><![CDATA[<h1 id="VLIW-architecture"><a href="#VLIW-architecture" class="headerlink" title="VLIW architecture"></a>VLIW architecture</h1><p>指令内数据是并行的，没有RAW check</p><h1 id="Static-Scheduling"><a href="#Static-Scheduling" class="headerlink" title="Static Scheduling"></a>Static Scheduling</h1><ul><li>Basic Blocks</li><li>Trace scheduling</li></ul><h2 id="methods"><a href="#methods" class="headerlink" title="methods"></a>methods</h2><ol><li>simple code motion</li><li>Loop unrolling &amp; loop peeling</li><li>Software pipeline</li><li>Global code scheduling(across basic block)</li></ol><ul><li>Trace scheduling</li><li>Superblock scheduling</li><li>Hyperblock scheduling</li><li>Speculative Trace scheduling</li></ul><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ol><li>为什么P48页ld和add不存在冲突？</li><li>第70页为什么选择在下面？</li></ol>]]></content>
       
       
       <categories>
