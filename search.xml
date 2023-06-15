@@ -4,6 +4,99 @@
   
     
     <entry>
+      <title>Ranking Queries</title>
+      <link href="/2023/06/15/DB_Ranking%20queries/"/>
+      <url>/2023/06/15/DB_Ranking%20queries/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Outline"><a href="#Outline" class="headerlink" title="Outline"></a>Outline</h1><p>Multi-objective optimization<br>• Main approaches:<br>– Ranking (aka top-k) queries<br>• Top k objects according to a given scoring function<br>– Skyline queries<br>• Set of non-dominated objects</p><h1 id="老办法"><a href="#老办法" class="headerlink" title="老办法"></a>老办法</h1><ol><li>Rank aggregation<br>Borda’s(candidate with the lowest penalty) and Condorcet’s proposals(A candidate who defeats every other candidate in pairwise majority rule election)</li></ol><ul><li>Axiomatic approach</li><li>Metric approach<br>Finding a new ranking R whose total distance to the initial rankings R1,…, Rn is minimized</li></ul><h1 id="Ranking-aka-top-k-queries"><a href="#Ranking-aka-top-k-queries" class="headerlink" title="Ranking (aka top-k) queries"></a>Ranking (aka top-k) queries</h1><ul><li>Combining opaque rankings<br>有多个表，求top-k<br>eg. hotel<br><strong>MedRank</strong> is not optimal<br>§ However, it is instance-optimal</li></ul><h2 id="Top-k-join-queries"><a href="#Top-k-join-queries" class="headerlink" title="Top-k join queries"></a>Top-k join queries</h2><p>SELECT E.*<br>FROM EMP E, DEPT D<br>WHERE E.DNO &#x3D; D.DNO<br>ORDER BY E.Salary &#x2F; D.Budget DESC<br>FETCH FIRST 1 ROW ONLY</p><h2 id="Top-k-1-1-join-queries"><a href="#Top-k-1-1-join-queries" class="headerlink" title="Top-k 1-1 join queries"></a>Top-k 1-1 join queries</h2><p>SELECT *<br>FROM EatWell EW, BreadAndWine BW<br>WHERE EW.Name &#x3D; BW.Name<br>ORDER BY EW.Score + BW.Score DESC<br>FETCH FIRST 1 ROW ONLY</p><h3 id="Common-scoring-functions"><a href="#Common-scoring-functions" class="headerlink" title="Common scoring functions"></a>Common scoring functions</h3><ol><li>SUM (AVG): used to weigh preferences equally<br>SUM(o) º SUM(p(o)) &#x3D; p1(o) + p2(o) + … + pm(o)</li><li>WSUM (Weighted sum): to weigh the ranking attributes differently<br>WSUM(o) º WSUM(p(o)) &#x3D; w1<em>p1(o) + w2</em>p2(o) + … + wm*pm(o)</li><li>MIN (Minimum): just considers the worst partial score<br>MIN(o) º MIN(p(o)) &#x3D; min{p1(o),p2(o), …, pm(o)}</li><li>MAX (Maximum): just considers the best partial score<br>MAX(o) º MAX(p(o)) &#x3D; max{p1(o),p2(o), …, pm(o)}</li></ol><h3 id="The-B0-algorithm-using-a-scoring-function-S"><a href="#The-B0-algorithm-using-a-scoring-function-S" class="headerlink" title="The B0 algorithm(using a scoring function S)"></a>The B0 algorithm(using a scoring function S)</h3><p>B0 only works for MAX</p><h3 id="Fagin’s-Algorithm-FA"><a href="#Fagin’s-Algorithm-FA" class="headerlink" title="Fagin’s Algorithm (FA)"></a>Fagin’s Algorithm (FA)</h3><p>at least k objects in common</p><h3 id="Threshold-Algorithm-TA"><a href="#Threshold-Algorithm-TA" class="headerlink" title="Threshold Algorithm (TA)"></a>Threshold Algorithm (TA)</h3><p>Threshold<br>给定Score函数，停止直到top-k的score不比threshold差</p><h3 id="The-NRA-algorithm-preliminaries"><a href="#The-NRA-algorithm-preliminaries" class="headerlink" title="The NRA algorithm: preliminaries"></a>The NRA algorithm: preliminaries</h3><table><thead><tr><th align="center">Algorithm</th><th align="center">Scoring function</th><th align="center">Data access</th><th align="center">Notes</th></tr></thead><tbody><tr><td align="center">B0</td><td align="center">MAX</td><td align="center">sorted</td><td align="center">instance-optimal</td></tr><tr><td align="center">FA</td><td align="center">monotone</td><td align="center">sorted and random</td><td align="center">cost independent of scoring function</td></tr><tr><td align="center">TA</td><td align="center">monotone</td><td align="center">sorted and random</td><td align="center">instance-optimal</td></tr><tr><td align="center">NRA</td><td align="center">monotone</td><td align="center">sorted</td><td align="center">instance-optimal, no exact scores</td></tr></tbody></table><h1 id="Skyline-queries"><a href="#Skyline-queries" class="headerlink" title="Skyline queries"></a>Skyline queries</h1><table><thead><tr><th align="center"></th><th align="center">Ranking queries</th><th align="center">Skyline queries</th></tr></thead><tbody><tr><td align="center">Simplicity</td><td align="center">No</td><td align="center">Yes</td></tr><tr><td align="center">Overall view of interesting results</td><td align="center">No</td><td align="center">Yes</td></tr><tr><td align="center">Control of cardinality</td><td align="center">Yes</td><td align="center">No</td></tr><tr><td align="center">Trade-off among attributes</td><td align="center">Yes</td><td align="center">No</td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> STUDY </category>
+          
+          <category> POLIMI </category>
+          
+          <category> DB2 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> POLIMI </tag>
+            
+            <tag> DB </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Phiscal Databases</title>
+      <link href="/2023/06/15/DB_JPA/"/>
+      <url>/2023/06/15/DB_JPA/</url>
+      
+        <content type="html"><![CDATA[<h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><p>Goals: understanding database development in the context of architecture and application development</p><h2 id="有哪些架构"><a href="#有哪些架构" class="headerlink" title="有哪些架构"></a>有哪些架构</h2><ul><li>Two-tier architectures (client-server)</li><li>Three-tier architectures<br>New element: à middle tier(更好地分离client和server)</li><li>Web “pure HTML” 3-tier architectures<br>The client is a standard Web browser(Thin client)</li><li>Rich Internet Applications<br>Enabling technology: client side scripting (with JavaScript) Fat client</li></ul><h2 id="什么是JPA"><a href="#什么是JPA" class="headerlink" title="什么是JPA"></a>什么是JPA</h2><p><strong>Java Persistence API</strong><br>The specification of an interface for mapping relational data to object oriented data in Java<br>在Java中映射<strong>关系数据</strong>到<strong>面向对象数据</strong>的接口规范。</p><ul><li>Java Transaction API (JTA)<br>• An API for managing transactions in Java</li></ul><h3 id="main-concept"><a href="#main-concept" class="headerlink" title="main concept"></a>main concept</h3><ul><li>Entity</li><li>Persistence Unit(like db schema)</li><li>Persistence Context(like db instance)</li><li>Managed entity</li><li>Entity manager</li><li>Client</li></ul><h1 id="ORM"><a href="#ORM" class="headerlink" title="ORM"></a>ORM</h1><p>The technique of bridging the gap between the** object model** and the <strong>relational model</strong></p><h2 id="Entity-Constraints"><a href="#Entity-Constraints" class="headerlink" title="Entity Constraints"></a>Entity Constraints</h2><ol><li>The entity class must have a public or protected no-arg constructor(无参构造函数)</li><li>The entity class must not be final(实体类不能被继承，重写或修改)</li><li><strong>No method or persistent instance variables</strong> of the entity class may be final</li><li>If an entity instance is to be passed by value as a detached object, the Serializable interface must be implemented</li></ol><h2 id="Entity-Identification"><a href="#Entity-Identification" class="headerlink" title="Entity Identification"></a>Entity Identification</h2><p>• Simple Primary key &#x3D; persistent field of the bean<br>used to represent its identity<br>• Composite Primary key &#x3D; set of persistent fields<br>used to represent its identity<br>• Remark: with respect to the POJOs, the persistent<br>identity is a new concept. POJOS do not have a<br>durable identity</p><h2 id="Identifier-generation-options"><a href="#Identifier-generation-options" class="headerlink" title="Identifier generation options"></a>Identifier generation options</h2><ul><li>AUTO<br>The provider generates identifiers by using whatever strategy it wants</li><li>TABLE<br>Identifiers are generated according to a generator table</li><li>SEQUENCE<br>If the underlying DB supports sequences, the provider will use this feature for generating IDs</li><li>IDENTITY<br>If the underlying DB supports primary key identity columns, the provider will use this feature for generating IDs</li></ul><h2 id="Relationship"><a href="#Relationship" class="headerlink" title="Relationship"></a>Relationship</h2><ol><li>All relationships in JPA are unidirectional</li><li>Based on directionality, one entity plays the role of source and one the role of target.</li><li>Cardinality(基数)</li><li>Ownership</li></ol><p>@joincolumn vs mappedBy</p><h2 id="Join-Table"><a href="#Join-Table" class="headerlink" title="Join Table"></a>Join Table</h2><p>Relationship fetch mode<br>Cascading operations<br>Orphan removal</p><h1 id="EM-The-Entity-Manager"><a href="#EM-The-Entity-Manager" class="headerlink" title="EM(The Entity Manager)"></a>EM(The Entity Manager)</h1><p>未完待续</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> STUDY </category>
+          
+          <category> POLIMI </category>
+          
+          <category> DB2 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> POLIMI </tag>
+            
+            <tag> DB </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>生词本(25周)</title>
+      <link href="/2023/06/13/words(week25)/"/>
+      <url>/2023/06/13/words(week25)/</url>
+      
+        <content type="html"><![CDATA[<h1 id="1-The-global-space-economy-is-coming-of-age"><a href="#1-The-global-space-economy-is-coming-of-age" class="headerlink" title="1. The global space economy is coming of age"></a>1. The global space economy is coming of age</h1><p>在这个句子中，“coming of age”是一个习语，意思是某事物已经成熟或发展到了一定的阶段。在这个句子中，“coming of age”表示全球太空经济正在迅速发展并变得更加成熟。</p><p>例如：</p><ul><li>After years of hard work, the young artist’s talent finally came of age and he became famous.（经过多年的努力，这位年轻艺术家终于成名了。）</li><li>The internet has come of age as a powerful tool for communication and commerce.（互联网作为一种强大的通信和商业工具已经越来越成熟。）</li></ul><h1 id="2-Italians-divided-over-Berlusconi-legacy"><a href="#2-Italians-divided-over-Berlusconi-legacy" class="headerlink" title="2. Italians divided over Berlusconi legacy"></a>2. Italians divided over Berlusconi legacy</h1><p>在这个句子中，”divide” 的意思是分裂或分开，”legacy” 指的是某人或某事物留下来的遗产、传统或影响。整个句子的意思是：意大利人对贝卢斯科尼的遗产持不同看法。</p><p>在这里，“divided over” 是一个习语，表示人们对某件事情有不同的观点或立场。以下是一些类似用法的例子：</p><ol><li>The country is divided over the issue of gun control. (全国就枪支管制问题存在分歧)</li><li>Our team was divided over whether to accept the offer or not. (我们团队内部因是否接受那份报价而存在争议)</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+          <category> New word </category>
+          
+          <category> 2023.6.6 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> STUDY </tag>
+            
+            <tag> English </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Lec14</title>
       <link href="/2023/06/12/Lec14/"/>
       <url>/2023/06/12/Lec14/</url>
@@ -283,11 +376,11 @@
     
     
     <entry>
-      <title>生词本(23周)</title>
+      <title>生词本(24周)</title>
       <link href="/2023/06/06/words(week24)/"/>
       <url>/2023/06/06/words(week24)/</url>
       
-        <content type="html"><![CDATA[<h1 id="Initiation-interval"><a href="#Initiation-interval" class="headerlink" title="Initiation interval"></a>Initiation interval</h1><p>在这个句子中，“interval”是一个名词，表示两个事件或时间之间的间隔。在“Initiation interval”的语境下，它指的是某个过程中开始和结束之间的时间段。</p><p>这个句子的意思是，在某个过程中，有一个特定的时间段用来启动该过程。</p><p>在英语中，“interval”还可以用于描述音乐、体育比赛等方面。例如：</p><ul><li>The orchestra took a short interval after the first movement. (管弦乐队在第一部分后休息了一会儿。)</li><li>There will be a 15-minute interval between the two halves of the football match. (足球比赛两半场之间将有15分钟的休息时间。)</li></ul><h1 id="pending"><a href="#pending" class="headerlink" title="pending"></a>pending</h1><p>在这个句子中，单词”pending”是一个形容词，用来描述指令的状态。它意味着有一些指令已经被下达但还没有完成或者等待执行。</p><p>整个句子的意思是：如果没有未决的指示，就会将该寄存器写入空白。</p><p>在这个句子中，并没有使用到任何习语。以下是几个例子：</p><ol><li>My pending workload is making me stressed out. (我的待处理工作量让我感到很压力)</li><li>The court case has been pending for months now. (这起法庭案件已经悬而未决数月了)</li></ol>]]></content>
+        <content type="html"><![CDATA[<h1 id="Initiation-interval"><a href="#Initiation-interval" class="headerlink" title="Initiation interval"></a>Initiation interval</h1><p>在这个句子中，“interval”是一个名词，表示两个事件或时间之间的间隔。在“Initiation interval”的语境下，它指的是某个过程中开始和结束之间的时间段。</p><p>这个句子的意思是，在某个过程中，有一个特定的时间段用来启动该过程。</p><p>在英语中，“interval”还可以用于描述音乐、体育比赛等方面。例如：</p><ul><li>The orchestra took a short interval after the first movement. (管弦乐队在第一部分后休息了一会儿。)</li><li>There will be a 15-minute interval between the two halves of the football match. (足球比赛两半场之间将有15分钟的休息时间。)</li></ul><h1 id="pending"><a href="#pending" class="headerlink" title="pending"></a>pending</h1><p>在这个句子中，单词”pending”是一个形容词，用来描述指令的状态。它意味着有一些指令已经被下达但还没有完成或者等待执行。</p><p>整个句子的意思是：如果没有未决的指示，就会将该寄存器写入空白。</p><p>在这个句子中，并没有使用到任何习语。以下是几个例子：</p><ol><li>My pending workload is making me stressed out. (我的待处理工作量让我感到很压力)</li><li>The court case has been pending for months now. (这起法庭案件已经悬而未决数月了)</li></ol><h1 id="plain-old"><a href="#plain-old" class="headerlink" title="plain old"></a>plain old</h1><p>Plain Old”也可以用作习惯用语来表示“非常普通、平凡”的含义。例如，“plain old car”就表示“非常普通的汽车”</p><h1 id="annotation"><a href="#annotation" class="headerlink" title="annotation"></a>annotation</h1><p>[英]· &#x2F;ˌænəʊˈteɪʃən&#x2F; 或 &#x2F;ˌanəʊˈteɪʃ(ə)n&#x2F;<br>[n.] 注释；评注；批注<br>[v.] 给…作注解；加注释于…<br>例句：</p><ol><li>The book contains annotations by the author. (这本书包含了作者的注释。)</li><li>She spent hours annotating her research paper. (她花了几个小时给她的研究论文做标记。)</li><li>The software allows users to annotate PDF documents with comments and highlights. (该软件允许用户使用评论和高亮显示来对PDF文件进行标记。)</li></ol><p>词源：来自拉丁语“annotatio”，意为“解释，说明”。</p><h1 id="specification"><a href="#specification" class="headerlink" title="specification"></a>specification</h1><p>[英]· &#x2F;ˌspesɪfɪˈkeɪʃ(ə)n&#x2F;  美· &#x2F;ˌspɛsəfɪˈkeʃən&#x2F;<br>[n.] 规格；规范；说明书<br>例句：</p><ol><li>The product specification should be clearly stated in the contract. (产品规格应在合同中明确说明。)</li><li>The software developer needs to follow the project specification closely. (软件开发人员需要密切遵循项目规范。)</li><li>This job requires someone who can read and interpret technical specifications accurately. (这份工作需要一个能够准确阅读和解释技术规范的人。)<br>词源：来自拉丁语“specificatio”，意为“具体化，详述”。</li></ol><h1 id="vice-versa"><a href="#vice-versa" class="headerlink" title="vice versa"></a>vice versa</h1><p>反之亦然</p>]]></content>
       
       
       <categories>
@@ -349,7 +442,7 @@
       <link href="/2023/06/05/CI/"/>
       <url>/2023/06/05/CI/</url>
       
-        <content type="html"><![CDATA[<h1 id="课程大纲"><a href="#课程大纲" class="headerlink" title="课程大纲"></a>课程大纲</h1><p><strong>A. HW Infrastructures:</strong><br>• System-level: Computing Infrastructures and Data Center<br>Architectures, Rack&#x2F;Structure;<br>• Node-level: Server (computation, HW accelerators), Storage<br>(Type, technology), Networking (architecture and technology);<br>• Building-level: Cooling systems, power supply, failure recovery<br><strong>B. SW Infrastructures:</strong><br>• Virtualization: Process&#x2F;System VM, Virtualization Mechanisms<br>(Hypervisor, Para&#x2F;Full virtualization)<br>• Computing Architectures: Cloud Computing (types,<br>characteristics), Edge&#x2F;Fog Computing, X-as-a service<br>• Machine and deep learning-as-a-service<br><strong>C. Methods:</strong><br>• Reliability and availability of datacenters (definition,<br>fundamental laws, RBDs)<br>• Disk performance (Type, Performance, RAID)<br>• Scalability and performance of datacenters (definitions,<br>fundamental laws, queuing network theory)</p><p>IoT<br>Embedded PCs&#x2F;Devices<br>PCs<br>Edge&#x2F;Fog Computing Systems<br>Embedded PCs</p><h2 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h2><p>Quality Evaluation techniques: </p><ol><li>Measurement-based</li></ol><ul><li>Direct measurement</li><li>Benchmarking</li><li>Prototype</li></ul><ol start="2"><li>Model-based</li></ol><ul><li>Analytical and numerical</li><li>Simulation</li><li>Hybrid techniques<br>eg. Queueing Networks<br>• Arrival: average arrival rate \lambda  (req&#x2F;s)<br>• Service: the time a job spends being served,  average duration, maximum service rate<br>• Queue: Service discipline&#x2F;queuing policy: FCFS, LCFS, RSS, PRI<br>• Population: Service discipline&#x2F;queuing policy<br>• Routing: Probabilistic, Round robin, Join the shortest queue</li></ul><h2 id="DataWareHouse"><a href="#DataWareHouse" class="headerlink" title="DataWareHouse"></a>DataWareHouse</h2><p>warehouse-scale computers (WSCs):</p><p>Multiple data centers：<br>Hierarchical approach: </p><ul><li>Geographic Areas and Regions</li><li>Availability Zones</li></ul><p>Architectural Overview of A Warehouse-scale Computer</p><ul><li>SERVERS: the main processing equipment</li><li>STORAGE: how and where to store the information</li><li>NETWORKING: providing internal and external connections</li><li>BUILDING AND INFRASTRUCTURE: power delivery, cooling, and building infrastructure</li></ul><p>If we observed such an abstract system we might measure the following<br>quantities:<br>§ T, the length of <strong>time</strong> we observe the system<br>§ A, the number of <strong>request arrivals</strong> we observe<br>§ C, the number of <strong>request completions</strong> we observe<br>§ B, the total amount of time during which the system is <strong>busy</strong>(B&lt;&#x3D;T&gt;)<br>§ N, the <strong>average number of jobs</strong> in the system </p><p>§ λ &#x3D; A&#x2F;T , the arrival rate<br>§ X &#x3D; C &#x2F;T , the throughput or completion rate<br>§ U &#x3D; B&#x2F;T, the utilisation<br>§ S &#x3D; B&#x2F;C, the mean service time per completed job</p><p><strong>utilization law:</strong><br>Uk &#x3D; XkSk<br><strong>Little’s law:</strong><br>N &#x3D; XR<br>(N &#x3D; average number of requests in the system<br>If the system throughput is X requests&#x2F;sec, and each request remains in the system on average for R seconds)</p><p>Red Box(without the queue)<br>Blue Box(including the queue)<br>Green Box(consider the central subsystem)</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="课程大纲"><a href="#课程大纲" class="headerlink" title="课程大纲"></a>课程大纲</h1><p><strong>A. HW Infrastructures:</strong><br>• System-level: Computing Infrastructures and Data Center<br>Architectures, Rack&#x2F;Structure;<br>• Node-level: Server (computation, HW accelerators), Storage<br>(Type, technology), Networking (architecture and technology);<br>• Building-level: Cooling systems, power supply, failure recovery<br><strong>B. SW Infrastructures:</strong><br>• Virtualization: Process&#x2F;System VM, Virtualization Mechanisms<br>(Hypervisor, Para&#x2F;Full virtualization)<br>• Computing Architectures: Cloud Computing (types,<br>characteristics), Edge&#x2F;Fog Computing, X-as-a service<br>• Machine and deep learning-as-a-service<br><strong>C. Methods:</strong><br>• Reliability and availability of datacenters (definition,<br>fundamental laws, RBDs)<br>• Disk performance (Type, Performance, RAID)<br>• Scalability and performance of datacenters (definitions,<br>fundamental laws, queuing network theory)</p><p>IoT<br>Embedded PCs&#x2F;Devices<br>PCs<br>Edge&#x2F;Fog Computing Systems<br>Embedded PCs</p><h2 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h2><p>Quality Evaluation techniques: </p><ol><li>Measurement-based</li></ol><ul><li>Direct measurement</li><li>Benchmarking</li><li>Prototype</li></ul><ol start="2"><li>Model-based</li></ol><ul><li>Analytical and numerical</li><li>Simulation</li><li>Hybrid techniques<br>eg. Queueing Networks<br>• Arrival: average arrival rate \lambda  (req&#x2F;s)<br>• Service: the time a job spends being served,  average duration, maximum service rate<br>• Queue: Service discipline&#x2F;queuing policy: FCFS, LCFS, RSS, PRI<br>• Population: Service discipline&#x2F;queuing policy<br>• Routing: Probabilistic, Round robin, Join the shortest queue</li></ul><p>If we observed such an abstract system we might measure the following<br>quantities:<br>§ T, the length of <strong>time</strong> we observe the system<br>§ A, the number of <strong>request arrivals</strong> we observe<br>§ C, the number of <strong>request completions</strong> we observe<br>§ B, the total amount of time during which the system is <strong>busy</strong>(B&lt;&#x3D;T&gt;)<br>§ N, the <strong>average number of jobs</strong> in the system </p><p>§ λ &#x3D; A&#x2F;T , the arrival rate 到达率<br>§ X &#x3D; C &#x2F;T , the throughput or completion rate 完成率或吞吐量<br>§ U &#x3D; B&#x2F;T, the utilisation 利用率<br>§ S &#x3D; B&#x2F;C, the mean service time per completed job 每个job平均使用资源k的时间</p><p><strong>utilization law:</strong><br>Uk &#x3D; XkSk &#x3D; B&#x2F;T &#x3D; C&#x2F;T * B&#x2F;C 完成率<em>平均使用资源k的时间<br><strong>Little’s law:</strong><br>N &#x3D; XR  吞吐量</em>平均居留时间&#x3D;系统中的请求数<br>(N &#x3D; average number of requests in the system(在系统中同时存在的请求数)<br>If the system throughput is X requests&#x2F;sec, and each request remains in the system on average for R seconds)</p><p><strong>Response Time Law</strong><br>R &#x3D; N&#x2F;X - Z residence time - thinking time</p><p>T: 我们观察的总时间<br>Ak: 对于资源k，到达的请求的数量<br>Ck: 对于资源k，完成的请求的数量<br>Bk: 资源k忙的时间<br>Nk：资源k平均完成的工作数量<br><strong>N &#x3D; XR</strong><br>level1：N: busy time; X: average service time; R: rate of service<br>level2(考虑queue): N: 等待或正在享受服务的用户数量 X:系统的吞吐量 R&#x3D;N&#x2F;X:每个用户花费的时间<br>level3(考虑subsystem): N:在<strong>子系统</strong>中的用户数量  X: <strong>子系统</strong>中每个请求花费的时间 R: <strong>子系统</strong>的throughput<br>level4(考虑total system):</p><p>关于little’s law的一些理解：</p><ol><li>如果提到系统中有几个活跃的用户，那么N就等于几</li><li>告诉 U 和 S(service time)，怎么求X? U&#x3D;B&#x2F;T, X&#x3D;C&#x2F;T, S&#x3D;B&#x2F;C 所以S&#x3D;U&#x2F;X</li><li>题设告知think time, response time, residence time(N&#x2F;X)，N&#x3D;N(think)+N(response)</li><li>整个系统的吞吐量等于各个子系统的吞吐量</li><li>告知每个子系统的利用率(U)和demand(D), 则可求吞吐量(X):<br>这是用了Utilization Law(U&#x3D;XS): S是service time, 在有些题目里，表示成demand</li></ol><p>Xk &#x3D; Vk * X<br>Vk &#x3D; Ck &#x2F; C</p><h2 id="DataWareHouse"><a href="#DataWareHouse" class="headerlink" title="DataWareHouse"></a>DataWareHouse</h2><p>warehouse-scale computers (WSCs):</p><p>Multiple data centers：<br>Hierarchical approach: </p><ul><li>Geographic Areas and Regions</li><li>Availability Zones</li></ul><p>Architectural Overview of A Warehouse-scale Computer</p><ul><li>SERVERS: the main processing equipment</li><li>STORAGE: how and where to store the information</li><li>NETWORKING: providing internal and external connections</li><li>BUILDING AND INFRASTRUCTURE: power delivery, cooling, and building infrastructure</li></ul><h2 id="Networking"><a href="#Networking" class="headerlink" title="Networking"></a>Networking</h2><p>Stages of enterprise infrastructures</p><ol><li>Monolithic app(单体式应用程序)</li></ol><ul><li>Minimal network demands</li><li>Proprietary protocols</li></ul><ol start="2"><li>Client server</li></ol><ul><li>High network demands inside the enterprise</li><li>Applications walled within the enterprise</li><li>TCP&#x2F;IP + Proprietary protocols</li></ul><ol start="3"><li>Web applications</li></ol><ul><li>Ubiquitous TCP&#x2F;IP</li><li>Access from anywhere</li><li>Servers are broken into multiple units</li></ul><ol start="4"><li>Microservices</li></ol><ul><li>Infrastructure moved to cloud providers</li><li>Servers broken into microservices</li><li>Increase of server-to-server traffic</li></ul><p>Classes of DCN<br>DCNs can be classified into three main categories:</p><ol><li>Switch-centric architectures<br>Uses switches to perform packet forwarding<br><strong>Three-Tier (or layer) “Classical” Network</strong>: Core, Aggregation(EOR), Access(TOR)<br><strong>Leaf-Spine architectures</strong></li><li>Server-centric architecture<br>Uses servers with multiple Network Interface Cards (NICs) to act as switches in addition to performing other computational functions</li></ol><p>Two stage interconnections<br>Leaf: ToR switch<br>Spine: dedicated switches (aggregation switches)<br>In practice: servers have two interfaces connected to two ToR switches</p><p>扩展到三层：Pod-based model, aka the Fat Tree<br>to provide fault-tolerance<br>3. Hybrid architectures<br>Combine switches and servers for packet forwarding</p>]]></content>
       
       
       <categories>
@@ -945,7 +1038,7 @@
       <link href="/2023/05/15/weekly1/"/>
       <url>/2023/05/15/weekly1/</url>
       
-        <content type="html"><![CDATA[<h1 id="Plan"><a href="#Plan" class="headerlink" title="Plan"></a>Plan</h1><ol><li>复习完MIDA1，看至少一半的exe课</li><li>复习完ACA(一天看两节课，十天看完) 每天五个小时</li><li>看FOR(2)和DB(3)的PPT，并做题</li><li>写周报，分享感受，The long season</li><li>第一轮考7门：TCS（12）,ACA（13）,CI（15）,FOR（16）, <del>CS（21）</del>, DB2（23）在ACA考试前只需要把理论和TA看完就行, MIDA1（24）, <del>MIDA2,</del>  </li><li>今天看for的duality和第二章和ILP(晚上)，上午看CI两个单元，下午看ACA的三个视频<br>MIDA(6个lecture:3天，10个exercise，5天)</li></ol><h1 id="发现的一些有趣的频道"><a href="#发现的一些有趣的频道" class="headerlink" title="发现的一些有趣的频道"></a>发现的一些有趣的频道</h1><p><a href="https://www.xiaoyuzhoufm.com/podcast/640ee2438be5d40013fe4a87">硬地骇客</a></p><p><a href="https://www.xiaoyuzhoufm.com/podcast/640ee2438be5d40013fe4a87">豌豆花下猫（关于Python）</a></p><p><a href="https://brr.fyi/">被派到南极洲工作的程序员</a><br>作者作为 IT 工程师被派到南极洲工作，博客是记录他在南极生活的点点滴滴</p><h1 id="看到的一些推特好帖"><a href="#看到的一些推特好帖" class="headerlink" title="看到的一些推特好帖"></a>看到的一些推特好帖</h1><h2 id="1-如何提高专注度"><a href="#1-如何提高专注度" class="headerlink" title="1. 如何提高专注度"></a>1. 如何提高专注度</h2><p>**转自博主Dexter Yang(@dexteryy)**，<br><a href="https://twitter.com/dexteryy/status/1629491278886076416">方法</a><br>想要通过正念（mindfulness&#x2F;meditation）来恢复对当下的感知、减慢时间流逝、用内啡肽替代多巴胺、提升专注能力、降低压力的消极影响，我觉得骑车是最有效果的（图2），比那些冥想app里的付费课程（图1）强多了。<br>方法总结：</p><ol><li>不要听播客不要听播客不要听播客（凡是抢占注意力的都不要碰）。<br>(1&#x2F;4)</li><li>开降噪，听音乐。最好是 citypop、blues  那样积极向上的音乐（这两种本来就源自上班族和黑人奴工振奋情绪排解压力的需求）。</li><li>公路车和共享单车都可以。</li><li>把注意力放在自身感受和眼前情景上，只接受下意识的瞬间的发散和思考。</li><li>天气要好，一定要有阳光，推荐下午出发，去程有落日返程有夜景。</li><li>路线选择类似 city walk，尽量途径那些有河、有沿街生态、城市机理细密有机多样的地方。</li></ol>]]></content>
+        <content type="html"><![CDATA[<h1 id="Plan"><a href="#Plan" class="headerlink" title="Plan"></a>Plan</h1><ol><li>复习完MIDA1，看至少一半的exe课</li><li>复习完ACA(一天看两节课，十天看完) 每天五个小时</li><li>看FOR(2)和DB(3)的PPT，并做题</li><li>写周报，分享感受，The long season</li><li>第一轮考7门：TCS（12）,ACA（13）,CI（15）,FOR（16）, <del>CS（21）</del>, DB2（23）在ACA考试前只需要把理论和TA看完就行, MIDA1（24）, <del>MIDA2,</del>  </li><li>从今天开始准备DB2和MIDA1，每天做题，做卷子。<br>顺便开始看CI和FOR和TCS的理论，每天看一章。<br>今天先把JPA，Ranking，identification看完</li></ol><h1 id="发现的一些有趣的频道"><a href="#发现的一些有趣的频道" class="headerlink" title="发现的一些有趣的频道"></a>发现的一些有趣的频道</h1><p><a href="https://www.xiaoyuzhoufm.com/podcast/640ee2438be5d40013fe4a87">硬地骇客</a></p><p><a href="https://www.xiaoyuzhoufm.com/podcast/640ee2438be5d40013fe4a87">豌豆花下猫（关于Python）</a></p><p><a href="https://brr.fyi/">被派到南极洲工作的程序员</a><br>作者作为 IT 工程师被派到南极洲工作，博客是记录他在南极生活的点点滴滴</p><h1 id="看到的一些推特好帖"><a href="#看到的一些推特好帖" class="headerlink" title="看到的一些推特好帖"></a>看到的一些推特好帖</h1><h2 id="1-如何提高专注度"><a href="#1-如何提高专注度" class="headerlink" title="1. 如何提高专注度"></a>1. 如何提高专注度</h2><p>**转自博主Dexter Yang(@dexteryy)**，<br><a href="https://twitter.com/dexteryy/status/1629491278886076416">方法</a><br>想要通过正念（mindfulness&#x2F;meditation）来恢复对当下的感知、减慢时间流逝、用内啡肽替代多巴胺、提升专注能力、降低压力的消极影响，我觉得骑车是最有效果的（图2），比那些冥想app里的付费课程（图1）强多了。<br>方法总结：</p><ol><li>不要听播客不要听播客不要听播客（凡是抢占注意力的都不要碰）。<br>(1&#x2F;4)</li><li>开降噪，听音乐。最好是 citypop、blues  那样积极向上的音乐（这两种本来就源自上班族和黑人奴工振奋情绪排解压力的需求）。</li><li>公路车和共享单车都可以。</li><li>把注意力放在自身感受和眼前情景上，只接受下意识的瞬间的发散和思考。</li><li>天气要好，一定要有阳光，推荐下午出发，去程有落日返程有夜景。</li><li>路线选择类似 city walk，尽量途径那些有河、有沿街生态、城市机理细密有机多样的地方。</li></ol>]]></content>
       
       
       <categories>
@@ -1201,19 +1294,6 @@
             <tag> 2013 </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>今天</title>
-      <link href="/2023/04/14/%E4%BB%8A%E5%A4%A9/"/>
-      <url>/2023/04/14/%E4%BB%8A%E5%A4%A9/</url>
-      
-        <content type="html"><![CDATA[<h2 id="hello"><a href="#hello" class="headerlink" title="hello"></a>hello</h2><p>nihaoakfnknkg</p>]]></content>
-      
-      
       
     </entry>
     

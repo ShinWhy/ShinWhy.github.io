@@ -14,7 +14,7 @@
 <meta property="og:description" content="课程大纲A. HW Infrastructures:• System-level: Computing Infrastructures and Data CenterArchitectures, Rack&#x2F;Structure;• Node-level: Server (computation, HW accelerators), Storage(Type, technology), Ne">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-06-05T06:23:00.000Z">
-<meta property="article:modified_time" content="2023-06-05T09:16:42.035Z">
+<meta property="article:modified_time" content="2023-06-14T11:38:16.334Z">
 <meta property="article:author" content="ShinWhy">
 <meta property="article:tag" content="POLIMI">
 <meta property="article:tag" content="CI">
@@ -120,7 +120,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E5%A4%A7%E7%BA%B2"><span class="toc-number">1.</span> <span class="toc-text">课程大纲</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Performance"><span class="toc-number">1.1.</span> <span class="toc-text">Performance</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DataWareHouse"><span class="toc-number">1.2.</span> <span class="toc-text">DataWareHouse</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E5%A4%A7%E7%BA%B2"><span class="toc-number">1.</span> <span class="toc-text">课程大纲</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Performance"><span class="toc-number">1.1.</span> <span class="toc-text">Performance</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DataWareHouse"><span class="toc-number">1.2.</span> <span class="toc-text">DataWareHouse</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Networking"><span class="toc-number">1.3.</span> <span class="toc-text">Networking</span></a></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -188,6 +188,20 @@
 <li>Simulation</li>
 <li>Hybrid techniques<br>eg. Queueing Networks<br>• Arrival: average arrival rate \lambda  (req&#x2F;s)<br>• Service: the time a job spends being served,  average duration, maximum service rate<br>• Queue: Service discipline&#x2F;queuing policy: FCFS, LCFS, RSS, PRI<br>• Population: Service discipline&#x2F;queuing policy<br>• Routing: Probabilistic, Round robin, Join the shortest queue</li>
 </ul>
+<p>If we observed such an abstract system we might measure the following<br>quantities:<br>§ T, the length of <strong>time</strong> we observe the system<br>§ A, the number of <strong>request arrivals</strong> we observe<br>§ C, the number of <strong>request completions</strong> we observe<br>§ B, the total amount of time during which the system is <strong>busy</strong>(B&lt;&#x3D;T&gt;)<br>§ N, the <strong>average number of jobs</strong> in the system </p>
+<p>§ λ &#x3D; A&#x2F;T , the arrival rate 到达率<br>§ X &#x3D; C &#x2F;T , the throughput or completion rate 完成率或吞吐量<br>§ U &#x3D; B&#x2F;T, the utilisation 利用率<br>§ S &#x3D; B&#x2F;C, the mean service time per completed job 每个job平均使用资源k的时间</p>
+<p><strong>utilization law:</strong><br>Uk &#x3D; XkSk &#x3D; B&#x2F;T &#x3D; C&#x2F;T * B&#x2F;C 完成率<em>平均使用资源k的时间<br><strong>Little’s law:</strong><br>N &#x3D; XR  吞吐量</em>平均居留时间&#x3D;系统中的请求数<br>(N &#x3D; average number of requests in the system(在系统中同时存在的请求数)<br>If the system throughput is X requests&#x2F;sec, and each request remains in the system on average for R seconds)</p>
+<p><strong>Response Time Law</strong><br>R &#x3D; N&#x2F;X - Z residence time - thinking time</p>
+<p>T: 我们观察的总时间<br>Ak: 对于资源k，到达的请求的数量<br>Ck: 对于资源k，完成的请求的数量<br>Bk: 资源k忙的时间<br>Nk：资源k平均完成的工作数量<br><strong>N &#x3D; XR</strong><br>level1：N: busy time; X: average service time; R: rate of service<br>level2(考虑queue): N: 等待或正在享受服务的用户数量 X:系统的吞吐量 R&#x3D;N&#x2F;X:每个用户花费的时间<br>level3(考虑subsystem): N:在<strong>子系统</strong>中的用户数量  X: <strong>子系统</strong>中每个请求花费的时间 R: <strong>子系统</strong>的throughput<br>level4(考虑total system):</p>
+<p>关于little’s law的一些理解：</p>
+<ol>
+<li>如果提到系统中有几个活跃的用户，那么N就等于几</li>
+<li>告诉 U 和 S(service time)，怎么求X? U&#x3D;B&#x2F;T, X&#x3D;C&#x2F;T, S&#x3D;B&#x2F;C 所以S&#x3D;U&#x2F;X</li>
+<li>题设告知think time, response time, residence time(N&#x2F;X)，N&#x3D;N(think)+N(response)</li>
+<li>整个系统的吞吐量等于各个子系统的吞吐量</li>
+<li>告知每个子系统的利用率(U)和demand(D), 则可求吞吐量(X):<br>这是用了Utilization Law(U&#x3D;XS): S是service time, 在有些题目里，表示成demand</li>
+</ol>
+<p>Xk &#x3D; Vk * X<br>Vk &#x3D; Ck &#x2F; C</p>
 <h2 id="DataWareHouse"><a href="#DataWareHouse" class="headerlink" title="DataWareHouse"></a>DataWareHouse</h2><p>warehouse-scale computers (WSCs):</p>
 <p>Multiple data centers：<br>Hierarchical approach: </p>
 <ul>
@@ -201,10 +215,45 @@
 <li>NETWORKING: providing internal and external connections</li>
 <li>BUILDING AND INFRASTRUCTURE: power delivery, cooling, and building infrastructure</li>
 </ul>
-<p>If we observed such an abstract system we might measure the following<br>quantities:<br>§ T, the length of <strong>time</strong> we observe the system<br>§ A, the number of <strong>request arrivals</strong> we observe<br>§ C, the number of <strong>request completions</strong> we observe<br>§ B, the total amount of time during which the system is <strong>busy</strong>(B&lt;&#x3D;T&gt;)<br>§ N, the <strong>average number of jobs</strong> in the system </p>
-<p>§ λ &#x3D; A&#x2F;T , the arrival rate<br>§ X &#x3D; C &#x2F;T , the throughput or completion rate<br>§ U &#x3D; B&#x2F;T, the utilisation<br>§ S &#x3D; B&#x2F;C, the mean service time per completed job</p>
-<p><strong>utilization law:</strong><br>Uk &#x3D; XkSk<br><strong>Little’s law:</strong><br>N &#x3D; XR<br>(N &#x3D; average number of requests in the system<br>If the system throughput is X requests&#x2F;sec, and each request remains in the system on average for R seconds)</p>
-<p>Red Box(without the queue)<br>Blue Box(including the queue)<br>Green Box(consider the central subsystem)</p>
+<h2 id="Networking"><a href="#Networking" class="headerlink" title="Networking"></a>Networking</h2><p>Stages of enterprise infrastructures</p>
+<ol>
+<li>Monolithic app(单体式应用程序)</li>
+</ol>
+<ul>
+<li>Minimal network demands</li>
+<li>Proprietary protocols</li>
+</ul>
+<ol start="2">
+<li>Client server</li>
+</ol>
+<ul>
+<li>High network demands inside the enterprise</li>
+<li>Applications walled within the enterprise</li>
+<li>TCP&#x2F;IP + Proprietary protocols</li>
+</ul>
+<ol start="3">
+<li>Web applications</li>
+</ol>
+<ul>
+<li>Ubiquitous TCP&#x2F;IP</li>
+<li>Access from anywhere</li>
+<li>Servers are broken into multiple units</li>
+</ul>
+<ol start="4">
+<li>Microservices</li>
+</ol>
+<ul>
+<li>Infrastructure moved to cloud providers</li>
+<li>Servers broken into microservices</li>
+<li>Increase of server-to-server traffic</li>
+</ul>
+<p>Classes of DCN<br>DCNs can be classified into three main categories:</p>
+<ol>
+<li>Switch-centric architectures<br>Uses switches to perform packet forwarding<br><strong>Three-Tier (or layer) “Classical” Network</strong>: Core, Aggregation(EOR), Access(TOR)<br><strong>Leaf-Spine architectures</strong></li>
+<li>Server-centric architecture<br>Uses servers with multiple Network Interface Cards (NICs) to act as switches in addition to performing other computational functions</li>
+</ol>
+<p>Two stage interconnections<br>Leaf: ToR switch<br>Spine: dedicated switches (aggregation switches)<br>In practice: servers have two interfaces connected to two ToR switches</p>
+<p>扩展到三层：Pod-based model, aka the Fat Tree<br>to provide fault-tolerance<br>3. Hybrid architectures<br>Combine switches and servers for packet forwarding</p>
 
   </div>
 </article>
@@ -236,7 +285,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E5%A4%A7%E7%BA%B2"><span class="toc-number">1.</span> <span class="toc-text">课程大纲</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Performance"><span class="toc-number">1.1.</span> <span class="toc-text">Performance</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DataWareHouse"><span class="toc-number">1.2.</span> <span class="toc-text">DataWareHouse</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E5%A4%A7%E7%BA%B2"><span class="toc-number">1.</span> <span class="toc-text">课程大纲</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Performance"><span class="toc-number">1.1.</span> <span class="toc-text">Performance</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DataWareHouse"><span class="toc-number">1.2.</span> <span class="toc-text">DataWareHouse</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Networking"><span class="toc-number">1.3.</span> <span class="toc-text">Networking</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
