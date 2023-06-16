@@ -1183,7 +1183,7 @@
       <link href="/2023/04/18/MIDA/"/>
       <url>/2023/04/18/MIDA/</url>
       
-        <content type="html"><![CDATA[<p>每天一个Lecture，一个Exec</p><h2 id="Prediction"><a href="#Prediction" class="headerlink" title="Prediction"></a>Prediction</h2><ul><li><p>什么是steady_state output?</p></li><li><p>什么是POLES和ZEROS?</p></li><li><p>γ是什么?</p></li><li><p>什么是predictor?</p></li><li><p>y(t)&#x3D;w(z)e(t)是什么？</p></li><li><p>为什么过去的现在的sample相乘等于0</p></li><li><p>笔记第5页y(t+k|t,s)为什么是stochastic process？</p></li><li><p>为什么prediction error是stochastic process？</p></li><li><p>MA的Variance为什么是平方和？为什么会收敛？</p></li><li><p>笔记第6页为什么y(t+k|t)&#x3D;那个</p></li><li><p>为什么Non-zero mean arma是那样的格式？</p></li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="Prediction"><a href="#Prediction" class="headerlink" title="Prediction"></a>Prediction</h2><ul><li><p>什么是steady_state output?</p></li><li><p>什么是POLES和ZEROS?</p></li><li><p>γ是什么?</p></li><li><p>什么是predictor?</p></li><li><p>y(t)&#x3D;w(z)e(t)是什么？</p></li><li><p>为什么过去的现在的sample相乘等于0</p></li><li><p>笔记第5页y(t+k|t,s)为什么是stochastic process？</p></li><li><p>为什么prediction error是stochastic process？</p></li><li><p>MA的Variance为什么是平方和？为什么会收敛？</p></li><li><p>笔记第6页为什么y(t+k|t)&#x3D;那个</p></li><li><p>为什么Non-zero mean arma是那样的格式？</p></li></ul>]]></content>
       
       
       <categories>
@@ -1212,7 +1212,7 @@
       <link href="/2023/04/18/MIDA%E5%A4%8D%E4%B9%A0/"/>
       <url>/2023/04/18/MIDA%E5%A4%8D%E4%B9%A0/</url>
       
-        <content type="html"><![CDATA[<p>stochastic process<br>相当于扔了一百次色子的实验<br>两个signal等价如果他们是同一个stochastic process的实现<br>怎么描述一个S.P.: 用mean和covariance<br>γ(t1,t2)&#x3D;</p>]]></content>
+        <content type="html"><![CDATA[<p>到明天下午三点应该能看完，之后就开始每天三个exe。明天开始。<br>DB把concurrency做了<br>.<br>stochastic process<br>相当于扔了一百次色子的实验<br>两个signal等价如果他们是同一个stochastic process的实现<br>怎么描述一个S.P.: 用mean和covariance<br>γ(t1,t2)&#x3D;</p>]]></content>
       
       
       <categories>
