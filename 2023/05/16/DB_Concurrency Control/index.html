@@ -14,7 +14,7 @@
 <meta property="og:description" content="Anomalies Lost update Dirty read Nonrepeatable read Phantom update Phantom insert  Serializable Serial-Serializable-ALL View-serializability(the same reads-from relationship and final writes)——判断起来时空复">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-05-16T07:44:00.000Z">
-<meta property="article:modified_time" content="2023-05-20T17:45:21.630Z">
+<meta property="article:modified_time" content="2023-06-18T19:27:09.083Z">
 <meta property="article:author" content="ShinWhy">
 <meta property="article:tag" content="POLIMI">
 <meta property="article:tag" content="DB">
@@ -120,7 +120,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Anomalies"><span class="toc-number">1.</span> <span class="toc-text">Anomalies</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Serializable"><span class="toc-number">2.</span> <span class="toc-text">Serializable</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#approaches"><span class="toc-number">3.</span> <span class="toc-text">approaches</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Deadlock"><span class="toc-number">4.</span> <span class="toc-text">Deadlock</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Deadlock-Resolution-Techniques"><span class="toc-number">4.1.</span> <span class="toc-text">Deadlock Resolution Techniques</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Timeout"><span class="toc-number">4.1.1.</span> <span class="toc-text">1. Timeout</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Deadlock-prevention"><span class="toc-number">4.1.2.</span> <span class="toc-text">2. Deadlock prevention</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Deadlock-detection"><span class="toc-number">4.1.3.</span> <span class="toc-text">3. Deadlock detection</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Anomalies"><span class="toc-number">1.</span> <span class="toc-text">Anomalies</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Serializable"><span class="toc-number">2.</span> <span class="toc-text">Serializable</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#approaches"><span class="toc-number">3.</span> <span class="toc-text">approaches</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Deadlock"><span class="toc-number">4.</span> <span class="toc-text">Deadlock</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Deadlock-Resolution-Techniques"><span class="toc-number">4.1.</span> <span class="toc-text">Deadlock Resolution Techniques</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Timeout"><span class="toc-number">4.1.1.</span> <span class="toc-text">1. Timeout</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Deadlock-prevention"><span class="toc-number">4.1.2.</span> <span class="toc-text">2. Deadlock prevention</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Deadlock-detection"><span class="toc-number">4.1.3.</span> <span class="toc-text">3. Deadlock detection</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Timestamps"><span class="toc-number">5.</span> <span class="toc-text">Timestamps</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Multiversion-Concurrency-Control"><span class="toc-number">5.1.</span> <span class="toc-text">Multiversion Concurrency Control</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Mechanism"><span class="toc-number">5.1.1.</span> <span class="toc-text">Mechanism:</span></a></li></ol></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -179,7 +179,10 @@
 <h1 id="Serializable"><a href="#Serializable" class="headerlink" title="Serializable"></a>Serializable</h1><ul>
 <li>Serial-Serializable-ALL</li>
 <li><strong>View-serializability</strong>(the same reads-from relationship and final writes)——判断起来时空复杂度太高</li>
-<li><strong>Conflict-serializability</strong>(更高的要求，更简单的判断方法)——conflict graph</li>
+<li><strong>Conflict-serializability</strong>(更高的要求，更简单的判断方法)——conflict graph(if there is no cycles in the graph)<blockquote>
+<p>怎么找equivalent serial schedule？ 删节点</p>
+</blockquote>
+</li>
 </ul>
 <h1 id="approaches"><a href="#approaches" class="headerlink" title="approaches"></a>approaches</h1><p>##1. Lock<br><strong># pessimistic concurrency control</strong></p>
 <ul>
@@ -191,7 +194,7 @@
 </li>
 <li><p><strong>Predicate locks</strong><br>  the lock on all tuples satisfying the predicate</p>
 </li>
-<li><p><strong>Update lock</strong><br>  解决丢失更新的问题，事务T1在请求升级SL为UL时，必须保证没有别的事务的SL</p>
+<li><p><strong>Update lock</strong><br>  解决丢失更新的问题，事务T1在请求升级SL为UL时，必须保证没有别的事务的SL<br>  不能直接从SL升级到XL，必须经过UL<br>  可以直接获得XL,SL,UL,先读后写，先给UL<br>  Each transaction can commit right after its last operation.</p>
 </li>
 <li><p><strong>Hierarchical locking</strong><br>  自上而下请求资源<br>  自下而上释放锁<br>  schema, table, fragment, page, tuple, field</p>
 </li>
@@ -214,6 +217,49 @@
 <h3 id="3-Deadlock-detection"><a href="#3-Deadlock-detection" class="headerlink" title="3. Deadlock detection"></a>3. Deadlock detection</h3><ul>
 <li>Distributed Deadlock Detection<br><strong>Obermarck’s algorithm</strong></li>
 </ul>
+<h1 id="Timestamps"><a href="#Timestamps" class="headerlink" title="Timestamps"></a>Timestamps</h1><ol>
+<li>Syntax: timestamp &#x3D; event-id.node-id</li>
+</ol>
+<ul>
+<li>event-ids are unique <strong>at each node</strong></li>
+<li>同一个node中的node-id都一样</li>
+</ul>
+<ol start="2">
+<li>Note that the notion of time is “<strong>lexical</strong>”: timestamp 5.1 “occurs before”<br>timestamp 5.2</li>
+<li>算法（Lamport方法）：如果接收到来自“未来”的消息，则使用“碰撞规则”将<strong>接收事件</strong>的时间戳推迟到<strong>发送事件</strong>的时间戳之后，以避免出现此类情况。</li>
+</ol>
+<ul>
+<li>如果我从你那里接收到一个时间戳大于我的最后一个发出的时间戳的消息，则更新当前时间戳以超过您的。</li>
+<li>rts只需要和WTM比，wts要和WTM和RTM比<br>The scheduler receives read&#x2F;write requests tagged with<br>the timestamp of the requesting transaction:<br>• rts(x):<br>• If ts &lt; WTM(x) the request is rejected and the transaction is killed<br>• Else, access is granted and we set RTM(x) &#x3D; max(RTM(x), ts)<br>• wts(x):<br>• If ts &lt; RTM(x) or ts &lt; WTM(x) the request is rejected and the<br>transaction is killed<br>• Else, access is granted and we set WTM(x) &#x3D; ts</li>
+</ul>
+<ol start="4">
+<li>2PL vs. TS  incomparable</li>
+<li>TS and CSR<br>• TS &#x3D;&gt; CSR</li>
+<li>TS and dirty reads</li>
+<li>Thomas Rule：reduce kill rate<br>处理wts时，<br>ts &lt; RTM(x)：杀<br>ts &lt; WTM(x)：过时，跳过<br>else：授权访问</li>
+</ol>
+<ul>
+<li>TS with Thomas Rule maybe not in VSR</li>
+</ul>
+<h2 id="Multiversion-Concurrency-Control"><a href="#Multiversion-Concurrency-Control" class="headerlink" title="Multiversion Concurrency Control"></a>Multiversion Concurrency Control</h2><p>WTMi(x), RTM(x)</p>
+<h3 id="Mechanism"><a href="#Mechanism" class="headerlink" title="Mechanism:"></a>Mechanism:</h3><p>• rts(x) is always accepted. A copy xk is selected for reading<br>such that:<br>• If ts &gt;&#x3D; WTMN(x), then k &#x3D; N<br>• Else take k such that WTMk(x) &lt;&#x3D; ts &lt; WTMk+1(x)<br>• wts(x):<br>• If ts &lt; RTM(x) the request is rejected<br>• Else a new version is created for timestamp ts (N is incremented)<br>• WTM1(x), …, WTMN(x) are the new versions, kept sorted from<br>oldest to youngest<br>• NB: unlike here, in real systems based, e.g., on snapshot isolation<br>(see later) and, for simplicity, in the exercises, if ts &lt; WTMN(x),<br>the request is rejected</p>
+<p>做题心得：</p>
+<ol>
+<li>lost update: 必须是interleaved的两个r-w，只有w不行</li>
+<li>phantom update: 必须有一个全局的限制条件，update后全局条件没变，但因为某些事务不知道所有的update，所以它觉得全局条件不满足了(两个读，一个读改之前的，一个读已经被别的事务改过的)</li>
+<li>属于VSR但不属于CSR的schedule都有一个共同的特点：他的冲突图中存在因为一对blind writes而产生的一对边导致的循环(w1,w2,w3)<br>什么是blind write？ 对于同一个资源，不是最后一个操作，后续还有写<br>找到blind write之后，调换它们的位置，看看能不能消除循环</li>
+</ol>
+<hr>
+<ol start="4">
+<li><p>2PL(全都锁上才能释放)<br>两个注意：<br>(1)Same resource: 只有当资源R空闲的时候才能上锁(UR &lt; LR)<br>(2)Same transaction: 所有的解锁必须在上锁之前(下面的锁&lt;上面的放锁)<br>怎么判断：一个一个标，找到那些必须提前加锁的时机，找到加锁和放锁的交界</p>
+</li>
+<li><p>Strict-2PL<br>commit&#x2F;rollback以后才能释放锁。<br>怎么判断：找到每个事务的最后一个操作，再看在那之前需不需要提前释放锁</p>
+</li>
+<li><p>Obermarck<br>把i&gt;j传送给对应的node</p>
+</li>
+<li><p>Update lock可以消除所有的死锁吗？<br>答：不能，<br>• Clearly deadlocks are possible in the presence of UL. Indeed, UL only makes deadlock less likely, by preventing one type of (very frequent) deadlock, due to update patterns, when two transactions compete for the same resource (e.g., r1(x) r2(x) w1(x) w2(x)). Consider two distinct resources X Y, and two transactions that want to access them in this order:<br>r1(X) r2(Y) w1(Y) w2(X).<br>• It is likely that they end up in deadlock, especially if the system on which they run applies 2PL. UL is totally irrelevant here, because there is no update pattern.</p>
+</li>
+</ol>
 
   </div>
 </article>
@@ -245,7 +291,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Anomalies"><span class="toc-number">1.</span> <span class="toc-text">Anomalies</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Serializable"><span class="toc-number">2.</span> <span class="toc-text">Serializable</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#approaches"><span class="toc-number">3.</span> <span class="toc-text">approaches</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Deadlock"><span class="toc-number">4.</span> <span class="toc-text">Deadlock</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Deadlock-Resolution-Techniques"><span class="toc-number">4.1.</span> <span class="toc-text">Deadlock Resolution Techniques</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Timeout"><span class="toc-number">4.1.1.</span> <span class="toc-text">1. Timeout</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Deadlock-prevention"><span class="toc-number">4.1.2.</span> <span class="toc-text">2. Deadlock prevention</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Deadlock-detection"><span class="toc-number">4.1.3.</span> <span class="toc-text">3. Deadlock detection</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Anomalies"><span class="toc-number">1.</span> <span class="toc-text">Anomalies</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Serializable"><span class="toc-number">2.</span> <span class="toc-text">Serializable</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#approaches"><span class="toc-number">3.</span> <span class="toc-text">approaches</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Deadlock"><span class="toc-number">4.</span> <span class="toc-text">Deadlock</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Deadlock-Resolution-Techniques"><span class="toc-number">4.1.</span> <span class="toc-text">Deadlock Resolution Techniques</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Timeout"><span class="toc-number">4.1.1.</span> <span class="toc-text">1. Timeout</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Deadlock-prevention"><span class="toc-number">4.1.2.</span> <span class="toc-text">2. Deadlock prevention</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Deadlock-detection"><span class="toc-number">4.1.3.</span> <span class="toc-text">3. Deadlock detection</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Timestamps"><span class="toc-number">5.</span> <span class="toc-text">Timestamps</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Multiversion-Concurrency-Control"><span class="toc-number">5.1.</span> <span class="toc-text">Multiversion Concurrency Control</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Mechanism"><span class="toc-number">5.1.1.</span> <span class="toc-text">Mechanism:</span></a></li></ol></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
