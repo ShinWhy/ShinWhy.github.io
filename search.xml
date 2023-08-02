@@ -8,7 +8,7 @@
       <link href="/2023/08/02/XX/"/>
       <url>/2023/08/02/XX/</url>
       
-        <content type="html"><![CDATA[<p>&#x2F;pictr&#x2F;medicine-melancholy-touhou-lying-down-red-eyes-doll-anime-53262.jpeg</p>   #img7.png为你的图片名称,不可重复 This is an image是图片介绍]]></content>
+        <content type="html"><![CDATA[<p>&#x2F;pictr&#x2F;medicine-melancholy-touhou-lying-down-red-eyes-doll-anime-53262.jpeg</p>  <p> #img7.png为你的图片名称,不可重复 This is an image是图片介绍</p>]]></content>
       
       
       
@@ -301,11 +301,11 @@
     
     
     <entry>
-      <title>Lec15</title>
-      <link href="/2023/06/12/Lec15/"/>
-      <url>/2023/06/12/Lec15/</url>
+      <title>Lec14</title>
+      <link href="/2023/06/12/Lec14/"/>
+      <url>/2023/06/12/Lec14/</url>
       
-        <content type="html"><![CDATA[<p>CPU的速度超过了内存的速度，内存无法跟上处理器的速度<br>引进cache</p><p>Q1: Where can a block be placed in the cache?<br>(Block placement)<br>Fully Associative, (2-way) Set Associative, Direct mapped<br>Q2: How is a block found if it is in the cache?<br>(Block identification)<br>Q3: Which block should be replaced on a miss?<br>(Block replacement)<br>Random, LRU, FIFO<br>Q4: What happens on a write?<br>(Write strategy)<br>Write through, Write back<br>no write allocate(直接将数据写入内存), write allocate(写时取回)</p><p><strong>Cache performance：</strong><br>AMAT &#x3D; Average Memory Access Time<br>CPIALUOps does not include memory instructions</p><p>AMAT &#x3D; Hit time + miss rate x miss penalty</p><ol><li>Reduce the miss rate<br>Hardware Prefetching</li><li>Reduce the miss penalty<br>to introduce a second level cache</li><li>Reduce the time to hit in the cache</li></ol><h1 id="1-Memory-Hierarchy-Review"><a href="#1-Memory-Hierarchy-Review" class="headerlink" title="1. Memory Hierarchy Review"></a>1. Memory Hierarchy Review</h1><h1 id="2-MIMD-Architectures"><a href="#2-MIMD-Architectures" class="headerlink" title="2. MIMD Architectures"></a>2. MIMD Architectures</h1><h1 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h1><p>Memory Address Space Model<br>Single logically shared address space: Shared Memory Architectures<br>Multiple and private address spaces: Message Passing Architectures</p><p>Address Space vs. Physical Memory</p><p>Shared Memory &amp; Message Passing</p><p>解决coherency问题：<br>Two classes of protocols:<br>Snooping Protocols(嗅探)<br>Directory-Based Protocols(基于目录)</p>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
       
       <categories>
@@ -332,11 +332,11 @@
     
     
     <entry>
-      <title>Lec14</title>
-      <link href="/2023/06/12/Lec14/"/>
-      <url>/2023/06/12/Lec14/</url>
+      <title>Lec15</title>
+      <link href="/2023/06/12/Lec15/"/>
+      <url>/2023/06/12/Lec15/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>CPU的速度超过了内存的速度，内存无法跟上处理器的速度<br>引进cache</p><p>Q1: Where can a block be placed in the cache?<br>(Block placement)<br>Fully Associative, (2-way) Set Associative, Direct mapped<br>Q2: How is a block found if it is in the cache?<br>(Block identification)<br>Q3: Which block should be replaced on a miss?<br>(Block replacement)<br>Random, LRU, FIFO<br>Q4: What happens on a write?<br>(Write strategy)<br>Write through, Write back<br>no write allocate(直接将数据写入内存), write allocate(写时取回)</p><p><strong>Cache performance：</strong><br>AMAT &#x3D; Average Memory Access Time<br>CPIALUOps does not include memory instructions</p><p>AMAT &#x3D; Hit time + miss rate x miss penalty</p><ol><li>Reduce the miss rate<br>Hardware Prefetching</li><li>Reduce the miss penalty<br>to introduce a second level cache</li><li>Reduce the time to hit in the cache</li></ol><h1 id="1-Memory-Hierarchy-Review"><a href="#1-Memory-Hierarchy-Review" class="headerlink" title="1. Memory Hierarchy Review"></a>1. Memory Hierarchy Review</h1><h1 id="2-MIMD-Architectures"><a href="#2-MIMD-Architectures" class="headerlink" title="2. MIMD Architectures"></a>2. MIMD Architectures</h1><h1 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h1><p>Memory Address Space Model<br>Single logically shared address space: Shared Memory Architectures<br>Multiple and private address spaces: Message Passing Architectures</p><p>Address Space vs. Physical Memory</p><p>Shared Memory &amp; Message Passing</p><p>解决coherency问题：<br>Two classes of protocols:<br>Snooping Protocols(嗅探)<br>Directory-Based Protocols(基于目录)</p>]]></content>
       
       
       <categories>
@@ -808,11 +808,11 @@
     
     
     <entry>
-      <title>Lec6:Static Scheduling and Very Long Instruction Words(VLIW)</title>
-      <link href="/2023/05/30/Lec6/"/>
-      <url>/2023/05/30/Lec6/</url>
+      <title>Lec5:ILP,Complex pipelining,Intro to Scheduling</title>
+      <link href="/2023/05/30/Lec5/"/>
+      <url>/2023/05/30/Lec5/</url>
       
-        <content type="html"><![CDATA[<h1 id="VLIW-architecture"><a href="#VLIW-architecture" class="headerlink" title="VLIW architecture"></a>VLIW architecture</h1><p>指令内数据是并行的，没有RAW check</p><h1 id="Static-Scheduling"><a href="#Static-Scheduling" class="headerlink" title="Static Scheduling"></a>Static Scheduling</h1><ul><li>Basic Blocks</li><li>Trace scheduling</li></ul><h2 id="methods"><a href="#methods" class="headerlink" title="methods"></a>methods</h2><ol><li>simple code motion</li><li>Loop unrolling &amp; loop peeling</li><li>Software pipeline</li><li>Global code scheduling(across basic block)</li></ol><ul><li>Trace scheduling</li><li>Superblock scheduling</li><li>Hyperblock scheduling</li><li>Speculative Trace scheduling</li></ul><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ol><li>为什么P48页ld和add不存在冲突？</li><li>第70页为什么选择在下面？</li></ol>]]></content>
+        <content type="html"><![CDATA[<p>Mixing integer and Floating point operations: Complex Pipelining<br>in-order<br>out-of-order<br>怎么样进一步提升性能？scheduling，分为Dynamic Scheduling(hardware) and Static Scheduling(software)</p><h1 id="1-为什么要加ISSUE阶段？"><a href="#1-为什么要加ISSUE阶段？" class="headerlink" title="1. 为什么要加ISSUE阶段？"></a>1. 为什么要加ISSUE阶段？</h1><p>在MIPS架构中，ISSUE阶段是指令流水线中的一个重要阶段，用于指令的调度和发射。ISSUE阶段的作用包括：</p><ol><li><p>指令调度：</p><ul><li>ISSUE阶段对已解码的指令进行调度，确定指令的执行顺序和优先级。它根据不同的调度算法和策略，将指令安排到适当的执行单元上，以最大程度地提高流水线的利用率和性能。</li></ul></li><li><p>数据相关检测：</p><ul><li>ISSUE阶段可以进行<strong>数据相关的检测</strong>，检查当前指令是否存在数据依赖性（例如RAW依赖）。通过检测数据相关性，可以判断指令是否可以立即发射，或者需要等待之前的指令完成。</li></ul></li><li><p>发射指令：</p><ul><li>在ISSUE阶段，经过调度和相关性检测后，合适的指令可以被发射到执行阶段（EX阶段）。发射意味着将指令送入下一阶段进行实际的操作和执行。</li></ul></li></ol><p>ISSUE阶段在流水线中起到关键的调度和控制作用。通过合理的调度和发射策略，可以优化指令的执行顺序，最大程度地避免数据冒险和资源竞争，提高流水线的吞吐量和效率。</p><h1 id="为什么decode执行的时机不一样"><a href="#为什么decode执行的时机不一样" class="headerlink" title="为什么decode执行的时机不一样"></a>为什么decode执行的时机不一样</h1>]]></content>
       
       
       <categories>
@@ -839,11 +839,11 @@
     
     
     <entry>
-      <title>Lec5:ILP,Complex pipelining,Intro to Scheduling</title>
-      <link href="/2023/05/30/Lec5/"/>
-      <url>/2023/05/30/Lec5/</url>
+      <title>Lec6:Static Scheduling and Very Long Instruction Words(VLIW)</title>
+      <link href="/2023/05/30/Lec6/"/>
+      <url>/2023/05/30/Lec6/</url>
       
-        <content type="html"><![CDATA[<p>Mixing integer and Floating point operations: Complex Pipelining<br>in-order<br>out-of-order<br>怎么样进一步提升性能？scheduling，分为Dynamic Scheduling(hardware) and Static Scheduling(software)</p><h1 id="1-为什么要加ISSUE阶段？"><a href="#1-为什么要加ISSUE阶段？" class="headerlink" title="1. 为什么要加ISSUE阶段？"></a>1. 为什么要加ISSUE阶段？</h1><p>在MIPS架构中，ISSUE阶段是指令流水线中的一个重要阶段，用于指令的调度和发射。ISSUE阶段的作用包括：</p><ol><li><p>指令调度：</p><ul><li>ISSUE阶段对已解码的指令进行调度，确定指令的执行顺序和优先级。它根据不同的调度算法和策略，将指令安排到适当的执行单元上，以最大程度地提高流水线的利用率和性能。</li></ul></li><li><p>数据相关检测：</p><ul><li>ISSUE阶段可以进行<strong>数据相关的检测</strong>，检查当前指令是否存在数据依赖性（例如RAW依赖）。通过检测数据相关性，可以判断指令是否可以立即发射，或者需要等待之前的指令完成。</li></ul></li><li><p>发射指令：</p><ul><li>在ISSUE阶段，经过调度和相关性检测后，合适的指令可以被发射到执行阶段（EX阶段）。发射意味着将指令送入下一阶段进行实际的操作和执行。</li></ul></li></ol><p>ISSUE阶段在流水线中起到关键的调度和控制作用。通过合理的调度和发射策略，可以优化指令的执行顺序，最大程度地避免数据冒险和资源竞争，提高流水线的吞吐量和效率。</p><h1 id="为什么decode执行的时机不一样"><a href="#为什么decode执行的时机不一样" class="headerlink" title="为什么decode执行的时机不一样"></a>为什么decode执行的时机不一样</h1>]]></content>
+        <content type="html"><![CDATA[<h1 id="VLIW-architecture"><a href="#VLIW-architecture" class="headerlink" title="VLIW architecture"></a>VLIW architecture</h1><p>指令内数据是并行的，没有RAW check</p><h1 id="Static-Scheduling"><a href="#Static-Scheduling" class="headerlink" title="Static Scheduling"></a>Static Scheduling</h1><ul><li>Basic Blocks</li><li>Trace scheduling</li></ul><h2 id="methods"><a href="#methods" class="headerlink" title="methods"></a>methods</h2><ol><li>simple code motion</li><li>Loop unrolling &amp; loop peeling</li><li>Software pipeline</li><li>Global code scheduling(across basic block)</li></ol><ul><li>Trace scheduling</li><li>Superblock scheduling</li><li>Hyperblock scheduling</li><li>Speculative Trace scheduling</li></ul><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ol><li>为什么P48页ld和add不存在冲突？</li><li>第70页为什么选择在下面？</li></ol>]]></content>
       
       
       <categories>
