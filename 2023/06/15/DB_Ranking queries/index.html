@@ -14,7 +14,7 @@
 <meta property="og:description" content="OutlineMulti-objective optimization• Main approaches:– Ranking (aka top-k) queries• Top k objects according to a given scoring function– Skyline queries• Set of non-dominated objects 老办法 Rank aggregat">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-06-15T11:17:00.000Z">
-<meta property="article:modified_time" content="2023-06-15T13:47:20.990Z">
+<meta property="article:modified_time" content="2023-07-16T00:45:07.815Z">
 <meta property="article:author" content="ShinWhy">
 <meta property="article:tag" content="POLIMI">
 <meta property="article:tag" content="DB">
@@ -88,6 +88,8 @@
     <br/>
     <span id="actions">
       <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2023/06/25/Go%E5%AE%9E%E7%8E%B0%E7%BC%96%E8%AF%91%E5%99%A8/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
         <li><a class="icon" aria-label="Next post" href="/2023/06/15/DB_JPA/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
@@ -186,10 +188,11 @@
 <li>MIN (Minimum): just considers the worst partial score<br>MIN(o) º MIN(p(o)) &#x3D; min{p1(o),p2(o), …, pm(o)}</li>
 <li>MAX (Maximum): just considers the best partial score<br>MAX(o) º MAX(p(o)) &#x3D; max{p1(o),p2(o), …, pm(o)}</li>
 </ol>
-<h3 id="The-B0-algorithm-using-a-scoring-function-S"><a href="#The-B0-algorithm-using-a-scoring-function-S" class="headerlink" title="The B0 algorithm(using a scoring function S)"></a>The B0 algorithm(using a scoring function S)</h3><p>B0 only works for MAX</p>
-<h3 id="Fagin’s-Algorithm-FA"><a href="#Fagin’s-Algorithm-FA" class="headerlink" title="Fagin’s Algorithm (FA)"></a>Fagin’s Algorithm (FA)</h3><p>at least k objects in common</p>
-<h3 id="Threshold-Algorithm-TA"><a href="#Threshold-Algorithm-TA" class="headerlink" title="Threshold Algorithm (TA)"></a>Threshold Algorithm (TA)</h3><p>Threshold<br>给定Score函数，停止直到top-k的score不比threshold差</p>
-<h3 id="The-NRA-algorithm-preliminaries"><a href="#The-NRA-algorithm-preliminaries" class="headerlink" title="The NRA algorithm: preliminaries"></a>The NRA algorithm: preliminaries</h3><table>
+<h3 id="The-B0-algorithm-using-a-scoring-function-S"><a href="#The-B0-algorithm-using-a-scoring-function-S" class="headerlink" title="The B0 algorithm(using a scoring function S)"></a>The B0 algorithm(using a scoring function S)</h3><p>B0 only works for MAX<br>有m个排好序的list，在每个list上做k次有序访问，把对象和对应的分数存在buffer里，计算buffer里的每个对象的最大分数，返回topk</p>
+<h3 id="Fagin’s-Algorithm-FA"><a href="#Fagin’s-Algorithm-FA" class="headerlink" title="Fagin’s Algorithm (FA)"></a>Fagin’s Algorithm (FA)</h3><p>at least k objects in common, 找到k个以后在目前遇到的object里面挑</p>
+<h3 id="Threshold-Algorithm-TA"><a href="#Threshold-Algorithm-TA" class="headerlink" title="Threshold Algorithm (TA)"></a>Threshold Algorithm (TA)</h3><p>Threshold(把当前行代入Score函数中)<br>给定Score函数，停止直到top-k的score不比threshold差</p>
+<h3 id="The-NRA-algorithm-preliminaries"><a href="#The-NRA-algorithm-preliminaries" class="headerlink" title="The NRA algorithm: preliminaries"></a>The NRA algorithm: preliminaries</h3><p>| id | lbscore | ubscore |</p>
+<table>
 <thead>
 <tr>
 <th align="center">Algorithm</th>
@@ -223,7 +226,8 @@
 <td align="center">instance-optimal, no exact scores</td>
 </tr>
 </tbody></table>
-<h1 id="Skyline-queries"><a href="#Skyline-queries" class="headerlink" title="Skyline queries"></a>Skyline queries</h1><table>
+<h1 id="Skyline-queries"><a href="#Skyline-queries" class="headerlink" title="Skyline queries"></a>Skyline queries</h1><p>首先根据某些单调函数来排序，然后画线</p>
+<table>
 <thead>
 <tr>
 <th align="center"></th>

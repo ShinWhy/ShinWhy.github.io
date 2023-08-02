@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="FSA A finite state automaton is (made of):– A finite state set: Q– A finite input alphabet: I– A transition function (partial, in general):">
+    <meta name="description" content="FSA A finite state automaton is (made of):– A finite state set: Q– A finite input alphabet: I– A transition function (partial, in general): PDA“Finite state machine” + “a stack”: PDA可以记住无限量的信息Input ta">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TCS:Part 1">
 <meta property="og:url" content="https://shinwhy.github.io/2023/05/23/TCS_1/index.html">
 <meta property="og:site_name" content="ShinWhy">
-<meta property="og:description" content="FSA A finite state automaton is (made of):– A finite state set: Q– A finite input alphabet: I– A transition function (partial, in general):">
+<meta property="og:description" content="FSA A finite state automaton is (made of):– A finite state set: Q– A finite input alphabet: I– A transition function (partial, in general): PDA“Finite state machine” + “a stack”: PDA可以记住无限量的信息Input ta">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-05-22T23:26:00.000Z">
-<meta property="article:modified_time" content="2023-05-23T12:23:34.623Z">
+<meta property="article:modified_time" content="2023-07-02T21:10:43.633Z">
 <meta property="article:author" content="ShinWhy">
 <meta property="article:tag" content="POLIMI">
 <meta property="article:tag" content="TCS">
@@ -120,7 +120,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#FSA"><span class="toc-number">1.</span> <span class="toc-text">FSA</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#FSA"><span class="toc-number">1.</span> <span class="toc-text">FSA</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PDA"><span class="toc-number">2.</span> <span class="toc-text">PDA</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TM"><span class="toc-number">3.</span> <span class="toc-text">TM</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Nondeterministic-Models"><span class="toc-number">4.</span> <span class="toc-text">Nondeterministic Models</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Nondeterministic-Finite-state-Automata-NFA"><span class="toc-number">4.1.</span> <span class="toc-text">Nondeterministic Finite-state Automata (NFA)</span></a></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -170,6 +170,10 @@
 
   <div class="content e-content" itemprop="articleBody">
     <h1 id="FSA"><a href="#FSA" class="headerlink" title="FSA"></a>FSA</h1><p> A finite state automaton is (made of):<br>– A finite state set: Q<br>– A finite input alphabet: I<br>– A transition function (partial, in general):</p>
+<h1 id="PDA"><a href="#PDA" class="headerlink" title="PDA"></a>PDA</h1><p>“Finite state machine” + “a stack”: PDA可以记住无限量的信息<br>Input tape + Stack + Control unit<br>This means at state q1, if we encounter an input string ‘a’ and top symbol of the stack is ‘b’, then we pop ‘b’, push ‘c’ on top of the stack and move to state q2.</p>
+<h1 id="TM"><a href="#TM" class="headerlink" title="TM"></a>TM</h1><p>有一个input head和一个memory head</p>
+<h1 id="Nondeterministic-Models"><a href="#Nondeterministic-Models" class="headerlink" title="Nondeterministic Models"></a>Nondeterministic Models</h1><h2 id="Nondeterministic-Finite-state-Automata-NFA"><a href="#Nondeterministic-Finite-state-Automata-NFA" class="headerlink" title="Nondeterministic Finite-state Automata (NFA)"></a>Nondeterministic Finite-state Automata (NFA)</h2><p>“state” the <strong>set</strong> of possible states<br>先构建NFA，再以此构建DFA<br>终结符、非终结符、开始符号</p>
+<p>RL正则语言<br>CFL上下文无关文法<br>GenL通用语言</p>
 
   </div>
 </article>
@@ -201,7 +205,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#FSA"><span class="toc-number">1.</span> <span class="toc-text">FSA</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#FSA"><span class="toc-number">1.</span> <span class="toc-text">FSA</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PDA"><span class="toc-number">2.</span> <span class="toc-text">PDA</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TM"><span class="toc-number">3.</span> <span class="toc-text">TM</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Nondeterministic-Models"><span class="toc-number">4.</span> <span class="toc-text">Nondeterministic Models</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Nondeterministic-Finite-state-Automata-NFA"><span class="toc-number">4.1.</span> <span class="toc-text">Nondeterministic Finite-state Automata (NFA)</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

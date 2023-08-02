@@ -14,7 +14,7 @@
 <meta property="og:description" content="Defmin f(x)s.t. x属于XGeneral form:min z &#x3D; c1x1 + c2c2 +…+cnxns.t.Matrix notationmin z &#x3D; [c1 … cn][] Standard form: 123min z &#x3D; cTxs.t. Ax &#x3D; b     x&gt;&#x3D;0   (only equality constraints and all n">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-06-01T21:49:00.000Z">
-<meta property="article:modified_time" content="2023-06-04T18:00:50.793Z">
+<meta property="article:modified_time" content="2023-07-11T16:08:01.108Z">
 <meta property="article:author" content="ShinWhy">
 <meta property="article:tag" content="POLIMI">
 <meta property="article:tag" content="FOR">
@@ -120,7 +120,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Def"><span class="toc-number">1.</span> <span class="toc-text">Def</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Basic-feasible-solutions-and-vertices-of-polyhedra"><span class="toc-number">2.</span> <span class="toc-text">Basic feasible solutions and vertices of polyhedra</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%95%E7%BA%AF%E5%BD%A2%E7%AE%97%E6%B3%95%EF%BC%88simplex-method%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">单纯形算法（simplex method）</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Def"><span class="toc-number">1.</span> <span class="toc-text">Def</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Basic-feasible-solutions-and-vertices-of-polyhedra"><span class="toc-number">2.</span> <span class="toc-text">Basic feasible solutions and vertices of polyhedra</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%95%E7%BA%AF%E5%BD%A2%E7%AE%97%E6%B3%95%EF%BC%88simplex-method%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">单纯形算法（simplex method）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%B9%E5%81%B6-Duality"><span class="toc-number">4.</span> <span class="toc-text">对偶(Duality)</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -175,10 +175,42 @@
 <p>方法：把小于0的x变成(xi-xj), 添加slack variable和surplus variable, 改变目标函数的符号</p>
 <h1 id="Basic-feasible-solutions-and-vertices-of-polyhedra"><a href="#Basic-feasible-solutions-and-vertices-of-polyhedra" class="headerlink" title="Basic feasible solutions and vertices of polyhedra"></a>Basic feasible solutions and vertices of polyhedra</h1><p>Ax&#x3D;b<br>A&#x3D;&gt;m<em>n<br>rank&#x3D;m(A is full of rank)<br>m &#x3D; n unique solution<br>m &lt; n 无穷个solution<br>A&#x3D;[B|N]<br>B: a basis of such a matrix A——————m</em>m<br>N: m*(n-m)</p>
 <p>XT &#x3D; [XBT|XNT]<br>A basic solution is a solution obtained by setting <strong>xN&#x3D;0</strong>，<br>A basic solution with <strong>XB&gt;&#x3D;0</strong> is a <strong>basic feasible solution</strong>.<br>The variable in XB——-basic variables, non basic variables</p>
-<h1 id="单纯形算法（simplex-method）"><a href="#单纯形算法（simplex-method）" class="headerlink" title="单纯形算法（simplex method）"></a>单纯形算法（simplex method）</h1><p>算法的基本思想是通过在多维空间中移动一个特定形状的多面体，寻找目标函数取得最优值的顶点</p>
+<h1 id="单纯形算法（simplex-method）"><a href="#单纯形算法（simplex-method）" class="headerlink" title="单纯形算法（simplex method）"></a>单纯形算法（simplex method）</h1><p>算法的基本思想是通过在多维空间中移动一个特定形状的多面体，寻找目标函数取得最优值的顶点<br>上课时的思路：<br>什么是单纯形法：</p>
+<ol>
+<li>在<strong>不增加目标函数值</strong>的前提下检测一系列的基本可行解，直到找到最优解或者发现线性规划是无界的<br>在每次循环中，从一个基本可行解移至另一个基本可行解。</li>
+<li>那我们该怎么做呢？</li>
+</ol>
+<ul>
+<li>先找到一个初始的vertex(基本可行解)</li>
+<li>确定当前的vertex是不是最优解</li>
+<li>如果不是，就从当前的vertex一道一个更好的相邻的vertex(或者说名这个LP是无界的)</li>
+</ul>
+<ol start="3">
+<li>分别看这些步骤</li>
+</ol>
+<ul>
+<li>初始的vertex很好看出来</li>
+<li>怎么确定当前的vertex是不是最优解？————引出reduced cost!!!<br>通过计算cTx，可以看出cost是由一个固定的值和一个变化的值组成的，其中变化的那个部分就是reduced cost，reduced cost是由于non basic 变量引起的(NNBBN)。</li>
+<li>如果cN&gt;0, 那么xB&#x3D;B-1b, xN&#x3D;0是最优解————由此可知单纯形法的终止条件。<br>所以要想判断是不是最优算法，可以观察cN是否小于0，如果小于，那么增大对应的xN，并保持其他的xN不变，那么cost会进一步缩小，所以不是最优解。</li>
+<li>怎么移向相邻的基本可行解？<br>移出xB，移入xN。</li>
+</ul>
+<p>步骤：</p>
+<ol>
+<li>转化为标准形式</li>
+<li>找到一个基本可行解</li>
+<li>画tableau</li>
+<li>找enter的变量和exit的变量，把enter的变量那一列通过变换变成单位向量</li>
+<li>如果还有reduced cost是negative的，继续第3步</li>
+<li>直到都是nonnegative，得到xB, xN, objective function value.</li>
+</ol>
 <p>basic feasible solution is such that xB&#x3D;B-1b, xN&#x3D;0<br>reduced cost<br>如果cN&gt;&#x3D;0 基本可行解就是全局最优解（对于最小化问题）<br>对于最大化问题，看是否&lt;&#x3D;0</p>
 <p>Change of basis(for minimization LP): 通过矩阵变换，哪个进(第一行负的进)，哪个出(第一列&#x2F;进的那列对应的行的值)</p>
-<p>Two-phase simplex method(Determine an initial basic feasible solution)看不出明显的基变量的情况下使用<br>两阶段的第一阶段就是用单纯形法消去人工变量，即把人工变量变成非基变量，第二阶段就是从基本可行解出发用单纯形法求线性规划最优解。</p>
+<p>Two-phase simplex method(Determine an initial basic feasible solution)看不出明显的基变量的情况下使用(找不到初始基本可行解)，引入人工变量<br>两阶段的第一阶段的目的是找到一个初始的基本可行解，就是用单纯形法消去人工变量，即把人工变量变成非基变量，第二阶段就是从基本可行解出发用单纯形法求线性规划最优解。</p>
+<h1 id="对偶-Duality"><a href="#对偶-Duality" class="headerlink" title="对偶(Duality)"></a>对偶(Duality)</h1><p>如果线性规划（Ⅰ）中的第k个约束条件是等式，则它的对偶规划（Ⅱ）<br>中的第k个变量W无非负限制（W 为自由变量）。</p>
+<p>反之，若原线性规划（Ⅰ）中的第k个变量无非负性要求，则对偶规划（Ⅱ）中的<br>第k个约束为等式。</p>
+<blockquote>
+<p>任一个线性规划得对偶规划都可以写出，其写法为：<br>（ⅰ）将目标函数转化为求最大<br>（ⅱ）将约束条件转化为“≤”型或“&#x3D;”型<br>（ⅲ）写出对偶关系表<br>（ⅳ）据对偶表的规定写出对偶规划</p>
+</blockquote>
 
   </div>
 </article>
@@ -210,7 +242,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Def"><span class="toc-number">1.</span> <span class="toc-text">Def</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Basic-feasible-solutions-and-vertices-of-polyhedra"><span class="toc-number">2.</span> <span class="toc-text">Basic feasible solutions and vertices of polyhedra</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%95%E7%BA%AF%E5%BD%A2%E7%AE%97%E6%B3%95%EF%BC%88simplex-method%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">单纯形算法（simplex method）</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Def"><span class="toc-number">1.</span> <span class="toc-text">Def</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Basic-feasible-solutions-and-vertices-of-polyhedra"><span class="toc-number">2.</span> <span class="toc-text">Basic feasible solutions and vertices of polyhedra</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%95%E7%BA%AF%E5%BD%A2%E7%AE%97%E6%B3%95%EF%BC%88simplex-method%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">单纯形算法（simplex method）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%B9%E5%81%B6-Duality"><span class="toc-number">4.</span> <span class="toc-text">对偶(Duality)</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
