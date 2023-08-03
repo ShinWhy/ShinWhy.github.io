@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>MyBatisPlus</title>
+      <link href="/2023/08/03/MybatisPlus/"/>
+      <url>/2023/08/03/MybatisPlus/</url>
+      
+        <content type="html"><![CDATA[<div class="row">    <embed src="/pdfs/MyBatisPlus（SpringBoot版）.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> EasyPan </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Spring Boot </tag>
+            
+            <tag> Maven </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>德语学习</title>
       <link href="/2023/08/02/German/"/>
       <url>/2023/08/02/German/</url>
