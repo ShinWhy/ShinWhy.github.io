@@ -4,6 +4,60 @@
   
     
     <entry>
+      <title>Nodejs笔记</title>
+      <link href="/2023/08/07/Nodejs%E7%AC%94%E8%AE%B0/"/>
+      <url>/2023/08/07/Nodejs%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="为什么要学习Nodejs"><a href="#为什么要学习Nodejs" class="headerlink" title="为什么要学习Nodejs?"></a>为什么要学习Nodejs?</h1><p>可以让其他人访问我们的编写的网页<br>为后续的框架学习打基础(Vue, React,Angular)</p><h1 id="什么是Nodejs"><a href="#什么是Nodejs" class="headerlink" title="什么是Nodejs?"></a>什么是Nodejs?</h1><p>通俗来讲：他是一款应用程序，是一款软件，它可以运行JavaScript代码</p><h1 id="Node-js的作用？"><a href="#Node-js的作用？" class="headerlink" title="Node.js的作用？"></a>Node.js的作用？</h1><ol><li>开发服务器端应用</li><li>开发工具类应用(Webpack, Vite, Babel)</li><li>开发桌面端应用(VSCode, Figma, Postman &lt;- electron &lt;- Node.js)</li></ol><h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><ol><li>Node.js中不能使用<code>BOM</code>和<code>DOM</code>的API，可以使用console和定时器API</li><li>Node.js中的顶级对象为<code>global</code>，也可以用<code>globalThis</code>访问顶级对象</li></ol><h1 id="Buffer"><a href="#Buffer" class="headerlink" title="Buffer"></a>Buffer</h1><div class="row">    <embed src="./pdfs/NodejsPDF/01_Buffer.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> Nodejs </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Nodejs </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数组</title>
+      <link href="/2023/08/05/leetcode(%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92)/"/>
+      <url>/2023/08/05/leetcode(%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92)/</url>
+      
+        <content type="html"><![CDATA[<ol><li>确定dp数组下标含义 eg: 分拆数字i，可以得到的最大乘积为dp[i];</li><li>递推公式 eg: dp[i] &#x3D; max(dp[i], (i - j) * j, dp[i - j] * j);</li><li>初始化 eg: dp[2] &#x3D; 1;</li><li>遍历顺序 eg: 从前向后遍历就可以;</li><li>推导结果</li></ol><h1 id="343-Integer-Break"><a href="#343-Integer-Break" class="headerlink" title="343. Integer Break"></a>343. Integer Break</h1><p>新知：max()只能比较两个数的值</p><h1 id="53-Maximum-Subarray"><a href="#53-Maximum-Subarray" class="headerlink" title="53. Maximum Subarray"></a>53. Maximum Subarray</h1><p>疑惑：</p><ul><li>递推公式怎么写？如果出现 3，-1，-1，9的情况， 阁下应该如何应对呢？</li><li>抛弃了前面的元素，重新开始算的情况是怎么样的？对于每一个i，无非只有两种情况：dp[i]&#x3D;max(nums[i]+dp[i+1],nums[i])<br>心得：</li><li>注意变量名不要和已经存在的函数名撞车</li><li>注意确定dp数组下标含义以后，要严格按照那个来思考问题。 这样就不会出现第一个疑惑</li></ul><h1 id="54-Spiral-Matrix"><a href="#54-Spiral-Matrix" class="headerlink" title="54. Spiral Matrix"></a>54. Spiral Matrix</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> Leetcode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Leetcode </tag>
+            
+            <tag> 数组(Array) </tag>
+            
+            <tag> 动态规划 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>MyBatisPlus</title>
       <link href="/2023/08/03/MybatisPlus/"/>
       <url>/2023/08/03/MybatisPlus/</url>

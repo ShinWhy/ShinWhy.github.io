@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="为什么要学习Nodejs?可以让其他人访问我们的编写的网页为后续的框架学习打基础(Vue, React,Angular) 什么是Nodejs?通俗来讲：他是一款应用程序，是一款软件，它可以运行JavaScript代码 Node.js的作用？ 开发服务器端应用 开发工具类应用(Webpack, Vite, Babel) 开发桌面端应用(VSCode, Figma, Postman &lt;- ele">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nodejs笔记">
+<meta property="og:url" content="https://shinwhy.github.io/2023/08/07/Nodejs%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="ShinWhy">
+<meta property="og:description" content="为什么要学习Nodejs?可以让其他人访问我们的编写的网页为后续的框架学习打基础(Vue, React,Angular) 什么是Nodejs?通俗来讲：他是一款应用程序，是一款软件，它可以运行JavaScript代码 Node.js的作用？ 开发服务器端应用 开发工具类应用(Webpack, Vite, Babel) 开发桌面端应用(VSCode, Figma, Postman &lt;- ele">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-08-06T22:00:00.000Z">
+<meta property="article:modified_time" content="2023-08-07T17:28:24.696Z">
+<meta property="article:author" content="ShinWhy">
+<meta property="article:tag" content="Nodejs">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Nodejs笔记</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="https://github.com/ShinWhy/">Projects</a></li><!--
+     --><!--
+       --><li><a href="/tags/">Tag</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Category</a></li><!--
+     --><!--
+       --><li><a href="/search/">Search</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2023/08/05/leetcode(%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92)/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://shinwhy.github.io/2023/08/07/Nodejs%E7%AC%94%E8%AE%B0/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://shinwhy.github.io/2023/08/07/Nodejs%E7%AC%94%E8%AE%B0/&text=Nodejs笔记"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://shinwhy.github.io/2023/08/07/Nodejs%E7%AC%94%E8%AE%B0/&title=Nodejs笔记"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://shinwhy.github.io/2023/08/07/Nodejs%E7%AC%94%E8%AE%B0/&is_video=false&description=Nodejs笔记"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Nodejs笔记&body=Check out this article: https://shinwhy.github.io/2023/08/07/Nodejs%E7%AC%94%E8%AE%B0/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://shinwhy.github.io/2023/08/07/Nodejs%E7%AC%94%E8%AE%B0/&title=Nodejs笔记"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://shinwhy.github.io/2023/08/07/Nodejs%E7%AC%94%E8%AE%B0/&title=Nodejs笔记"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://shinwhy.github.io/2023/08/07/Nodejs%E7%AC%94%E8%AE%B0/&title=Nodejs笔记"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://shinwhy.github.io/2023/08/07/Nodejs%E7%AC%94%E8%AE%B0/&title=Nodejs笔记"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://shinwhy.github.io/2023/08/07/Nodejs%E7%AC%94%E8%AE%B0/&name=Nodejs笔记&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://shinwhy.github.io/2023/08/07/Nodejs%E7%AC%94%E8%AE%B0/&t=Nodejs笔记"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0Nodejs"><span class="toc-number">1.</span> <span class="toc-text">为什么要学习Nodejs?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFNodejs"><span class="toc-number">2.</span> <span class="toc-text">什么是Nodejs?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Node-js%E7%9A%84%E4%BD%9C%E7%94%A8%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">Node.js的作用？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">4.</span> <span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Buffer"><span class="toc-number">5.</span> <span class="toc-text">Buffer</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        Nodejs笔记
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">ShinWhy</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-08-06T22:00:00.000Z" class="dt-published" itemprop="datePublished">2023-08-07</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/Nodejs/">Nodejs</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="p-category" href="/tags/Nodejs/" rel="tag">Nodejs</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1 id="为什么要学习Nodejs"><a href="#为什么要学习Nodejs" class="headerlink" title="为什么要学习Nodejs?"></a>为什么要学习Nodejs?</h1><p>可以让其他人访问我们的编写的网页<br>为后续的框架学习打基础(Vue, React,Angular)</p>
+<h1 id="什么是Nodejs"><a href="#什么是Nodejs" class="headerlink" title="什么是Nodejs?"></a>什么是Nodejs?</h1><p>通俗来讲：他是一款应用程序，是一款软件，它可以运行JavaScript代码</p>
+<h1 id="Node-js的作用？"><a href="#Node-js的作用？" class="headerlink" title="Node.js的作用？"></a>Node.js的作用？</h1><ol>
+<li>开发服务器端应用</li>
+<li>开发工具类应用(Webpack, Vite, Babel)</li>
+<li>开发桌面端应用(VSCode, Figma, Postman &lt;- electron &lt;- Node.js)</li>
+</ol>
+<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><ol>
+<li>Node.js中不能使用<code>BOM</code>和<code>DOM</code>的API，可以使用console和定时器API</li>
+<li>Node.js中的顶级对象为<code>global</code>，也可以用<code>globalThis</code>访问顶级对象</li>
+</ol>
+<h1 id="Buffer"><a href="#Buffer" class="headerlink" title="Buffer"></a>Buffer</h1>
+
+	<div class="row">
+    <embed src="./pdfs/NodejsPDF/01_Buffer.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/ShinWhy/">Projects</a></li>
+         
+          <li><a href="/tags/">Tag</a></li>
+         
+          <li><a href="/categories/">Category</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0Nodejs"><span class="toc-number">1.</span> <span class="toc-text">为什么要学习Nodejs?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFNodejs"><span class="toc-number">2.</span> <span class="toc-text">什么是Nodejs?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Node-js%E7%9A%84%E4%BD%9C%E7%94%A8%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">Node.js的作用？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">4.</span> <span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Buffer"><span class="toc-number">5.</span> <span class="toc-text">Buffer</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://shinwhy.github.io/2023/08/07/Nodejs%E7%AC%94%E8%AE%B0/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://shinwhy.github.io/2023/08/07/Nodejs%E7%AC%94%E8%AE%B0/&text=Nodejs笔记"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://shinwhy.github.io/2023/08/07/Nodejs%E7%AC%94%E8%AE%B0/&title=Nodejs笔记"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://shinwhy.github.io/2023/08/07/Nodejs%E7%AC%94%E8%AE%B0/&is_video=false&description=Nodejs笔记"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Nodejs笔记&body=Check out this article: https://shinwhy.github.io/2023/08/07/Nodejs%E7%AC%94%E8%AE%B0/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://shinwhy.github.io/2023/08/07/Nodejs%E7%AC%94%E8%AE%B0/&title=Nodejs笔记"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://shinwhy.github.io/2023/08/07/Nodejs%E7%AC%94%E8%AE%B0/&title=Nodejs笔记"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://shinwhy.github.io/2023/08/07/Nodejs%E7%AC%94%E8%AE%B0/&title=Nodejs笔记"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://shinwhy.github.io/2023/08/07/Nodejs%E7%AC%94%E8%AE%B0/&title=Nodejs笔记"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://shinwhy.github.io/2023/08/07/Nodejs%E7%AC%94%E8%AE%B0/&name=Nodejs笔记&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://shinwhy.github.io/2023/08/07/Nodejs%E7%AC%94%E8%AE%B0/&t=Nodejs笔记"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2018-2099
+    ShinWhy
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="https://github.com/ShinWhy/">Projects</a></li><!--
+     --><!--
+       --><li><a href="/tags/">Tag</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Category</a></li><!--
+     --><!--
+       --><li><a href="/search/">Search</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
