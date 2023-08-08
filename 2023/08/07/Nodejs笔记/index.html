@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="为什么要学习Nodejs?可以让其他人访问我们的编写的网页为后续的框架学习打基础(Vue, React,Angular) 什么是Nodejs?通俗来讲：他是一款应用程序，是一款软件，它可以运行JavaScript代码 Node.js的作用？ 开发服务器端应用 开发工具类应用(Webpack, Vite, Babel) 开发桌面端应用(VSCode, Figma, Postman &lt;- ele">
+    <meta name="description" content="一、简介1. 为什么要学习Nodejs?可以让其他人访问我们的编写的网页为后续的框架学习打基础(Vue, React,Angular) 2. 什么是Nodejs?通俗来讲：他是一款应用程序，是一款软件，它可以运行JavaScript代码 3. Node.js的作用？ 开发服务器端应用 开发工具类应用(Webpack, Vite, Babel) 开发桌面端应用(VSCode, Figma, Post">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nodejs笔记">
 <meta property="og:url" content="https://shinwhy.github.io/2023/08/07/Nodejs%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="ShinWhy">
-<meta property="og:description" content="为什么要学习Nodejs?可以让其他人访问我们的编写的网页为后续的框架学习打基础(Vue, React,Angular) 什么是Nodejs?通俗来讲：他是一款应用程序，是一款软件，它可以运行JavaScript代码 Node.js的作用？ 开发服务器端应用 开发工具类应用(Webpack, Vite, Babel) 开发桌面端应用(VSCode, Figma, Postman &lt;- ele">
+<meta property="og:description" content="一、简介1. 为什么要学习Nodejs?可以让其他人访问我们的编写的网页为后续的框架学习打基础(Vue, React,Angular) 2. 什么是Nodejs?通俗来讲：他是一款应用程序，是一款软件，它可以运行JavaScript代码 3. Node.js的作用？ 开发服务器端应用 开发工具类应用(Webpack, Vite, Babel) 开发桌面端应用(VSCode, Figma, Post">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-08-06T22:00:00.000Z">
-<meta property="article:modified_time" content="2023-08-07T23:10:33.228Z">
+<meta property="article:modified_time" content="2023-08-08T05:19:57.910Z">
 <meta property="article:author" content="ShinWhy">
 <meta property="article:tag" content="Nodejs">
 <meta name="twitter:card" content="summary">
@@ -117,7 +117,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0Nodejs"><span class="toc-number">1.</span> <span class="toc-text">为什么要学习Nodejs?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFNodejs"><span class="toc-number">2.</span> <span class="toc-text">什么是Nodejs?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Node-js%E7%9A%84%E4%BD%9C%E7%94%A8%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">Node.js的作用？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">4.</span> <span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#01-Buffer"><span class="toc-number">5.</span> <span class="toc-text">01_Buffer</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#02-fs%E6%A8%A1%E5%9D%97"><span class="toc-number">6.</span> <span class="toc-text">02_fs模块</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#03-path%E6%A8%A1%E5%9D%97"><span class="toc-number">7.</span> <span class="toc-text">03_path模块</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#04-HTTP%E5%8D%8F%E8%AE%AE"><span class="toc-number">8.</span> <span class="toc-text">04_HTTP协议</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">一、简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0Nodejs"><span class="toc-number">1.1.</span> <span class="toc-text">1. 为什么要学习Nodejs?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BB%80%E4%B9%88%E6%98%AFNodejs"><span class="toc-number">1.2.</span> <span class="toc-text">2. 什么是Nodejs?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Node-js%E7%9A%84%E4%BD%9C%E7%94%A8%EF%BC%9F"><span class="toc-number">1.3.</span> <span class="toc-text">3. Node.js的作用？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.4.</span> <span class="toc-text">4. 注意事项</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%A8%A1%E5%9D%97"><span class="toc-number">2.</span> <span class="toc-text">二、模块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Buffer"><span class="toc-number">2.1.</span> <span class="toc-text">1. Buffer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-fs%E6%A8%A1%E5%9D%97"><span class="toc-number">2.2.</span> <span class="toc-text">2. fs模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-path%E6%A8%A1%E5%9D%97"><span class="toc-number">2.3.</span> <span class="toc-text">3. path模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-HTTP%E5%8D%8F%E8%AE%AE"><span class="toc-number">2.4.</span> <span class="toc-text">4. HTTP协议</span></a></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -166,18 +166,18 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1 id="为什么要学习Nodejs"><a href="#为什么要学习Nodejs" class="headerlink" title="为什么要学习Nodejs?"></a>为什么要学习Nodejs?</h1><p>可以让其他人访问我们的编写的网页<br>为后续的框架学习打基础(Vue, React,Angular)</p>
-<h1 id="什么是Nodejs"><a href="#什么是Nodejs" class="headerlink" title="什么是Nodejs?"></a>什么是Nodejs?</h1><p>通俗来讲：他是一款应用程序，是一款软件，它可以运行JavaScript代码</p>
-<h1 id="Node-js的作用？"><a href="#Node-js的作用？" class="headerlink" title="Node.js的作用？"></a>Node.js的作用？</h1><ol>
+    <h1 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h1><h2 id="1-为什么要学习Nodejs"><a href="#1-为什么要学习Nodejs" class="headerlink" title="1. 为什么要学习Nodejs?"></a>1. 为什么要学习Nodejs?</h2><p>可以让其他人访问我们的编写的网页<br>为后续的框架学习打基础(Vue, React,Angular)</p>
+<h2 id="2-什么是Nodejs"><a href="#2-什么是Nodejs" class="headerlink" title="2. 什么是Nodejs?"></a>2. 什么是Nodejs?</h2><p>通俗来讲：他是一款应用程序，是一款软件，它可以运行JavaScript代码</p>
+<h2 id="3-Node-js的作用？"><a href="#3-Node-js的作用？" class="headerlink" title="3. Node.js的作用？"></a>3. Node.js的作用？</h2><ol>
 <li>开发服务器端应用</li>
 <li>开发工具类应用(Webpack, Vite, Babel)</li>
 <li>开发桌面端应用(VSCode, Figma, Postman &lt;- electron &lt;- Node.js)</li>
 </ol>
-<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><ol>
+<h2 id="4-注意事项"><a href="#4-注意事项" class="headerlink" title="4. 注意事项"></a>4. 注意事项</h2><ol>
 <li>Node.js中不能使用<code>BOM</code>和<code>DOM</code>的API，可以使用console和定时器API</li>
 <li>Node.js中的顶级对象为<code>global</code>，也可以用<code>globalThis</code>访问顶级对象</li>
 </ol>
-<h1 id="01-Buffer"><a href="#01-Buffer" class="headerlink" title="01_Buffer"></a>01_Buffer</h1>
+<h1 id="二、模块"><a href="#二、模块" class="headerlink" title="二、模块"></a>二、模块</h1><h2 id="1-Buffer"><a href="#1-Buffer" class="headerlink" title="1. Buffer"></a>1. Buffer</h2>
 
 	<div class="row">
     <embed src="/pdfs/NodejsPDF/01_Buffer.pdf" width="100%" height="550" type="application/pdf">
@@ -185,8 +185,7 @@
 
 
 
-
-<h1 id="02-fs模块"><a href="#02-fs模块" class="headerlink" title="02_fs模块"></a>02_fs模块</h1>
+<h2 id="2-fs模块"><a href="#2-fs模块" class="headerlink" title="2. fs模块"></a>2. fs模块</h2>
 
 	<div class="row">
     <embed src="/pdfs/NodejsPDF/02_fs模块.pdf" width="100%" height="550" type="application/pdf">
@@ -198,7 +197,7 @@
 <li>写入文件应用场景<br>下载文件<br>安装软件<br>保存程序日志，如 Git<br>编辑器保存文件<br>视频录制</li>
 <li>读取文件应用场景<br>电脑开机<br>程序运行<br>编辑器打开文件<br>查看图片<br>播放视频<br>播放音乐<br>Git 查看日志<br>上传文件<br>查看聊天记录</li>
 </ol>
-<h1 id="03-path模块"><a href="#03-path模块" class="headerlink" title="03_path模块"></a>03_path模块</h1>
+<h2 id="3-path模块"><a href="#3-path模块" class="headerlink" title="3. path模块"></a>3. path模块</h2>
 
 	<div class="row">
     <embed src="/pdfs/NodejsPDF/03_path模块.pdf" width="100%" height="550" type="application/pdf">
@@ -206,8 +205,7 @@
 
 
 
-
-<h1 id="04-HTTP协议"><a href="#04-HTTP协议" class="headerlink" title="04_HTTP协议"></a>04_HTTP协议</h1>
+<h2 id="4-HTTP协议"><a href="#4-HTTP协议" class="headerlink" title="4. HTTP协议"></a>4. HTTP协议</h2>
 
 	<div class="row">
     <embed src="/pdfs/NodejsPDF/04_HTTP协议.pdf" width="100%" height="550" type="application/pdf">
@@ -245,7 +243,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0Nodejs"><span class="toc-number">1.</span> <span class="toc-text">为什么要学习Nodejs?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFNodejs"><span class="toc-number">2.</span> <span class="toc-text">什么是Nodejs?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Node-js%E7%9A%84%E4%BD%9C%E7%94%A8%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">Node.js的作用？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">4.</span> <span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#01-Buffer"><span class="toc-number">5.</span> <span class="toc-text">01_Buffer</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#02-fs%E6%A8%A1%E5%9D%97"><span class="toc-number">6.</span> <span class="toc-text">02_fs模块</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#03-path%E6%A8%A1%E5%9D%97"><span class="toc-number">7.</span> <span class="toc-text">03_path模块</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#04-HTTP%E5%8D%8F%E8%AE%AE"><span class="toc-number">8.</span> <span class="toc-text">04_HTTP协议</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">一、简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0Nodejs"><span class="toc-number">1.1.</span> <span class="toc-text">1. 为什么要学习Nodejs?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BB%80%E4%B9%88%E6%98%AFNodejs"><span class="toc-number">1.2.</span> <span class="toc-text">2. 什么是Nodejs?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Node-js%E7%9A%84%E4%BD%9C%E7%94%A8%EF%BC%9F"><span class="toc-number">1.3.</span> <span class="toc-text">3. Node.js的作用？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.4.</span> <span class="toc-text">4. 注意事项</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%A8%A1%E5%9D%97"><span class="toc-number">2.</span> <span class="toc-text">二、模块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Buffer"><span class="toc-number">2.1.</span> <span class="toc-text">1. Buffer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-fs%E6%A8%A1%E5%9D%97"><span class="toc-number">2.2.</span> <span class="toc-text">2. fs模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-path%E6%A8%A1%E5%9D%97"><span class="toc-number">2.3.</span> <span class="toc-text">3. path模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-HTTP%E5%8D%8F%E8%AE%AE"><span class="toc-number">2.4.</span> <span class="toc-text">4. HTTP协议</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
