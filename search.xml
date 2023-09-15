@@ -4,11 +4,42 @@
   
     
     <entry>
+      <title>PL</title>
+      <link href="/2023/09/15/PL/"/>
+      <url>/2023/09/15/PL/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/source/images/PL/Concept.JPG" alt="概念思维导图"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> STUDY </category>
+          
+          <category> POLIMI </category>
+          
+          <category> PL </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> POLIMI </tag>
+            
+            <tag> PL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>推荐系统</title>
       <link href="/2023/09/12/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
       <url>/2023/09/12/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/</url>
       
-        <content type="html"><![CDATA[<h1 id="今天把机器学习模型算法看完"><a href="#今天把机器学习模型算法看完" class="headerlink" title="今天把机器学习模型算法看完"></a>今天把机器学习模型算法看完</h1><h1 id="机器学习数学基础"><a href="#机器学习数学基础" class="headerlink" title="机器学习数学基础"></a>机器学习数学基础</h1><p>线性代数：矩阵<br>微积分：导数，偏导数，方向导数，梯度(Gradient): 函数在变量空间的某一点处，沿着哪一个方向有最大的变化率。凹函数和凸函数<br>概率论和统计： 样本均值，样本方差，标准差，概率分布{均匀分布，正态分布(高斯分布)，指数分布}，条件概率公式，全概率公式，贝叶斯公式</p><h1 id="机器学习入门"><a href="#机器学习入门" class="headerlink" title="机器学习入门"></a>机器学习入门</h1><p>有监督学习：提供数据并提供数据对应结果的机器学习过程（分类(离散数值)&#x2F;回归(连续数值)）<br>无监督学习：<br>强化学习：通过与环境交互并延迟返回进而改进行为的学习过程。<br>![机器学习](&#x2F;images&#x2F;Recommender Systems&#x2F;Machine Learning.jpg)</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="今天把机器学习模型算法看完"><a href="#今天把机器学习模型算法看完" class="headerlink" title="今天把机器学习模型算法看完"></a>今天把机器学习模型算法看完</h1><h1 id="机器学习数学基础"><a href="#机器学习数学基础" class="headerlink" title="机器学习数学基础"></a>机器学习数学基础</h1><p>线性代数：矩阵<br>微积分：导数，偏导数，方向导数，梯度(Gradient): 函数在变量空间的某一点处，沿着哪一个方向有最大的变化率。凹函数和凸函数<br>概率论和统计： 样本均值，样本方差，标准差，概率分布{均匀分布，正态分布(高斯分布)，指数分布}，条件概率公式，全概率公式，贝叶斯公式</p><h1 id="机器学习入门"><a href="#机器学习入门" class="headerlink" title="机器学习入门"></a>机器学习入门</h1><p>有监督学习：提供数据并提供数据对应结果的机器学习过程（分类(离散数值)&#x2F;回归(连续数值)）<br>无监督学习：<br>强化学习：通过与环境交互并延迟返回进而改进行为的学习过程。<br>![机器学习](&#x2F;images&#x2F;Recommender Systems&#x2F;Machine Learning.jpg)<br><img src="/images/Resources/MyBatis%E4%B8%8B%E8%BD%BD.png"></p>]]></content>
       
       
       <categories>
