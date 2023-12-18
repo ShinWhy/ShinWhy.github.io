@@ -6,17 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="Course Structure Evaluation 学习指导![](&#x2F;images&#x2F;DM&#x2F;study guide.JPG)  Data Mining介绍Good: valid, novel(发现一些平时看不出来的), useful(actionable, 能不能利用做些事情), understandable(why)  Descripive: (about wha">
+    <meta name="description" content="Course Structure Evaluation 学习指导![](&#x2F;images&#x2F;DM&#x2F;study guide.JPG) 背景知识##1. Big Data##2. Machine Learning  Supervised Learning Unsupervised Learning Reinforcement Learning  ##3. Data Scien">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Data Mining上课笔记">
 <meta property="og:url" content="https://shinwhy.github.io/2023/10/16/DM/index.html">
 <meta property="og:site_name" content="ShinWhy">
-<meta property="og:description" content="Course Structure Evaluation 学习指导![](&#x2F;images&#x2F;DM&#x2F;study guide.JPG)  Data Mining介绍Good: valid, novel(发现一些平时看不出来的), useful(actionable, 能不能利用做些事情), understandable(why)  Descripive: (about wha">
+<meta property="og:description" content="Course Structure Evaluation 学习指导![](&#x2F;images&#x2F;DM&#x2F;study guide.JPG) 背景知识##1. Big Data##2. Machine Learning  Supervised Learning Unsupervised Learning Reinforcement Learning  ##3. Data Scien">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://shinwhy.github.io/images/DM/outline.JPG">
 <meta property="og:image" content="https://shinwhy.github.io/images/DM/Evaluation.JPG">
+<meta property="og:image" content="https://shinwhy.github.io/images/DM/outline.JPG">
 <meta property="article:published_time" content="2023-10-16T13:49:00.000Z">
-<meta property="article:modified_time" content="2023-10-26T08:49:22.702Z">
+<meta property="article:modified_time" content="2023-12-13T23:42:06.533Z">
 <meta property="article:author" content="ShinWhy">
 <meta property="article:tag" content="POLIMI">
 <meta property="article:tag" content="DM">
@@ -123,7 +124,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Course-Structure"><span class="toc-number">1.</span> <span class="toc-text">Course Structure</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Evaluation"><span class="toc-number">2.</span> <span class="toc-text">Evaluation</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%AF%BC"><span class="toc-number">3.</span> <span class="toc-text">学习指导</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Course-Structure"><span class="toc-number">1.</span> <span class="toc-text">Course Structure</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Evaluation"><span class="toc-number">2.</span> <span class="toc-text">Evaluation</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%AF%BC"><span class="toc-number">3.</span> <span class="toc-text">学习指导</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AF%86"><span class="toc-number">4.</span> <span class="toc-text">背景知识</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-Data-Mining%E4%BB%8B%E7%BB%8D"><span class="toc-number">5.</span> <span class="toc-text">1. Data Mining介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1"><span class="toc-number">5.1.</span> <span class="toc-text">任务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E6%B5%81%E7%A8%8B"><span class="toc-number">5.2.</span> <span class="toc-text">主要流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Data-preparation-amp-preprocessing"><span class="toc-number">5.3.</span> <span class="toc-text">Data preparation &amp; preprocessing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Major-Tasks"><span class="toc-number">5.3.1.</span> <span class="toc-text">Major Tasks</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Missing-value"><span class="toc-number">5.3.2.</span> <span class="toc-text">Missing value</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sampling"><span class="toc-number">5.3.3.</span> <span class="toc-text">Sampling</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E4%BB%BB%E5%8A%A1"><span class="toc-number">5.4.</span> <span class="toc-text">主要任务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Regression"><span class="toc-number">5.4.1.</span> <span class="toc-text">1. Regression</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Classification"><span class="toc-number">5.4.2.</span> <span class="toc-text">2. Classification</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Clustering-unsupervised-learning"><span class="toc-number">5.4.3.</span> <span class="toc-text">3. Clustering(unsupervised learning)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Associtions"><span class="toc-number">5.4.4.</span> <span class="toc-text">4. Associtions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Other-tasks"><span class="toc-number">5.4.5.</span> <span class="toc-text">5. Other tasks</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98"><span class="toc-number">5.5.</span> <span class="toc-text">相关问题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-Data-Representation"><span class="toc-number">6.</span> <span class="toc-text">2. Data Representation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Attributes"><span class="toc-number">6.1.</span> <span class="toc-text">Attributes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Missing-Values"><span class="toc-number">6.2.</span> <span class="toc-text">Missing Values</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Inaccurate-Values"><span class="toc-number">6.3.</span> <span class="toc-text">Inaccurate Values</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Encode"><span class="toc-number">6.4.</span> <span class="toc-text">Encode</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-Data-Exploration"><span class="toc-number">7.</span> <span class="toc-text">3. Data Exploration</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -175,11 +176,80 @@
     <h1 id="Course-Structure"><a href="#Course-Structure" class="headerlink" title="Course Structure"></a>Course Structure</h1><p><img src="/images/DM/outline.JPG" alt="outline"></p>
 <h1 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h1><p><img src="/images/DM/Evaluation.JPG" alt="考试信息"></p>
 <h1 id="学习指导"><a href="#学习指导" class="headerlink" title="学习指导"></a>学习指导</h1><p>![](&#x2F;images&#x2F;DM&#x2F;study guide.JPG)</p>
-<ol>
-<li>Data Mining介绍<br>Good: valid, novel(发现一些平时看不出来的), useful(actionable, 能不能利用做些事情), understandable(why)</li>
+<h1 id="背景知识"><a href="#背景知识" class="headerlink" title="背景知识"></a>背景知识</h1><p>##1. Big Data<br>##2. Machine Learning</p>
+<ul>
+<li>Supervised Learning</li>
+<li>Unsupervised Learning</li>
+<li>Reinforcement Learning</li>
+</ul>
+<p>##3. Data Science</p>
+<h1 id="1-Data-Mining介绍"><a href="#1-Data-Mining介绍" class="headerlink" title="1. Data Mining介绍"></a>1. Data Mining介绍</h1><p>Process of identifying (1)valid, (2)novel, (3)potentially useful, and (4)understandable patterns in data<br>Good: valid, novel(发现一些平时看不出来的), useful(actionable, 能不能利用做些事情), understandable(why)</p>
+<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><ul>
+<li>Descripive: (about what already happened)</li>
+<li>Predictive: (about what might happen)</li>
+<li>Prescriptive: (recommend a course of action)</li>
+</ul>
+<h2 id="主要流程"><a href="#主要流程" class="headerlink" title="主要流程"></a>主要流程</h2><p><img src="/images/DM/outline.JPG" alt="outline"><br>Main step: Selection, Cleaning, Transformation, Mining, Validation, Presentation &amp; Narrative</p>
+<h2 id="Data-preparation-amp-preprocessing"><a href="#Data-preparation-amp-preprocessing" class="headerlink" title="Data preparation &amp; preprocessing"></a>Data preparation &amp; preprocessing</h2><p>80%-90% of overall effort<br>incomplete, noisy(incorrect), inconsistent, duplicate</p>
+<h3 id="Major-Tasks"><a href="#Major-Tasks" class="headerlink" title="Major Tasks"></a>Major Tasks</h3><ol>
+<li>Data cleaning</li>
+<li>Data integration</li>
+<li>Data reduction</li>
+<li>Feature engineer, data transformation, and data discretization</li>
 </ol>
-<p>Descripive: (about what already happened)<br>Predictive: (about what might happen)</p>
-
+<h3 id="Missing-value"><a href="#Missing-value" class="headerlink" title="Missing value"></a>Missing value</h3><h3 id="Sampling"><a href="#Sampling" class="headerlink" title="Sampling"></a>Sampling</h3><p>main technique employed for data selection</p>
+<ol>
+<li>Simple random sampling</li>
+<li>Sampling without replacement</li>
+<li>Sampling with replacement(Bootstrap) 1-1&#x2F;n</li>
+<li>Stratified sampling(分层抽样)</li>
+</ol>
+<h2 id="主要任务"><a href="#主要任务" class="headerlink" title="主要任务"></a>主要任务</h2><h3 id="1-Regression"><a href="#1-Regression" class="headerlink" title="1. Regression"></a>1. Regression</h3><ul>
+<li>Linear Regression Model</li>
+<li>KNeighborsRegressor: 它通过找到距离新数据点最近的K个邻居，并使用它们的数值来进行预测。这个算法在回归分析和预测问题中很有用。</li>
+<li>KNIME Regression Tree: 在每个节点上，回归树算法会选择最佳的特征和切分点，使得子节点中的样本尽可能相似，同时实现目标变量的最小方差或最小平方误差。这种算法简单且易于理解，通常在预测连续型变量时表现良好。通过对输入空间进行递归的划分来生成树结构，每个叶子节点都对应着一个具体的预测值</li>
+</ul>
+<h3 id="2-Classification"><a href="#2-Classification" class="headerlink" title="2. Classification"></a>2. Classification</h3><p>用上面提到的方法</p>
+<h3 id="3-Clustering-unsupervised-learning"><a href="#3-Clustering-unsupervised-learning" class="headerlink" title="3. Clustering(unsupervised learning)"></a>3. Clustering(unsupervised learning)</h3><p>K-means</p>
+<h3 id="4-Associtions"><a href="#4-Associtions" class="headerlink" title="4. Associtions"></a>4. Associtions</h3><p>Assocition Rules(Support, Confidence, Lift)<br>支持（Support）、置信度（Confidence）、提升度（Lift）是关联规则分析中常用的指标。支持指标衡量一个规则在数据集中出现的频率，置信度衡量规则的可靠性，而提升度则衡量两个事件之间的相关性程度。这些指标对于了解数据集中项之间的关联程度和规律具有重要作用。</p>
+<h3 id="5-Other-tasks"><a href="#5-Other-tasks" class="headerlink" title="5. Other tasks"></a>5. Other tasks</h3><ul>
+<li>Outlier analysis</li>
+<li>Trend and evolution analysis</li>
+<li>Text Mining, Topic Modeling, Graph Mining, Data Streams</li>
+<li>Sentiment Analysis, Opinion Analysis, etc.</li>
+<li>Other pattern-directed or statistical analysis</li>
+</ul>
+<h2 id="相关问题"><a href="#相关问题" class="headerlink" title="相关问题"></a>相关问题</h2><p>Pitfalls</p>
+<h1 id="2-Data-Representation"><a href="#2-Data-Representation" class="headerlink" title="2. Data Representation"></a>2. Data Representation</h1><p>Instances, Attributes(variables), and Concept(class)</p>
+<h2 id="Attributes"><a href="#Attributes" class="headerlink" title="Attributes"></a>Attributes</h2><ul>
+<li>Numeric Attributes</li>
+<li>Categorical Attributes<br>Hierarchies eg. Spatial regions, taxonomies</li>
+</ul>
+<h2 id="Missing-Values"><a href="#Missing-Values" class="headerlink" title="Missing Values"></a>Missing Values</h2><ol>
+<li>Type</li>
+</ol>
+<ul>
+<li>MNAR</li>
+<li>MAR</li>
+<li>MCAR</li>
+</ul>
+<ol start="2">
+<li>Handling Missing Values</li>
+</ol>
+<ul>
+<li>Do Not Impute</li>
+<li>Deletion</li>
+<li>List-wise Deletion</li>
+<li>Pairwise Deletion</li>
+<li>Imputation</li>
+<li>Single Imputation(Mean&#x2F;mode substitution, Dummy variable control)</li>
+<li>Model-based Imputation(for MCAR, not for MNAR)</li>
+</ul>
+<h2 id="Inaccurate-Values"><a href="#Inaccurate-Values" class="headerlink" title="Inaccurate Values"></a>Inaccurate Values</h2><h2 id="Encode"><a href="#Encode" class="headerlink" title="Encode"></a>Encode</h2><ol>
+<li>Lable Encoder</li>
+<li>One Hot Encodeing</li>
+</ol>
+<h1 id="3-Data-Exploration"><a href="#3-Data-Exploration" class="headerlink" title="3. Data Exploration"></a>3. Data Exploration</h1>
   </div>
 </article>
 
@@ -210,7 +280,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Course-Structure"><span class="toc-number">1.</span> <span class="toc-text">Course Structure</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Evaluation"><span class="toc-number">2.</span> <span class="toc-text">Evaluation</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%AF%BC"><span class="toc-number">3.</span> <span class="toc-text">学习指导</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Course-Structure"><span class="toc-number">1.</span> <span class="toc-text">Course Structure</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Evaluation"><span class="toc-number">2.</span> <span class="toc-text">Evaluation</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%AF%BC"><span class="toc-number">3.</span> <span class="toc-text">学习指导</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AF%86"><span class="toc-number">4.</span> <span class="toc-text">背景知识</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-Data-Mining%E4%BB%8B%E7%BB%8D"><span class="toc-number">5.</span> <span class="toc-text">1. Data Mining介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1"><span class="toc-number">5.1.</span> <span class="toc-text">任务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E6%B5%81%E7%A8%8B"><span class="toc-number">5.2.</span> <span class="toc-text">主要流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Data-preparation-amp-preprocessing"><span class="toc-number">5.3.</span> <span class="toc-text">Data preparation &amp; preprocessing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Major-Tasks"><span class="toc-number">5.3.1.</span> <span class="toc-text">Major Tasks</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Missing-value"><span class="toc-number">5.3.2.</span> <span class="toc-text">Missing value</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sampling"><span class="toc-number">5.3.3.</span> <span class="toc-text">Sampling</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E4%BB%BB%E5%8A%A1"><span class="toc-number">5.4.</span> <span class="toc-text">主要任务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Regression"><span class="toc-number">5.4.1.</span> <span class="toc-text">1. Regression</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Classification"><span class="toc-number">5.4.2.</span> <span class="toc-text">2. Classification</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Clustering-unsupervised-learning"><span class="toc-number">5.4.3.</span> <span class="toc-text">3. Clustering(unsupervised learning)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Associtions"><span class="toc-number">5.4.4.</span> <span class="toc-text">4. Associtions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Other-tasks"><span class="toc-number">5.4.5.</span> <span class="toc-text">5. Other tasks</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98"><span class="toc-number">5.5.</span> <span class="toc-text">相关问题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-Data-Representation"><span class="toc-number">6.</span> <span class="toc-text">2. Data Representation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Attributes"><span class="toc-number">6.1.</span> <span class="toc-text">Attributes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Missing-Values"><span class="toc-number">6.2.</span> <span class="toc-text">Missing Values</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Inaccurate-Values"><span class="toc-number">6.3.</span> <span class="toc-text">Inaccurate Values</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Encode"><span class="toc-number">6.4.</span> <span class="toc-text">Encode</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-Data-Exploration"><span class="toc-number">7.</span> <span class="toc-text">3. Data Exploration</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
