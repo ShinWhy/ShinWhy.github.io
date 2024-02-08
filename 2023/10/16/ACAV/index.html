@@ -15,7 +15,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://shinwhy.github.io/images/ACAV/tasks.JPG">
 <meta property="article:published_time" content="2023-10-16T10:42:00.000Z">
-<meta property="article:modified_time" content="2024-01-09T15:44:47.817Z">
+<meta property="article:modified_time" content="2024-02-03T15:33:35.898Z">
 <meta property="article:author" content="ShinWhy">
 <meta property="article:tag" content="POLIMI">
 <meta property="article:tag" content="ACAV">
@@ -178,7 +178,36 @@
 <li>Retrofitting</li>
 </ul>
 <h2 id="3-Sensor"><a href="#3-Sensor" class="headerlink" title="3. Sensor"></a>3. Sensor</h2><p>This chapter is dealing with the <strong>Perception(感知感觉)</strong></p>
-<h3 id="I-Vision-Sensors"><a href="#I-Vision-Sensors" class="headerlink" title="I. Vision Sensors"></a>I. Vision Sensors</h3><h2 id="2-Time-of-Flight-Sensors"><a href="#2-Time-of-Flight-Sensors" class="headerlink" title="2. Time of Flight Sensors"></a>2. Time of Flight Sensors</h2><p>随机抽样一致性（Random Sample Consensus，RANSAC）是一种用于拟合模型和估计参数的迭代方法。RANSAC算法的主要目标是从包含离群点（outliers）的数据集中，估计出最佳的模型参数，以便更好地拟合数据。</p>
+<h3 id="I-Vision-Sensors"><a href="#I-Vision-Sensors" class="headerlink" title="I. Vision Sensors"></a>I. Vision Sensors</h3><p>Visual perception</p>
+<ol>
+<li>Introduction to Cameras<br>lens&#x2F;aperture&#x2F;sensor<br>各种分类</li>
+<li>Camera Projective Geometry<br>The Image Plane: I &#x3D; f(xi, yi)<br>Reference Frame: World Reference, Camera Reference<br>Pin hole model: [R|t] roto-translation between world reference and camera reference, R-3*3 matrix, t-3D vector<br>xi&#x2F;f &#x3D; xw&#x2F;zw<br>Two steps:</li>
+</ol>
+<ul>
+<li>Projection from world coordinates to camera coordinates(roto-translation)</li>
+<li>Projection from camera coordinates to image coordinates(xi &#x3D; xc&#x2F;zc*f + cx &#x3D; xi’)(3D -&gt; 2D)</li>
+<li>Camera Calibration(Input and Output)</li>
+<li>Depth Vision(knowing the size of objects we have in the scene)</li>
+<li>Stereo Cameras: Zw &#x3D; fb &#x2F; d</li>
+<li>Correspondence Problem: Correlation Based Algorithm &#x2F; Feature Based Algorithm<ul>
+<li>Appearance Similarity function</li>
+<li>Search Strategy to find location with highest similarity: epipolar constraint</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>Model Based Image Processing</li>
+</ol>
+<ul>
+<li>look for specific features(human defined)</li>
+<li>lane detection: lens distortion correction - ROI selection - Bird-Eye View - Image Segmentation</li>
+<li>RANSAC算法</li>
+</ul>
+<ol start="4">
+<li>Neural Network Image Processing</li>
+<li>Conclusion</li>
+</ol>
+<h2 id="2-Time-of-Flight-Sensors"><a href="#2-Time-of-Flight-Sensors" class="headerlink" title="2. Time of Flight Sensors"></a>2. Time of Flight Sensors</h2><p>随机抽样一致性（Random Sample Consensus，RANSAC）是一种用于拟合模型和估计参数的迭代方法。RANSAC算法的主要目标是从包含离群点（outliers）的数据集中，估计出最佳的模型参数，以便更好地拟合数据。</p>
 <p>RANSAC算法的工作原理如下：</p>
 <ol>
 <li>从数据集中随机选择一小部分样本，并使用这些样本拟合模型。</li>
