@@ -294,6 +294,37 @@
     
     
     <entry>
+      <title>Tensorflow</title>
+      <link href="/2023/09/15/Tensorflow/"/>
+      <url>/2023/09/15/Tensorflow/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Tensorflow找不到GPU：tensorflow-2-11-0版本开始，在windows上不再支持GPU"><a href="#Tensorflow找不到GPU：tensorflow-2-11-0版本开始，在windows上不再支持GPU" class="headerlink" title="Tensorflow找不到GPU：tensorflow 2.11.0版本开始，在windows上不再支持GPU"></a>Tensorflow找不到GPU：tensorflow 2.11.0版本开始，在windows上不再支持GPU</h2><p><a href="https://blog.csdn.net/bragen/article/details/129131278"></a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> STUDY </category>
+          
+          <category> POLIMI </category>
+          
+          <category> ANNDL </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> POLIMI </tag>
+            
+            <tag> ANNDL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>推荐系统</title>
       <link href="/2023/09/12/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
       <url>/2023/09/12/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/</url>

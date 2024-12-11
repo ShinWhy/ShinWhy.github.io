@@ -6,21 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="Static scoping rules（静态作用域规则）是指在编程语言中，变量的作用域是在程序编译时就已经确定好的，而不是在程序运行时才确定。这意味着，如果一个变量被定义在某个函数内部，它的作用域只限于该函数内部，而不会影响到其他函数。这样可以避免变量名冲突和不必要的内存消耗，提高程序的可读性和可维护性。 Static vs Dynamic scoping 为什么去掉apply以后不能正常运行？">
+    <meta name="description" content="Tensorflow找不到GPU：tensorflow 2.11.0版本开始，在windows上不再支持GPU">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PL">
-<meta property="og:url" content="https://shinwhy.github.io/2023/09/15/PL/index.html">
+<meta property="og:title" content="Tensorflow">
+<meta property="og:url" content="https://shinwhy.github.io/2023/09/15/Tensorflow/index.html">
 <meta property="og:site_name" content="ShinWhy">
-<meta property="og:description" content="Static scoping rules（静态作用域规则）是指在编程语言中，变量的作用域是在程序编译时就已经确定好的，而不是在程序运行时才确定。这意味着，如果一个变量被定义在某个函数内部，它的作用域只限于该函数内部，而不会影响到其他函数。这样可以避免变量名冲突和不必要的内存消耗，提高程序的可读性和可维护性。 Static vs Dynamic scoping 为什么去掉apply以后不能正常运行？">
+<meta property="og:description" content="Tensorflow找不到GPU：tensorflow 2.11.0版本开始，在windows上不再支持GPU">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://shinwhy.github.io/images/PL/Concept.JPG">
 <meta property="article:published_time" content="2023-09-15T06:45:53.000Z">
-<meta property="article:modified_time" content="2024-02-19T14:33:18.000Z">
+<meta property="article:modified_time" content="2024-12-11T01:06:39.796Z">
 <meta property="article:author" content="ShinWhy">
 <meta property="article:tag" content="POLIMI">
-<meta property="article:tag" content="PL">
+<meta property="article:tag" content="ANNDL">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://shinwhy.github.io/images/PL/Concept.JPG">
     
     
       
@@ -40,7 +38,7 @@
       
     
     <!-- title -->
-    <title>PL</title>
+    <title>Tensorflow</title>
     <!-- async scripts -->
     <!-- Google Analytics -->
 
@@ -91,10 +89,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" aria-label="Previous post" href="/2023/09/15/ANNDL/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Previous post" href="/2023/09/15/PL/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" aria-label="Next post" href="/2023/09/15/Tensorflow/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Next post" href="/2023/09/12/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -107,22 +105,22 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://shinwhy.github.io/2023/09/15/PL/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://shinwhy.github.io/2023/09/15/PL/&text=PL"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://shinwhy.github.io/2023/09/15/PL/&title=PL"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://shinwhy.github.io/2023/09/15/PL/&is_video=false&description=PL"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=PL&body=Check out this article: https://shinwhy.github.io/2023/09/15/PL/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://shinwhy.github.io/2023/09/15/PL/&title=PL"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://shinwhy.github.io/2023/09/15/PL/&title=PL"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://shinwhy.github.io/2023/09/15/PL/&title=PL"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://shinwhy.github.io/2023/09/15/PL/&title=PL"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://shinwhy.github.io/2023/09/15/PL/&name=PL&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://shinwhy.github.io/2023/09/15/PL/&t=PL"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://shinwhy.github.io/2023/09/15/Tensorflow/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://shinwhy.github.io/2023/09/15/Tensorflow/&text=Tensorflow"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://shinwhy.github.io/2023/09/15/Tensorflow/&title=Tensorflow"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://shinwhy.github.io/2023/09/15/Tensorflow/&is_video=false&description=Tensorflow"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Tensorflow&body=Check out this article: https://shinwhy.github.io/2023/09/15/Tensorflow/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://shinwhy.github.io/2023/09/15/Tensorflow/&title=Tensorflow"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://shinwhy.github.io/2023/09/15/Tensorflow/&title=Tensorflow"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://shinwhy.github.io/2023/09/15/Tensorflow/&title=Tensorflow"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://shinwhy.github.io/2023/09/15/Tensorflow/&title=Tensorflow"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://shinwhy.github.io/2023/09/15/Tensorflow/&name=Tensorflow&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://shinwhy.github.io/2023/09/15/Tensorflow/&t=Tensorflow"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
     <div id="toc">
-      
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Tensorflow%E6%89%BE%E4%B8%8D%E5%88%B0GPU%EF%BC%9Atensorflow-2-11-0%E7%89%88%E6%9C%AC%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%9C%A8windows%E4%B8%8A%E4%B8%8D%E5%86%8D%E6%94%AF%E6%8C%81GPU"><span class="toc-number">1.</span> <span class="toc-text">Tensorflow找不到GPU：tensorflow 2.11.0版本开始，在windows上不再支持GPU</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -134,7 +132,7 @@
   <header>
     
     <h1 class="posttitle p-name" itemprop="name headline">
-        PL
+        Tensorflow
     </h1>
 
 
@@ -155,14 +153,14 @@
       
     <div class="article-category">
         <i class="fas fa-archive"></i>
-        <a class="category-link" href="/categories/STUDY/">STUDY</a> › <a class="category-link" href="/categories/STUDY/POLIMI/">POLIMI</a> › <a class="category-link" href="/categories/STUDY/POLIMI/PL/">PL</a>
+        <a class="category-link" href="/categories/STUDY/">STUDY</a> › <a class="category-link" href="/categories/STUDY/POLIMI/">POLIMI</a> › <a class="category-link" href="/categories/STUDY/POLIMI/ANNDL/">ANNDL</a>
     </div>
 
 
       
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="p-category" href="/tags/PL/" rel="tag">PL</a>, <a class="p-category" href="/tags/POLIMI/" rel="tag">POLIMI</a>
+        <a class="p-category" href="/tags/ANNDL/" rel="tag">ANNDL</a>, <a class="p-category" href="/tags/POLIMI/" rel="tag">POLIMI</a>
     </div>
 
 
@@ -171,9 +169,7 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <p><img src="/images/PL/Concept.JPG" alt="概念思维导图"><br>Static scoping rules（静态作用域规则）是指在编程语言中，变量的作用域是在程序编译时就已经确定好的，而不是在程序运行时才确定。这意味着，如果一个变量被定义在某个函数内部，它的作用域只限于该函数内部，而不会影响到其他函数。这样可以避免变量名冲突和不必要的内存消耗，提高程序的可读性和可维护性。</p>
-<p>Static vs Dynamic scoping</p>
-<p>为什么去掉apply以后不能正常运行？</p>
+    <h2 id="Tensorflow找不到GPU：tensorflow-2-11-0版本开始，在windows上不再支持GPU"><a href="#Tensorflow找不到GPU：tensorflow-2-11-0版本开始，在windows上不再支持GPU" class="headerlink" title="Tensorflow找不到GPU：tensorflow 2.11.0版本开始，在windows上不再支持GPU"></a>Tensorflow找不到GPU：tensorflow 2.11.0版本开始，在windows上不再支持GPU</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/bragen/article/details/129131278"></a></p>
 
   </div>
 </article>
@@ -205,22 +201,22 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Tensorflow%E6%89%BE%E4%B8%8D%E5%88%B0GPU%EF%BC%9Atensorflow-2-11-0%E7%89%88%E6%9C%AC%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%9C%A8windows%E4%B8%8A%E4%B8%8D%E5%86%8D%E6%94%AF%E6%8C%81GPU"><span class="toc-number">1.</span> <span class="toc-text">Tensorflow找不到GPU：tensorflow 2.11.0版本开始，在windows上不再支持GPU</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://shinwhy.github.io/2023/09/15/PL/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://shinwhy.github.io/2023/09/15/PL/&text=PL"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://shinwhy.github.io/2023/09/15/PL/&title=PL"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://shinwhy.github.io/2023/09/15/PL/&is_video=false&description=PL"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=PL&body=Check out this article: https://shinwhy.github.io/2023/09/15/PL/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://shinwhy.github.io/2023/09/15/PL/&title=PL"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://shinwhy.github.io/2023/09/15/PL/&title=PL"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://shinwhy.github.io/2023/09/15/PL/&title=PL"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://shinwhy.github.io/2023/09/15/PL/&title=PL"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://shinwhy.github.io/2023/09/15/PL/&name=PL&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://shinwhy.github.io/2023/09/15/PL/&t=PL"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://shinwhy.github.io/2023/09/15/Tensorflow/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://shinwhy.github.io/2023/09/15/Tensorflow/&text=Tensorflow"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://shinwhy.github.io/2023/09/15/Tensorflow/&title=Tensorflow"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://shinwhy.github.io/2023/09/15/Tensorflow/&is_video=false&description=Tensorflow"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Tensorflow&body=Check out this article: https://shinwhy.github.io/2023/09/15/Tensorflow/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://shinwhy.github.io/2023/09/15/Tensorflow/&title=Tensorflow"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://shinwhy.github.io/2023/09/15/Tensorflow/&title=Tensorflow"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://shinwhy.github.io/2023/09/15/Tensorflow/&title=Tensorflow"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://shinwhy.github.io/2023/09/15/Tensorflow/&title=Tensorflow"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://shinwhy.github.io/2023/09/15/Tensorflow/&name=Tensorflow&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://shinwhy.github.io/2023/09/15/Tensorflow/&t=Tensorflow"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
